@@ -149,7 +149,7 @@ function App() {
             
             <div style={{ display: "flex", gap: "1.5rem", marginTop: "3rem" }}>
               <a
-                href="#"
+                href="https://github.com/elaouziassaadpro-alt"
                 style={{
                   color: "var(--text-secondary)",
                   transition: "color 0.3s",
@@ -164,7 +164,7 @@ function App() {
                 <Github size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/assaad-elaouzi-8b95bb211/"
                 style={{
                   color: "var(--text-secondary)",
                   transition: "color 0.3s",

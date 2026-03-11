@@ -14,7 +14,13 @@ import {
   Cpu,
   AirVent,
   AirplayIcon,
-  Plane
+  Plane,
+  User,
+  Phone,
+  Locate,
+  PlaneLanding,
+  CitrusIcon,
+  LocateIcon
 } from "lucide-react";
 import "./App.css";
 import FollowCursor from "./cursor";
@@ -54,6 +60,7 @@ function App() {
         <div
           style={{
             maxWidth: "1200px",
+            
             margin: "0 auto",
             display: "flex",
             justifyContent: "space-between",
@@ -68,7 +75,7 @@ function App() {
               fontFamily: "Outfit",
             }}
           >
-            <span className="gradient-text">AE.</span>
+            <span className="gradient-text"><img src="/logo.png" alt="logo" style={{ width: "50px", height: "50px" }} /></span>
           </div>
           <div style={{ display: "flex", gap: "2rem", fontWeight: "500", fontSize: "0.95rem" }}>
             <a href="#about" className="nav-link">About</a>
@@ -84,13 +91,14 @@ function App() {
         id="home"
         className="section"
         style={{
-          height: "100vh",
+          minHeight: "100vh",
           display: "flex",
           alignItems: "center",
           overflow: "hidden",
           background: "none",
           position: "relative",
-          zIndex: 10
+          zIndex: 10,
+          paddingTop: "120px"
         }}
       >
         <div style={{
@@ -103,17 +111,7 @@ function App() {
           gap: "2rem"
         }}>
           <div style={{ maxWidth: "600px", flex: 1 }} className="animate-fade-in">
-            <h2
-              style={{
-                fontSize: "1.5rem",
-                color: "var(--accent-primary)",
-                marginBottom: "1rem",
-                fontWeight: "500",
-                fontFamily: "Outfit",
-              }}
-            >
-              👋 Hello, I'm Assaad Elaouzi
-            </h2>
+            
             <h1
               style={{
                 fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
@@ -137,13 +135,13 @@ function App() {
               robust IT infrastructure and high-performance software solutions.
             </p>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-              <a href="#projects" className="btn btn-primary">
+              <a href="#projects" className="btn-premium">
                 View Enterprise Projects
               </a>
               <a
                 href="#contact"
-                className="btn btn-outline"
-                style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+                className="btn-premium"
+                style={{ background: "rgba(255, 255, 255, 0.05)", border: "1px solid var(--border-color)" }}
               >
                 Contact Me <Mail size={18} />
               </a>
@@ -561,7 +559,6 @@ function App() {
                 <span>Laravel</span>
                 <span>React.js</span>
                 <span>Docker</span>
-                <span>Linux</span>
               </div>
               <div style={{ display: "flex", gap: "1rem" }}>
                 <a href="#" style={{ color: "var(--text-primary)" }}>
@@ -620,6 +617,52 @@ function App() {
         >
           Whether you need to architect a new enterprise backend, streamline your IT infrastructure, or discuss scalable web applications, my inbox is always open. Let's build something robust together.
         </p>
+
+        {/* Contact Card */}
+        <div 
+          className="glass-card" 
+          style={{ 
+            textAlign: "left", 
+            marginBottom: "3rem", 
+            padding: "2rem",
+            display: "grid",
+            gap: "1.5rem",
+            borderLeft: "4px solid var(--accent-primary)"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ color: "var(--accent-primary)" }}><User size={24} /></div>
+            <div>
+              <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: "1px" }}>Full Name</div>
+              <div style={{ fontSize: "1.1rem", fontWeight: "600", color: "var(--text-primary)" }}>ELAOUZI Assaad</div>
+            </div>
+          </div>
+          
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ color: "var(--accent-primary)" }}><Mail size={24} /></div>
+            <div>
+              <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: "1px" }}>Email Address</div>
+              <a href="mailto:elaouzi.assaadpro@gmail.com" style={{ fontSize: "1.1rem", fontWeight: "600", color: "var(--text-primary)", transition: "color 0.3s" }}>elaouzi.assaadpro@gmail.com</a>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ color: "var(--accent-primary)" }}><Phone size={24} /></div>
+            <div>
+              <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: "1px" }}>Phone Number</div>
+              <div style={{ fontSize: "1.1rem", fontWeight: "600", color: "var(--text-primary)" }}>+212 645609313</div>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <div style={{ color: "var(--accent-primary)" }}><LocateIcon size={24} /></div>
+            <div>
+              <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", textTransform: "uppercase", letterSpacing: "1px" }}>Location</div>
+              <div style={{ fontSize: "1.1rem", fontWeight: "600", color: "var(--text-primary)" }}>Casablanca-Rabat</div>
+            </div>
+          </div>
+        </div>
+
         <Button />
       </section>
 

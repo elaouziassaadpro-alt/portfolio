@@ -27,17 +27,10 @@ import FollowCursor from "./cursor";
 import NeuralGlow from "./neural-glow";
 import GlobeDemo from "./Globe";
 import Button from "./Gradient";
+import Navbar from "./navbar";
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen">
@@ -45,46 +38,7 @@ function App() {
       <NeuralGlow />
 
       {/* Navigation */}
-      <nav
-        style={{
-          position: "fixed",
-          width: "100%",
-          padding: "20px 0",
-          zIndex: 100,
-          background: scrolled ? "var(--surface-color)" : "transparent",
-          backdropFilter: scrolled ? "var(--glass-blur)" : "none",
-          borderBottom: scrolled ? "1px solid var(--border-color)" : "none",
-          transition: "all 0.3s ease",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "0 20px",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "1.5rem",
-              fontWeight: "800",
-              fontFamily: "Outfit",
-            }}
-          >
-            <span className="gradient-text"><img src="/logo.png" alt="logo" style={{ width: "50px", height: "50px" }} /></span>
-          </div>
-          <div style={{ display: "flex", gap: "2rem", fontWeight: "500", fontSize: "0.95rem" }}>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#experience" className="nav-link">Experience</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#contact" className="nav-link">Contact</a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section
@@ -181,7 +135,48 @@ function App() {
             </div>
           </div>
           <div style={{ flex: 1, minWidth: "300px", display: "flex", justifyContent: "center" }}>
-            <GlobeDemo />
+            <div className="animate-float" style={{
+              position: "relative",
+              width: "400px",
+              height: "500px",
+              borderRadius: "24px",
+              overflow: "hidden",
+              border: "1px solid var(--border-color)",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.5)",
+              background: "var(--surface-color)",
+            }}>
+              <img 
+                src="/profile.png" 
+                alt="Assaad Elaouzi" 
+                style={{ 
+                  width: "100%", 
+                  height: "100%", 
+                  objectFit: "cover",
+                  filter: "brightness(0.9) contrast(1.1)"
+                }} 
+              />
+              <div style={{
+                position: "absolute",
+                inset: 0,
+                background: "linear-gradient(to top, rgba(11, 15, 25, 0.8), transparent)",
+                pointerEvents: "none"
+              }} />
+              <div style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "20px",
+                right: "20px",
+                padding: "1.2rem",
+                backdropFilter: "blur(12px)",
+                background: "rgba(255,255,255,0.03)",
+                borderRadius: "16px",
+                border: "1px solid rgba(255,255,255,0.1)",
+                textAlign: "left"
+              }}>
+                <div style={{ fontWeight: "800", color: "white", fontSize: "1.2rem", fontFamily: "Outfit" }}>Assaad Elaouzi</div>
+                <div style={{ fontSize: "0.85rem", color: "var(--accent-primary)", fontWeight: "600", letterSpacing: "0.5px" }}>IT Generalist & Developer</div>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -578,6 +573,96 @@ function App() {
               <Activity size={80} color="var(--text-secondary)" opacity={0.3} />
             </div>
           </div>
+
+        </div>
+      </section>
+      {/* Vision Section */}
+      <section id="vision" className="section" style={{ paddingTop: "100px", zIndex: 10, position: "relative" }}>
+        <h2
+          style={{
+            fontSize: "2.5rem",
+            marginBottom: "3rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "1rem",
+              color: "var(--accent-primary)",
+              fontFamily: "Inter",
+            }}
+          >
+            04.
+          </span>
+          Concept & Vision: Global Super App
+        </h2>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "4rem",
+            alignItems: "center",
+          }}
+        >
+          <div className="animate-fade-in">
+            <p
+              style={{
+                fontSize: "1.1rem",
+                color: "var(--text-secondary)",
+                marginBottom: "2rem",
+                lineHeight: "1.8",
+              }}
+            >
+              The concept of a global super app integrating multiple digital services within a single platform, 
+              including an online marketplace, digital payments, service booking, and vendor management. 
+              The platform is architected to connect users, businesses, and service providers in a 
+              unified ecosystem supporting international users and scalable operations.
+            </p>
+            
+            <h3
+              style={{
+                fontSize: "1.2rem",
+                marginBottom: "1.5rem",
+                color: "var(--text-primary)",
+                fontFamily: "Outfit",
+              }}
+            >
+              Visionary Core & Ecosystem:
+            </h3>
+            
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "2rem" }}>
+              {["Global Super App", "Online Marketplace", "Digital Payments", "Service Booking", "Vendor Management", "Scalable Systems", "Database Architecture"].map((tech) => (
+                <span key={tech} style={{
+                  padding: "0.5rem 1rem",
+                  background: "rgba(139, 92, 246, 0.1)",
+                  border: "1px solid rgba(139, 92, 246, 0.2)",
+                  borderRadius: "20px",
+                  color: "var(--accent-secondary)",
+                  fontSize: "0.9rem",
+                  fontWeight: "500",
+                }}>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div 
+            className="glass-card animate-float"
+            style={{ 
+              height: "500px", 
+              display: "flex", 
+              alignItems: "center", 
+              justifyContent: "center",
+              background: "radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent)",
+              overflow: "hidden"
+            }}
+          >
+            <GlobeDemo />
+          </div>
         </div>
       </section>
 
@@ -602,7 +687,7 @@ function App() {
             marginBottom: "1rem",
           }}
         >
-          04. What's Next?
+          05. What's Next?
         </h2>
         <h3 style={{ fontSize: "3rem", marginBottom: "1.5rem" }}>
           Get In Touch

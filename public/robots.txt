@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# AI search crawlers — explicitly allowed for AI Overviews / AI Mode /
+# ChatGPT search / Perplexity / Claude visibility, even though the
+# wildcard rule above already covers them.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://portfolio-ten-tau-451f9zrxlt.vercel.app/sitemap.xml

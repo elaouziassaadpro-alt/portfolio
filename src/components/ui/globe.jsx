@@ -13,13 +13,13 @@ export default function Earth() {
       height: 800,
       phi: 0,
       theta: 0.1,
-      dark: 1,
-      diffuse: 1.2,
+      dark: 0,
+      diffuse: 0.4,
       mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.3, 0.3, 0.3],
-      markerColor: [0.1, 0.8, 1],
-      glowColor: [1, 1, 1],
+      mapBrightness: 1.2,
+      baseColor: [0.92, 0.9, 0.86], // cream landmass
+      markerColor: [0.85, 0.35, 0.19], // burnt orange
+      glowColor: [0.87, 0.84, 0.79], // warm halo
       markers: [
         // Example marker locations
         { location: [37.7595, -122.4367], size: 0.03 },

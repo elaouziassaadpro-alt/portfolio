@@ -70,9 +70,9 @@ const NeuralGlow = () => {
         noise = max(.0, noise - .5);
         noise *= (1. - length(vUv - .5));
 
-        // Blue/indigo color palette
-        color = vec3(0.1, 0.2, 0.8); // Base blue color
-        color += vec3(0.0, 0.1, 0.4) * sin(3.0 * u_scroll_progress + 1.5); // Indigo variation
+        // Warm editorial palette: burnt orange drifting toward gold
+        color = vec3(0.85, 0.35, 0.19); // Burnt orange (#d85a30)
+        color += vec3(-0.13, 0.25, 0.18) * sin(3.0 * u_scroll_progress + 1.5); // Gold variation
 
         color = color * noise;
 
@@ -219,7 +219,10 @@ const NeuralGlow = () => {
           width: '100%',
           height: '100%',
           pointerEvents: 'none',
-          opacity: 0.95,
+          // Reads as a warm paper texture on the cream background.
+          // A glow needs a dark canvas to sit on; at full strength on
+          // light it overwhelms the type.
+          opacity: 0.3,
           zIndex: -1,
         }}
       />

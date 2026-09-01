@@ -1,0 +1,20 @@
+# Assaad Elaouzi — IT Applications Developer
+
+> Portfolio of Assaad Elaouzi, an IT Applications Developer based in Casablanca, Morocco, specializing in Laravel, React, and enterprise web application development. Currently IT & Application Developer at Alphavest Asset Management.
+
+## Main sections
+
+- [About](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#about): Degree in Application Development Engineering (FST Tanger), Full Stack Developer certification (Webforce3), and core technology stack.
+- [Experience](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#experience): Current role at Alphavest Asset Management, plus internships at Forvis Mazars Casablanca, OCP Group (Jorf Lasfar), DEVTI Technologie, and Gretin Innovation.
+- [Projects](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#projects): Enterprise KYC platform, laboratory management system, project evaluation platform, tour booking platform, and internal desktop tools.
+- [Contact](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#contact): Email, phone, and location.
+
+## Key facts
+
+- Based in Casablanca, Morocco
+- Core stack: Laravel, PHP, React.js, React Native, Node.js, Express.js, SQL, Java, Python, Git, Livewire
+- Degree: Licence en Ingénierie de Développement des Applications Informatiques, FST Tanger (2023-2024)
+- Certification: Full Stack Developer, Webforce3 (2022-2024)
+- Contact: elaouzi.assaadpro@gmail.com / +212 645 609 313
+
+Note: this file is ignored by Google Search (Google's AI Overviews and AI Mode do not use llms.txt) but may be read by other AI crawlers/assistants.

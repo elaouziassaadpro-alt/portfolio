@@ -1,30 +1,143 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-  --bg-color: #0b0f19;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #8b5cf6;
-  --surface-color: rgba(30, 41, 59, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(12px);
+/* ========================================
+PREMIUM EDITORIAL COLOR SYSTEM
+======================================== */
+
+/* Main backgrounds */
+--bg-color: #f4f1ea;
+--bg-dark: #1c1c1a;
+--bg-elevated: #ebe7de;
+
+/* Typography */
+--text-primary: #1c1c1a;
+--text-secondary: #6e6b64;
+--text-muted: #6b6459;
+--text-light: #f4f1ea;
+
+/* Signature colors
+   Fills / borders / icons / large display type. */
+--accent-primary: #d85a30;
+--accent-primary-hover: #b94624;
+--accent-secondary: #b89b5e;
+
+/* Text-safe accents
+   #d85a30 is 3.4:1 on cream and #b89b5e is 2.4:1 — both fail AA
+   below 24px. Use these for small accent text (eyebrows, labels,
+   pills, section numbers); they clear 4.5:1. */
+--accent-text: #a83f20;
+--accent-secondary-text: #7a6230;
+
+/* Accent tints — replaces the old hardcoded rgba(59,130,246,…) blues */
+--accent-wash: rgba(216, 90, 48, 0.08);
+--accent-wash-strong: rgba(216, 90, 48, 0.14);
+--accent-border: rgba(216, 90, 48, 0.22);
+--gold-wash: rgba(184, 155, 94, 0.1);
+--gold-border: rgba(184, 155, 94, 0.28);
+
+/* Inverted surface — for plates sitting on photography */
+--overlay-dark: rgba(28, 28, 26, 0.82);
+--overlay-plate: rgba(244, 241, 234, 0.12);
+
+/* "Ink chip" — the always-inverted pill used by .btn-premium and
+   .btn-outline:hover (dark fill + light text in light mode). Kept
+   separate from --text-primary/--text-light: those describe page
+   text, not this fill, and reusing them made the button invert to
+   near-white-on-white once dark mode existed. */
+--chip-bg: #1c1c1a;
+--chip-text: #f4f1ea;
+
+/* Surfaces */
+--surface-color: rgba(250, 249, 246, 0.88);
+--surface-solid: #faf9f6;
+--border-color: #dedad1;
+--border-dark: rgba(244, 241, 234, 0.15);
+
+/* Effects */
+--glass-blur: blur(14px);
+--shadow-sm: 0 4px 12px rgba(28, 28, 26, 0.06);
+--shadow-md: 0 12px 32px rgba(28, 28, 26, 0.1);
+--shadow-lg: 0 24px 60px rgba(28, 28, 26, 0.14);
+
+/* Theme-transition timing, referenced by body/.glass-card below */
+--theme-transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
 }
+
+/* ========================================
+DARK THEME
+Same warm editorial system, inverted. Accent hues are
+brightened (not just reused) since #d85a30/#b89b5e were
+tuned for contrast against cream, not near-black.
+======================================== */
+
+:root[data-theme="dark"] {
+--bg-color: #15130f;
+--bg-dark: #f4f1ea;
+--bg-elevated: #201d17;
+
+--text-primary: #f3efe6;
+--text-secondary: #b3ab9b;
+--text-muted: #8a8271;
+--text-light: #f4f1ea;
+
+--accent-primary: #e2683b;
+--accent-primary-hover: #ef7c4f;
+--accent-secondary: #c9ad74;
+
+--accent-text: #ff9a6b;
+--accent-secondary-text: #d9bd85;
+
+--accent-wash: rgba(226, 104, 59, 0.14);
+--accent-wash-strong: rgba(226, 104, 59, 0.22);
+--accent-border: rgba(226, 104, 59, 0.32);
+--gold-wash: rgba(201, 173, 116, 0.14);
+--gold-border: rgba(201, 173, 116, 0.34);
+
+--overlay-dark: rgba(10, 9, 7, 0.82);
+--overlay-plate: rgba(244, 241, 234, 0.1);
+
+--surface-color: rgba(32, 29, 23, 0.85);
+--surface-solid: #1c1913;
+--border-color: rgba(244, 241, 234, 0.12);
+--border-dark: rgba(244, 241, 234, 0.15);
+
+--shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.28);
+--shadow-md: 0 12px 32px rgba(0, 0, 0, 0.38);
+--shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.48);
+
+--chip-bg: #f4f1ea;
+--chip-text: #171512;
+}
+
+/* ========================================
+RESET
+======================================== */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+font-family: "Inter", sans-serif;
+background-color: var(--bg-color);
+color: var(--text-primary);
+line-height: 1.6;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+transition: var(--theme-transition);
 }
+
+/* ========================================
+TYPOGRAPHY
+======================================== */
 
 h1,
 h2,
@@ -32,197 +145,439 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
+font-family: "Outfit", sans-serif;
+font-weight: 700;
+line-height: 1.1;
+letter-spacing: -0.03em;
+}
+
+p {
+color: var(--text-secondary);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+color: inherit;
+text-decoration: none;
 }
+
+/* ========================================
+ACCENT TEXT
+======================================== */
 
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+background: linear-gradient(
+135deg,
+var(--accent-primary) 0%,
+var(--accent-secondary) 100%
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
 }
+
+/* Small caps label above a heading ("Financial Sector") */
+.eyebrow {
+font-family: "Outfit", sans-serif;
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--accent-text);
+}
+
+/* Numeral that prefixes each section heading ("01.") */
+.section-index {
+font-family: "Outfit", sans-serif;
+font-size: 1rem;
+font-weight: 600;
+color: var(--accent-text);
+}
+
+/* ========================================
+PILLS
+======================================== */
+
+.pill {
+padding: 0.45rem 0.95rem;
+border-radius: 999px;
+font-size: 0.85rem;
+font-weight: 500;
+background: var(--accent-wash);
+border: 1px solid var(--accent-border);
+color: var(--accent-text);
+transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.pill:hover {
+background: var(--accent-wash-strong);
+border-color: var(--accent-primary);
+}
+
+.pill-gold {
+background: var(--gold-wash);
+border-color: var(--gold-border);
+color: var(--accent-secondary-text);
+}
+
+.pill-gold:hover {
+background: var(--gold-wash);
+border-color: var(--accent-secondary);
+}
+
+/* Tinted square behind an icon */
+.icon-plate {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 0.9rem;
+border-radius: 12px;
+background: var(--accent-wash);
+border: 1px solid var(--accent-border);
+}
+
+/* ========================================
+CALLOUT
+Project description block. Was a dark navy box
+left over from the dark theme — unreadable on cream.
+======================================== */
+
+.callout {
+/* accent-wash rather than bg-elevated: the elevated tone put
+   secondary text at 4.31:1, just under AA. This lands at 4.6:1. */
+background: var(--accent-wash);
+border-left: 3px solid var(--accent-primary);
+padding: 1.25rem 1.5rem;
+border-radius: 0 10px 10px 0;
+color: var(--text-secondary);
+}
+
+/* ========================================
+SECTIONS
+======================================== */
 
 .section {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+padding: 110px 24px;
+max-width: 1240px;
+margin: 0 auto;
 }
 
+/* ========================================
+CARDS
+Cleaner and more editorial.
+Reduced AI-style glass effect.
+======================================== */
+
 .glass-card {
-  background: var(--surface-color);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 2rem;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+background: var(--surface-solid);
+border: 1px solid var(--border-color);
+border-radius: 18px;
+padding: 2rem;
+box-shadow: var(--shadow-sm);
+
+transition:
+transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+border-color 0.35s ease,
+background-color 0.35s ease;
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+transform: translateY(-6px);
+box-shadow: var(--shadow-lg);
+border-color: var(--accent-border);
 }
+
+/* ========================================
+BUTTON BASE
+======================================== */
 
 .btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  font-family: "Outfit", sans-serif;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  font-size: 1rem;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+
+padding: 0.85rem 1.7rem;
+
+font-family: "Outfit", sans-serif;
+font-weight: 600;
+
+border-radius: 10px;
+cursor: pointer;
+
+transition:
+transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+background 0.3s ease,
+border-color 0.3s ease,
+box-shadow 0.3s ease;
+
+border: 1px solid transparent;
+font-size: 0.95rem;
 }
 
+/* ========================================
+PRIMARY BUTTON
+Signature burnt orange.
+No AI purple/blue gradient.
+======================================== */
+
 .btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
-  color: white;
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+background: var(--accent-primary);
+color: #ffffff;
+box-shadow: 0 8px 24px rgba(216, 90, 48, 0.2);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
-  transform: translateY(-2px);
+background: var(--accent-primary-hover);
+transform: translateY(-2px);
+box-shadow: 0 12px 30px rgba(216, 90, 48, 0.28);
 }
 
+.btn-primary:active {
+transform: translateY(0) scale(0.98);
+}
+
+/* ========================================
+OUTLINE BUTTON
+======================================== */
+
 .btn-outline {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  backdrop-filter: var(--glass-blur);
+background: transparent;
+color: var(--text-primary);
+border: 1px solid var(--border-color);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+border-color: var(--chip-bg);
+background: var(--chip-bg);
+color: var(--chip-text);
+transform: translateY(-2px);
 }
 
+/* ========================================
+PREMIUM BUTTON
+Editorial accent instead of
+blue/purple SaaS gradient.
+======================================== */
+
 .btn-premium {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.6rem;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  border-radius: 12px;
-  font-weight: 600;
-  font-family: "Outfit", sans-serif;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  z-index: 1;
+position: relative;
+
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+
+padding: 0.85rem 1.7rem;
+
+background: var(--chip-bg);
+color: var(--chip-text);
+
+border-radius: 10px;
+
+font-weight: 600;
+font-family: "Outfit", sans-serif;
+
+overflow: hidden;
+
+transition:
+transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+box-shadow 0.35s ease,
+background 0.35s ease;
+
+box-shadow: 0 8px 24px rgba(28, 28, 26, 0.18);
+
+border: 1px solid transparent;
+cursor: pointer;
 }
 
 .btn-premium::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: none;
-  z-index: 2;
+content: "";
+
+position: absolute;
+inset: 0;
+
+background: var(--accent-primary);
+
+transform: translateY(100%);
+
+transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+
+z-index: 0;
+}
+
+.btn-premium > * {
+position: relative;
+z-index: 1;
 }
 
 .btn-premium:hover::before {
-  left: 100%;
-  transition: all 0.6s ease;
+transform: translateY(0);
 }
 
 .btn-premium:hover {
-  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
-  transform: translateY(-3px) scale(1.02);
+transform: translateY(-3px);
+box-shadow: 0 14px 35px rgba(28, 28, 26, 0.22);
 }
 
 .btn-premium:active {
-  transform: translateY(-1px) scale(0.98);
+transform: translateY(-1px) scale(0.98);
 }
 
-/* Animations */
-@keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+/* ========================================
+THEME TOGGLE & LANGUAGE SWITCH
+======================================== */
+
+.theme-toggle {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 1px solid var(--border-color);
+background: transparent;
+color: var(--text-primary);
+cursor: pointer;
+transition: var(--theme-transition), transform 0.3s ease;
 }
+
+.theme-toggle:hover {
+border-color: var(--accent-primary);
+color: var(--accent-text);
+transform: translateY(-2px);
+}
+
+.lang-switch {
+display: inline-flex;
+gap: 0.15rem;
+padding: 0.2rem;
+border-radius: 999px;
+border: 1px solid var(--border-color);
+background: transparent;
+transition: var(--theme-transition);
+}
+
+.lang-switch button {
+border: none;
+background: transparent;
+padding: 0.35rem 0.6rem;
+border-radius: 999px;
+font-family: "Outfit", sans-serif;
+font-size: 0.75rem;
+font-weight: 700;
+letter-spacing: 0.03em;
+color: var(--text-muted);
+cursor: pointer;
+transition: background 0.25s ease, color 0.25s ease;
+}
+
+.lang-switch button:hover {
+color: var(--text-primary);
+}
+
+.lang-switch button.active {
+background: var(--accent-primary);
+color: #ffffff;
+}
+
+/* ========================================
+ANIMATIONS
+======================================== */
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+opacity: 0;
+transform: translateY(24px);
+}
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+0%,
+100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-14px);
+}
 }
 
 .animate-fade-in {
-  animation: fadeIn 1s ease forwards;
+animation: fadeIn 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+animation: float 7s ease-in-out infinite;
 }
 
 .delay-100 {
-  animation-delay: 100ms;
-}
-.delay-200 {
-  animation-delay: 200ms;
-}
-.delay-300 {
-  animation-delay: 300ms;
+animation-delay: 100ms;
 }
 
-/* Custom Scrollbar */
+.delay-200 {
+animation-delay: 200ms;
+}
+
+.delay-300 {
+animation-delay: 300ms;
+}
+
+/* ========================================
+SCROLLBAR
+======================================== */
+
 ::-webkit-scrollbar {
-  width: 8px;
+width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+background: var(--bg-color);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--surface-color);
-  border-radius: 4px;
+background: #c5c0b6;
+border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-primary);
+background: var(--accent-primary);
+}
+
+:root[data-theme="dark"] ::-webkit-scrollbar-thumb {
+background: #3a352c;
+}
+
+/* ========================================
+SELECTION
+======================================== */
+
+::selection {
+background: var(--accent-primary);
+color: #ffffff;
+}
+
+/* ========================================
+ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+outline: 3px solid rgba(216, 90, 48, 0.4);
+outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+.section {
+padding: 80px 20px;
+}
+
+.glass-card {
+padding: 1.5rem;
+border-radius: 16px;
+}
 }

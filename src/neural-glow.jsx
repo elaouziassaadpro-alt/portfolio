@@ -1,8 +1,13 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
+// Reads as a warm paper texture on the cream background.
+// A glow needs a dark canvas to sit on; at full strength on
+// light it overwhelms the type.
+const BASE_OPACITY = 0.3;
 const NeuralGlow = () => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
+  const reduceMotionRef = useRef(false);
   const glRef = useRef(null);
   const uniformsRef = useRef(null);
   const pointerRef = useRef({
@@ -121,7 +126,7 @@ const NeuralGlow = () => {
     const gl =
       canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
     if (!gl) {
-      alert('WebGL is not supported by your browser.');
+      // Decorative only — fail silently rather than interrupt the visitor.
       return null;
     }
     const vertexShader = createShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
@@ -157,7 +162,17 @@ const NeuralGlow = () => {
     const gl = glRef.current;
     const uniforms = uniformsRef.current;
     const pointer = pointerRef.current;
-    if (!gl || !uniforms) return;
+    const canvas = canvasRef.current;
+    if (!gl || !uniforms || !canvas) return;
+    // Glow belongs to the hero only: fully visible at the top, gone after
+    // one viewport of scroll. Once invisible the loop stops; onScroll
+    // restarts it when the hero comes back into view.
+    const fade = Math.max(0, 1 - window.scrollY / window.innerHeight);
+    canvas.style.opacity = String(BASE_OPACITY * fade);
+    if (fade === 0) {
+      animationRef.current = null;
+      return;
+    }
     const currentTime = performance.now();
     pointer.x += (pointer.tX - pointer.x) * 0.2;
     pointer.y += (pointer.tY - pointer.y) * 0.2;
@@ -172,7 +187,10 @@ const NeuralGlow = () => {
       window.pageYOffset / (2 * window.innerHeight)
     );
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    animationRef.current = requestAnimationFrame(render);
+    // Reduced motion: draw a single static frame per scroll instead of looping.
+    animationRef.current = reduceMotionRef.current
+      ? null
+      : requestAnimationFrame(render);
   };
   const updateMousePosition = (x, y) => {
     pointerRef.current.tX = x;
@@ -188,13 +206,20 @@ const NeuralGlow = () => {
     updateMousePosition(e.clientX, e.clientY);
   };
   useEffect(() => {
+    reduceMotionRef.current = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
     glRef.current = initShader();
     resizeCanvas();
     render();
     const handleResize = () => {
       resizeCanvas();
     };
+    const handleScroll = () => {
+      if (animationRef.current == null) render();
+    };
     window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('pointermove', handlePointerMove);
     window.addEventListener('touchmove', handleTouchMove);
     window.addEventListener('click', handleClick);
@@ -203,6 +228,7 @@ const NeuralGlow = () => {
         cancelAnimationFrame(animationRef.current);
       }
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('click', handleClick);
@@ -219,10 +245,7 @@ const NeuralGlow = () => {
           width: '100%',
           height: '100%',
           pointerEvents: 'none',
-          // Reads as a warm paper texture on the cream background.
-          // A glow needs a dark canvas to sit on; at full strength on
-          // light it overwhelms the type.
-          opacity: 0.3,
+          opacity: BASE_OPACITY,
           zIndex: -1,
         }}
       />

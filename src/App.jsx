@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   Github,
   Linkedin,
@@ -12,18 +11,12 @@ import {
   Terminal,
   Layers,
   Cpu,
-  AirVent,
-  AirplayIcon,
   Plane,
   User,
   Phone,
-  Locate,
-  PlaneLanding,
-  CitrusIcon,
   LocateIcon
 } from "lucide-react";
 import "./App.css";
-import FollowCursor from "./cursor";
 import NeuralGlow from "./neural-glow";
 import GlobeDemo from "./Globe";
 import Button from "./Gradient";
@@ -48,12 +41,14 @@ const aboutCardIcons = [
 
 const techStack = ["Laravel", "PHP", "Livewire", "React.js", "React Native", "Node.js", "Express.js", "SQL", "Java", "Python", "Git"];
 
+// image: path under /public (e.g. "/projects/kyc.webp").
+// links: { live, repo } URLs, or { private: true } for client code that can't be shared.
 const projectVisuals = [
-  { Icon: ShieldCheck, tags: ["Laravel", "PHP", "Livewire", "MySQL"] },
-  { Icon: Activity, tags: ["Laravel", "React.js", "Docker"] },
-  { Icon: Terminal, tags: ["Laravel", "PHP", "SQL"] },
-  { Icon: Plane, tags: ["React.js", "JavaScript"] },
-  { Icon: Layers, tags: ["Java", "JavaFX"] },
+  { Icon: ShieldCheck, tags: ["Laravel", "PHP", "Livewire", "MySQL"], image: null, links: {} },
+  { Icon: Activity, tags: ["Laravel", "React.js", "Docker"], image: null, links: {} },
+  { Icon: Terminal, tags: ["Laravel", "PHP", "SQL"], image: null, links: {} },
+  { Icon: Plane, tags: ["React.js", "JavaScript"], image: null, links: {} },
+  { Icon: Layers, tags: ["Java", "JavaFX"], image: null, links: {} },
 ];
 
 const projectDelays = [0, 0.2, 0.1, 0.1, 0.1];
@@ -70,7 +65,6 @@ function App() {
         transition: "opacity 0.24s ease, filter 0.24s ease",
       }}
     >
-      <FollowCursor color="#d85a30" />
       <NeuralGlow />
 
       {/* Navigation */}
@@ -396,119 +390,77 @@ function App() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
           {t.projects.items.map((project, idx) => {
-            const { Icon, tags } = projectVisuals[idx];
+            const { Icon, tags, image, links } = projectVisuals[idx];
             const imageFirst = idx % 2 === 0;
-
-            const imageBlock = (
-              <div
-                style={{
-                  background: "var(--surface-color)",
-                  minHeight: "300px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Icon size={80} color="var(--text-secondary)" opacity={0.3} />
-              </div>
-            );
-
-            const textBlock = (
-              <div
-                style={{
-                  padding: "2rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: imageFirst ? "stretch" : "flex-start",
-                }}
-              >
-                <span className="eyebrow">{project.eyebrow}</span>
-                <h3 style={{ fontSize: "1.8rem", margin: "0.5rem 0 1rem 0" }}>
-                  {project.title}
-                </h3>
-                <p
-                  className="callout"
-                  style={{
-                    marginBottom: "1.5rem",
-                    zIndex: 2,
-                    ...(imageFirst ? { marginLeft: "-50px" } : { marginRight: "-50px" }),
-                  }}
-                >
-                  {project.desc}
-                </p>
-                {project.bullets && (
-                  <ul
-                    style={{
-                      listStyle: "none",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "0.6rem",
-                      marginBottom: "1.5rem",
-                      color: "var(--text-secondary)",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {project.bullets.map((line) => (
-                      <li
-                        key={line}
-                        style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}
-                      >
-                        <span
-                          style={{
-                            width: "6px",
-                            height: "6px",
-                            borderRadius: "50%",
-                            background: "var(--accent-primary)",
-                            flexShrink: 0,
-                          }}
-                        />
-                        {line}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "1rem",
-                    color: "var(--text-secondary)",
-                    fontSize: "0.9rem",
-                    marginBottom: "1.5rem",
-                    fontFamily: "Outfit",
-                  }}
-                >
-                  {tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-            );
+            const labels = t.projects.labels;
+            // problem/solution/outcome are optional per project; until they're
+            // filled in, the card falls back to the single `desc` paragraph.
+            const facts = [
+              ["problem", project.problem],
+              ["solution", project.solution],
+              ["outcome", project.outcome],
+            ].filter(([, value]) => value);
 
             return (
               <ScrollReveal key={idx} direction={imageFirst ? "right" : "left"} delay={projectDelays[idx]}>
-                <div
-                  className="glass-card"
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: imageFirst ? "1.2fr 1fr" : "1fr 1.2fr",
-                    gap: "2rem",
-                    padding: "0",
-                    overflow: "hidden",
-                  }}
-                >
-                  {imageFirst ? (
-                    <>
-                      {imageBlock}
-                      {textBlock}
-                    </>
-                  ) : (
-                    <>
-                      {textBlock}
-                      {imageBlock}
-                    </>
-                  )}
-                </div>
+                <article className="glass-card project-card" data-flip={!imageFirst}>
+                  <div className="project-media">
+                    {image ? (
+                      <img src={image} alt={project.title} loading="lazy" width="1200" height="750" />
+                    ) : (
+                      <Icon size={80} color="var(--text-secondary)" opacity={0.3} aria-hidden="true" />
+                    )}
+                  </div>
+
+                  <div className="project-body">
+                    <span className="eyebrow">{project.eyebrow}</span>
+                    <h3 style={{ fontSize: "1.6rem", margin: "0.25rem 0 0" }}>{project.title}</h3>
+                    {project.role && <p className="project-role">{project.role}</p>}
+
+                    {facts.length > 0 ? (
+                      <dl className="project-facts">
+                        {facts.map(([key, value]) => (
+                          <div key={key} style={{ display: "contents" }}>
+                            <dt>{labels[key]}</dt>
+                            <dd>{value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    ) : (
+                      <p className="callout">{project.desc}</p>
+                    )}
+
+                    {project.bullets && (
+                      <ul className="project-bullets">
+                        {project.bullets.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
+                      </ul>
+                    )}
+
+                    <ul className="project-tags" aria-label="Stack">
+                      {tags.map((tag) => (
+                        <li key={tag} className="pill">{tag}</li>
+                      ))}
+                    </ul>
+
+                    {(links.live || links.repo || links.private) && (
+                      <div className="project-links">
+                        {links.live && (
+                          <a href={links.live} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                            {labels.live} <ExternalLink size={16} />
+                          </a>
+                        )}
+                        {links.repo && (
+                          <a href={links.repo} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                            {labels.code} <Github size={16} />
+                          </a>
+                        )}
+                        {links.private && <span className="project-private">{labels.private}</span>}
+                      </div>
+                    )}
+                  </div>
+                </article>
               </ScrollReveal>
             );
           })}

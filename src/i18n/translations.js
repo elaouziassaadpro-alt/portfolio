@@ -6,6 +6,8 @@ export const translations = {
       projects: "Projects",
       vision: "Vision",
       contact: "Contact",
+      menu: "Menu",
+      close: "Close",
     },
     hero: {
       titleBefore: "IT Applications",
@@ -60,6 +62,7 @@ export const translations = {
     },
     projects: {
       heading: "Featured Enterprise Systems",
+      labels: { problem: "Problem", solution: "What I built", outcome: "Outcome", live: "Live site", code: "Code", private: "Private client code" },
       items: [
         {
           eyebrow: "Financial Sector",
@@ -128,6 +131,8 @@ export const translations = {
       projects: "Projets",
       vision: "Vision",
       contact: "Contact",
+      menu: "Menu",
+      close: "Fermer",
     },
     hero: {
       titleBefore: "Développeur",
@@ -182,6 +187,7 @@ export const translations = {
     },
     projects: {
       heading: "Projets Phares",
+      labels: { problem: "Problème", solution: "Ce que j’ai construit", outcome: "Résultat", live: "Voir en ligne", code: "Code", private: "Code client privé" },
       items: [
         {
           eyebrow: "Secteur Financier",
@@ -250,6 +256,8 @@ export const translations = {
       projects: "Proyectos",
       vision: "Visión",
       contact: "Contacto",
+      menu: "Menú",
+      close: "Cerrar",
     },
     hero: {
       titleBefore: "Desarrollador de",
@@ -304,6 +312,7 @@ export const translations = {
     },
     projects: {
       heading: "Proyectos Destacados",
+      labels: { problem: "Problema", solution: "Lo que construí", outcome: "Resultado", live: "Ver en línea", code: "Código", private: "Código privado del cliente" },
       items: [
         {
           eyebrow: "Sector Financiero",

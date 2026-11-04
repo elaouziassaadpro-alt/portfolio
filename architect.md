@@ -1,7 +1,7 @@
 # Architecture — Assaad Elaouzi Portfolio
 
 A personal portfolio built with **React 19 + Vite 7**, pre-rendered to static HTML per language at build time and hydrated in the browser, deployed on Vercel
-(`https://portfolio-ten-tau-451f9zrxlt.vercel.app/`). There is no backend, no router and no data fetching: all content comes from JSON in `src/data` at build time.
+(`https://assaadelaouzi.vercel.app/`). There is no backend, no router and no data fetching: all content comes from JSON in `src/data` at build time.
 
 ---
 

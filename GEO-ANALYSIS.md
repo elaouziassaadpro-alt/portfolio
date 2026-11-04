@@ -1,6 +1,6 @@
 # GEO / SEO Analysis — Assaad Elaouzi Portfolio
 
-**URL:** https://portfolio-ten-tau-451f9zrxlt.vercel.app/ (`/`, `/fr/`, `/es/`)
+**URL:** https://assaadelaouzi.vercel.app/ (`/`, `/fr/`, `/es/`)
 **Date:** 2026-11-04
 **Site type:** Personal portfolio (React 19 + Vite, pre-rendered to static HTML at build time)
 

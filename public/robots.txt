@@ -33,4 +33,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://portfolio-ten-tau-451f9zrxlt.vercel.app/sitemap.xml
+Sitemap: https://assaadelaouzi.vercel.app/sitemap.xml

@@ -1,19 +1,26 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { MotionConfig } from 'framer-motion'
+import { createRoot, hydrateRoot } from 'react-dom/client'
+import { domAnimation, LazyMotion, MotionConfig } from 'framer-motion'
 import './index.css'
 import App from './App.jsx'
 import { ThemeProvider } from './contexts/ThemeContext.jsx'
 import { LanguageProvider } from './contexts/LanguageContext.jsx'
 
-createRoot(document.getElementById('root')).render(
+const app = (
   <StrictMode>
     <ThemeProvider>
       <LanguageProvider>
-        <MotionConfig reducedMotion="user">
-          <App />
-        </MotionConfig>
+        <LazyMotion features={domAnimation} strict>
+          <MotionConfig reducedMotion="user">
+            <App />
+          </MotionConfig>
+        </LazyMotion>
       </LanguageProvider>
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 )
+
+// Production pages are pre-rendered; in dev the root only holds a placeholder comment.
+const root = document.getElementById('root')
+if (root.firstElementChild) hydrateRoot(root, app)
+else createRoot(root).render(app)

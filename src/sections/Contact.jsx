@@ -11,7 +11,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="block contact">
-      <SectionHeading index={5} label={t.nav.contact} title={t.contact.heading} align="center" />
+      <SectionHeading index={6} label={t.nav.contact} title={t.contact.heading} align="center" />
 
       <ScrollReveal className="contact-body">
         <p className="lead">{t.contact.p1}</p>

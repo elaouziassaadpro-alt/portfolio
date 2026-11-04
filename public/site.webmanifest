@@ -1,0 +1,13 @@
+{
+  "name": "Assaad Elaouzi Portfolio",
+  "short_name": "A. Elaouzi",
+  "description": "Assaad Elaouzi, IT & Application Developer in Casablanca, Morocco.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07141f",
+  "theme_color": "#07141f",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

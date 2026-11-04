@@ -1,7 +1,7 @@
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import { useLanguage } from "../contexts/LanguageContext";
-import { SUPPORTED_LANGUAGES } from "../i18n/translations";
+import { languagePath, SUPPORTED_LANGUAGES } from "../i18n/translations";
 
 // Language switch + theme toggle, shared by the nav bar and the mobile menu.
 export default function Controls() {
@@ -12,15 +12,20 @@ export default function Controls() {
     <div className="controls">
       <div className="lang-switch" role="group" aria-label={t.a11y.language}>
         {SUPPORTED_LANGUAGES.map((code) => (
-          <button
+          // Real links, so crawlers can follow them to each language's page
+          <a
             key={code}
-            type="button"
+            href={languagePath(code)}
+            hrefLang={code}
             className={code === lang ? "active" : ""}
-            aria-pressed={code === lang}
-            onClick={() => setLang(code)}
+            aria-current={code === lang ? "true" : undefined}
+            onClick={(e) => {
+              e.preventDefault();
+              setLang(code);
+            }}
           >
             {code.toUpperCase()}
-          </button>
+          </a>
         ))}
       </div>
 

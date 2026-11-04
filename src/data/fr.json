@@ -7,13 +7,14 @@
     "exploring": "Explorations",
     "contact": "Contact",
     "menu": "Menu",
-    "close": "Fermer"
+    "close": "Fermer",
+    "faq": "FAQ"
   },
   "intro": {
     "role": "Développeur d'applications & IT",
     "tagline": "Je construis des systèmes Laravel & React pour la finance et l'industrie — et je fais tourner l'IT qui les porte.",
     "nowLabel": "En ce moment",
-    "now": "Je développe l'application de souscriptions et rachats digitalisés d'Alphavest Asset Management.",
+    "now": "Je développe pour Alphavest Asset Management une solution de reporting et de souscriptions et rachats digitalisés.",
     "ctaContact": "Me contacter",
     "ctaProjects": "Voir les projets",
     "scroll": "Défiler"
@@ -23,7 +24,7 @@
     "title": "Deux casquettes, un seul responsable — du serveur à l’interface.",
     "basedLabel": "Basé à",
     "p1": "Je suis titulaire d'une Licence en Ingénierie du Développement d'Applications (FST Tanger) et d'un certificat de Développeur Full Stack délivré par Webforce3. Depuis 2022, j'ai enchaîné quatre stages et mon poste actuel, en construisant des applications d'entreprise avec Laravel et React tout en développant une expérience concrète en infrastructure IT.",
-    "p2": "Chez Alphavest Asset Management, j'ai une double casquette : je gère les services IT essentiels — sauvegardes, administration des domaines, support et maintenance — et j'ai développé l'application de conformité KYC avec Laravel et Livewire. Je construis maintenant son application de souscriptions et rachats digitalisés avec Spring Boot et React Native. Je peux ainsi porter un projet de bout en bout, du serveur à l'interface.",
+    "p2": "Chez Alphavest Asset Management, j'ai une double casquette : je gère les services IT essentiels — sauvegardes, administration des domaines, support et maintenance — et je développe les applications métier de la société. Après la plateforme de conformité KYC (Laravel, Livewire), je construis la solution de reporting et de souscriptions et rachats digitalisés (Spring Boot, React Native). Je peux ainsi porter un projet de bout en bout, du serveur à l'interface.",
     "stats": [
       {
         "value": "2022",
@@ -38,7 +39,8 @@
         "label": "Systèmes métier construits"
       }
     ],
-    "stackHeading": "Ma stack"
+    "stackHeading": "Ma stack",
+    "intro": "Assaad Elaouzi est développeur d'applications & IT, basé à Casablanca, au Maroc. Chez Alphavest Asset Management, Assaad gère les services IT essentiels et construit les applications métier de la société : une plateforme KYC terminée et une solution, en cours de développement, de reporting et de souscriptions et rachats digitalisés."
   },
   "experience": {
     "heading": "Expérience",
@@ -48,7 +50,7 @@
         "role": "Développeur d'applications & IT",
         "company": "Alphavest Asset Management",
         "period": "2026 — Auj.",
-        "desc": "Je pilote les opérations IT quotidiennes — sauvegardes, administration des domaines, support et maintenance — j'ai développé l'application KYC interne et je développe maintenant l'application de souscriptions et rachats digitalisés."
+        "desc": "Je pilote les opérations IT quotidiennes — sauvegardes, administration des domaines, support et maintenance. J'ai développé l'application KYC interne et je développe maintenant la solution de reporting et de souscriptions et rachats digitalisés."
       },
       {
         "role": "Stagiaire Développeur Logiciel",
@@ -107,14 +109,14 @@
     "items": [
       {
         "sector": "Finance",
-        "title": "Souscriptions et rachats digitalisés",
+        "title": "Reporting, souscriptions et rachats digitalisés",
         "context": "Alphavest Asset Management · 2026 — en cours",
-        "summary": "Une application mobile pour les clients d'Alphavest Asset Management : ils passent leurs souscriptions et rachats de fonds et gèrent toutes leurs opérations sous forme digitale, sans papier.",
+        "summary": "Une solution pour Alphavest Asset Management qui fournit le reporting et permet de traiter les souscriptions, les rachats et toutes les opérations associées sous forme digitale, sans papier.",
         "points": [
-          "Ordres de souscription et de rachat passés depuis le téléphone du client (React Native)",
-          "Toutes les opérations client traitées en digital, de bout en bout",
-          "API REST Java Spring Boot reposant sur PostgreSQL",
-          "Reporting sur les indices, les benchmarks, les portefeuilles et les fonds"
+          "Reporting sur les indices, les benchmarks, les portefeuilles et les fonds",
+          "Ordres de souscription et de rachat passés en digital depuis une application mobile (React Native)",
+          "Toutes les opérations traitées sous forme digitale, de bout en bout",
+          "API REST Java Spring Boot reposant sur PostgreSQL"
         ]
       },
       {
@@ -195,5 +197,33 @@
     "language": "Langue",
     "toDark": "Passer en mode sombre",
     "toLight": "Passer en mode clair"
-  }
+  },
+  "meta": {
+    "locale": "fr_FR",
+    "title": "Assaad Elaouzi — Développeur d'applications & IT, Casablanca",
+    "description": "Assaad Elaouzi est développeur d'applications & IT à Casablanca, au Maroc. Systèmes Laravel, Spring Boot et React pour la finance et l'industrie.",
+    "ogImageAlt": "Assaad Elaouzi, développeur d'applications & IT à Casablanca, au Maroc"
+  },
+  "faq": {
+    "heading": "Questions fréquentes.",
+    "items": [
+      {
+        "q": "Qui est Assaad Elaouzi ?",
+        "a": "Assaad Elaouzi est développeur d'applications & IT à Casablanca, au Maroc, chez Alphavest Asset Management depuis janvier 2026. Assaad est titulaire d'une Licence en Ingénierie du Développement d'Applications (FST Tanger) et d'un certificat de Développeur Full Stack délivré par Webforce3."
+      },
+      {
+        "q": "Avec quelles technologies travaille Assaad Elaouzi ?",
+        "a": "Laravel, PHP et Livewire ; Java et Spring Boot ; React.js et React Native ; Node.js et Express.js ; PostgreSQL, MySQL et SQL ; ainsi que Python et Git."
+      },
+      {
+        "q": "Qu'a construit Assaad Elaouzi ?",
+        "a": "Cinq systèmes métier, et un sixième en cours : une plateforme KYC et une solution de reporting et de souscriptions et rachats digitalisés pour Alphavest Asset Management, un système de gestion de laboratoire pour OCP Group, une plateforme d'évaluation de projets chez Forvis Mazars, une plateforme de réservation de circuits chez DEVTI Technologie et des outils de bureau chez Gretin Innovation."
+      },
+      {
+        "q": "Comment contacter Assaad Elaouzi ?",
+        "a": "Par e-mail à elaouzi.assaadpro@gmail.com, par téléphone ou WhatsApp au +212 645 609 313, ou sur LinkedIn. Assaad est basé à Casablanca, au Maroc."
+      }
+    ]
+  },
+  "updated": "Dernière mise à jour"
 }

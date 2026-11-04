@@ -13,12 +13,21 @@ export default function About() {
 
       <div className="bento">
         <ScrollReveal className="bento-text glow-card">
+          <p className="lead lead-strong">{t.about.intro}</p>
           <p className="lead">{t.about.p1}</p>
           <p className="lead">{t.about.p2}</p>
         </ScrollReveal>
 
         <ScrollReveal className="bento-photo glow-card" delay={0.1}>
-          <img src={profile.photo} alt={profile.name} width="383" height="566" loading="lazy" />
+          <img
+            src={profile.photo}
+            srcSet={`${profile.photoSmall} 440w, ${profile.photo} 800w`}
+            sizes="(max-width: 959px) 100vw, 440px"
+            alt={profile.name}
+            width={profile.photoWidth}
+            height={profile.photoHeight}
+            loading="lazy"
+          />
           <div className="bento-photo-caption">
             <span className="bento-photo-name">{profile.name}</span>
             <span className="bento-photo-place">

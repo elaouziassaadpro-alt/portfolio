@@ -1,8 +1,7 @@
 User-agent: *
 Allow: /
 
-# AI search crawlers — explicitly allowed for AI Overviews / AI Mode /
-# ChatGPT search / Perplexity / Claude visibility, even though the
+# AI search and assistant crawlers: explicitly allowed, even though the
 # wildcard rule above already covers them.
 User-agent: GPTBot
 Allow: /
@@ -10,7 +9,13 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
@@ -20,6 +25,9 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 User-agent: CCBot

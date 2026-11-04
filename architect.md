@@ -1,7 +1,7 @@
 # Architecture — Assaad Elaouzi Portfolio
 
-A single-page personal portfolio built with **React 19 + Vite 7**, rendered entirely on the client, deployed as static files on Vercel
-(`https://portfolio-ten-tau-451f9zrxlt.vercel.app/`). There is no backend, no router and no data fetching: all content ships in the JS bundle.
+A personal portfolio built with **React 19 + Vite 7**, pre-rendered to static HTML per language at build time and hydrated in the browser, deployed on Vercel
+(`https://portfolio-ten-tau-451f9zrxlt.vercel.app/`). There is no backend, no router and no data fetching: all content comes from JSON in `src/data` at build time.
 
 ---
 
@@ -20,7 +20,7 @@ A single-page personal portfolio built with **React 19 + Vite 7**, rendered enti
 | Theming | Home-grown React context | "Deep Ocean" (navy, teal, a little coral): dark by default, light mode via `data-theme="light"` |
 | Lint | ESLint 9 flat config (`js`, `react-hooks`, `react-refresh`) | `npm run lint` |
 
-Scripts: `npm run dev` · `npm run build` (→ `dist/`) · `npm run preview` · `npm run lint`.
+Scripts: `npm run dev` · `npm run build` (client build, SSR build, then `scripts/prerender.mjs`, → `dist/`) · `npm run preview` · `npm run lint`.
 
 ---
 
@@ -28,8 +28,11 @@ Scripts: `npm run dev` · `npm run build` (→ `dist/`) · `npm run preview` · 
 
 ```
 portfolio/
-├── index.html              # SEO head (meta, OG/Twitter, JSON-LD), font links, <noscript> fallback
-├── public/                 # profile.png, logo.png (favicon), robots.txt, sitemap.xml, llms.txt
+├── index.html              # Template: fonts, theme/language script; head and body filled in at build
+├── scripts/prerender.mjs   # Writes per-language HTML, sitemap and llms files
+├── vercel.json             # Build settings, security and cache headers
+├── design/                 # Source images (not deployed)
+├── public/                 # Web photos, icons, og-image.jpg, robots.txt, manifest, 404.html
 ├── src/
 │   ├── main.jsx            # ThemeProvider → LanguageProvider → MotionConfig → App
 │   ├── App.jsx             # Page shell: skip link, grain, nav, hero, marquee, sections, footer
@@ -93,8 +96,8 @@ All site data lives in JSON in `src/data/`. To change text or data, edit these f
 
 | File | Holds |
 |---|---|
-| `en.json`, `fr.json`, `es.json` | All visible copy for that language, plus screen-reader labels (`a11y`) |
-| `site.json` | What every language shares: `profile` (name, photo, contact links), `sections`, `stack`, `experienceTags`, `featuredCount`, `projectMeta` |
+| `en.json`, `fr.json`, `es.json` | All copy for that language: `meta` (title, description), visible text, `faq`, screen-reader labels (`a11y`) |
+| `site.json` | What every language shares: `url`, `lastUpdated`, `profile`, `person` (schema facts), `sections`, `stack`, `experienceTags`, `featuredCount`, `projectMeta` |
 
 `src/content.js` and `src/i18n/translations.js` only load these files and export them to the components.
 
@@ -113,7 +116,7 @@ Each project in the language files has `sector`, `title`, `context`, `summary` a
 **To add links:** set `"links": { "live": "…", "repo": "…" }`, or `{ "private": true }` for code that can't be shared.
 **To add a language:** add `src/data/<code>.json` with the same shape, then add it to `translations` in `src/i18n/translations.js`.
 
-**Not read from JSON:** `index.html` (meta tags, JSON-LD, `<noscript>`) and `public/llms.txt` are static files for crawlers, so update them by hand when the facts change.
+**When the content really changes,** update `lastUpdated` in `site.json`: it feeds the footer date, the schema and the sitemap. If the domain changes, update `url` in `site.json` and the `Sitemap:` line in `public/robots.txt`.
 
 ---
 
@@ -131,9 +134,20 @@ Each project in the language files has `sector`, `title`, `context`, `summary` a
 
 ---
 
-## 7. SEO / GEO
+## 7. SEO / GEO and build output
 
-The app renders on the client, so `index.html` carries meta tags, Open Graph, JSON-LD (`ProfilePage` → `Person`) and a `<noscript>` text version. `public/` holds `robots.txt`, `sitemap.xml` and `llms.txt`. The remaining gap (no prerender) is tracked in `GEO-ANALYSIS.md`.
+`npm run build` renders `src/entry-server.jsx` once per language and writes into `dist/`:
+
+- `index.html`, `fr/index.html`, `es/index.html`: full HTML with translated title, description, canonical, `hreflang`, Open Graph and JSON-LD (`WebSite`, `ProfilePage`, `Person`, `ItemList`, `FAQPage`)
+- `sitemap.xml`, `llms.txt`, `llms-full.txt`
+
+All of these are generated from `src/data`, so they can't drift from the site. Static files live in `public/` (`robots.txt`, manifest, icons, `og-image.jpg`, photos, `404.html`); `vercel.json` sets headers. Source images are in `design/` and aren't deployed.
+
+**Language = URL.** `LanguageContext` reads the path, and switching uses `pushState` to `/`, `/fr/` or `/es/` and updates the head. An inline script in `index.html` sends visitors landing on `/` to their saved or browser language. Crawlers stay on `/`.
+
+**Hydration rules.** Anything rendered must match between the build and the browser. The theme uses `useSyncExternalStore` with a dark server snapshot. The 3D scene isn't pre-rendered; it mounts after page load (`SCENE_DELAY_MS` in `Hero.jsx`), and its geometry is generated in `brain.worker.js`. The name reveal and hero fades are CSS, so they run without JavaScript.
+
+Scores and remaining actions are in `GEO-ANALYSIS.md`.
 
 ---
 
@@ -143,7 +157,4 @@ The app renders on the client, so `index.html` carries meta tags, Open Graph, JS
 |---|---|
 | No project screenshots or links yet; the cards are ready for them | `content.js` → `projectMeta` |
 | No CV download | Add the file to `public/` and a button in `Hero.jsx` |
-| `logo.png` (favicon, 165 KB) and `profile.png` (222 KB) are unoptimised PNGs | `public/` |
-| The `<noscript>` text and JSON-LD still use the old wording | `index.html` |
-| No prerender/SSG | see `GEO-ANALYSIS.md` |
 | ESLint fast-refresh warnings on the two context files (they export a hook next to the provider) | move the hooks to their own files |

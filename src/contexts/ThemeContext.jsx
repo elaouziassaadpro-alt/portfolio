@@ -1,31 +1,32 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useSyncExternalStore } from "react";
 
 const ThemeContext = createContext(null);
+const listeners = new Set();
 
-function getInitialTheme() {
+// The inline script in index.html applies a saved light theme before first
+// paint, so the attribute is the source of truth. Pre-rendered HTML is always
+// dark (the default look); React swaps in the real value right after hydration.
+const getTheme = () => (document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark");
+const getServerTheme = () => "dark";
+
+function subscribe(listener) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function toggleTheme() {
+  const next = getTheme() === "light" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", next);
   try {
-    const stored = localStorage.getItem("portfolio-theme");
-    if (stored === "light" || stored === "dark") return stored;
+    localStorage.setItem("portfolio-theme", next);
   } catch {
-    // localStorage unavailable (private mode, etc.) — fall through to default
+    // ignore write failures
   }
-  // Dark is the signature look; light is opt-in.
-  return "dark";
+  listeners.forEach((listener) => listener());
 }
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(getInitialTheme);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    try {
-      localStorage.setItem("portfolio-theme", theme);
-    } catch {
-      // ignore write failures
-    }
-  }, [theme]);
-
-  const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
+  const theme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

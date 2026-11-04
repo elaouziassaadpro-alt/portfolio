@@ -1,19 +1,25 @@
 {
   "profile": {
     "name": "Assaad Elaouzi",
-    "photo": "/profile.png",
+    "photo": "/profile-800.webp",
     "email": "elaouzi.assaadpro@gmail.com",
     "phone": "+212 645 609 313",
     "phoneHref": "tel:+212645609313",
     "whatsapp": "https://wa.me/212645609313",
     "github": "https://github.com/elaouziassaadpro-alt",
-    "linkedin": "https://www.linkedin.com/in/assaad-elaouzi-8b95bb211/"
+    "linkedin": "https://www.linkedin.com/in/assaad-elaouzi-8b95bb211/",
+    "photoSmall": "/profile-440.webp",
+    "photoJpg": "/profile.jpg",
+    "photoWidth": 800,
+    "photoHeight": 1142,
+    "ogImage": "/og-image.jpg"
   },
   "sections": [
     "about",
     "experience",
     "projects",
     "exploring",
+    "faq",
     "contact"
   ],
   "stack": [
@@ -115,5 +121,45 @@
       "image": null,
       "links": {}
     }
-  ]
+  ],
+  "url": "https://portfolio-ten-tau-451f9zrxlt.vercel.app",
+  "lastUpdated": "2026-11-04",
+  "defaultLanguage": "en",
+  "person": {
+    "givenName": "Assaad",
+    "familyName": "Elaouzi",
+    "locality": "Casablanca",
+    "country": "MA",
+    "telephone": "+212645609313",
+    "worksFor": "Alphavest Asset Management",
+    "alumniOf": [
+      {
+        "type": "CollegeOrUniversity",
+        "name": "Faculté des Sciences et Techniques de Tanger (FST Tanger)"
+      },
+      {
+        "type": "EducationalOrganization",
+        "name": "Webforce3"
+      }
+    ],
+    "knowsAbout": [
+      "Laravel",
+      "PHP",
+      "Livewire",
+      "Java",
+      "Spring Boot",
+      "React.js",
+      "React Native",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "MySQL",
+      "SQL",
+      "Python",
+      "Git",
+      "KYC compliance",
+      "IT infrastructure"
+    ]
+  }
 }

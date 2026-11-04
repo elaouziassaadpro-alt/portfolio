@@ -7,13 +7,14 @@
     "exploring": "Exploring",
     "contact": "Contact",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "faq": "FAQ"
   },
   "intro": {
     "role": "IT & Application Developer",
     "tagline": "I build Laravel & React systems for finance and industry — and keep the IT behind them running.",
     "nowLabel": "Now",
-    "now": "Building a digital subscriptions & redemptions app at Alphavest Asset Management.",
+    "now": "Building a reporting and digital subscriptions & redemptions solution for Alphavest Asset Management.",
     "ctaContact": "Get in touch",
     "ctaProjects": "See the work",
     "scroll": "Scroll"
@@ -23,7 +24,7 @@
     "title": "Two hats, one owner — from server to interface.",
     "basedLabel": "Based in",
     "p1": "I hold a degree in Application Development Engineering (FST Tanger) and a Full Stack Developer certification from Webforce3. Since 2022, I've worked across four internships and my current role, building enterprise applications with Laravel and React while picking up hands-on IT infrastructure experience along the way.",
-    "p2": "At Alphavest Asset Management I wear two hats: I run core IT services — backups, domain administration, support and system maintenance — and I built the firm's KYC compliance application with Laravel and Livewire. I'm now building its digital subscriptions and redemptions app with Spring Boot and React Native. That lets me own a project end to end, from the server to the interface.",
+    "p2": "At Alphavest Asset Management I wear two hats: I run core IT services — backups, domain administration, support and system maintenance — and I build the firm's business applications. After the KYC compliance platform (Laravel, Livewire), I'm now developing its reporting and digital subscriptions and redemptions solution (Spring Boot, React Native). That lets me own a project end to end, from the server to the interface.",
     "stats": [
       {
         "value": "2022",
@@ -38,7 +39,8 @@
         "label": "Business systems built"
       }
     ],
-    "stackHeading": "Stack I work with"
+    "stackHeading": "Stack I work with",
+    "intro": "Assaad Elaouzi is an IT & Application Developer based in Casablanca, Morocco. At Alphavest Asset Management, Assaad runs core IT services and builds the firm's business applications: a finished KYC platform and a solution, now in progress, for reporting and digital subscriptions and redemptions."
   },
   "experience": {
     "heading": "Experience",
@@ -48,7 +50,7 @@
         "role": "IT & Application Developer",
         "company": "Alphavest Asset Management",
         "period": "2026 — Now",
-        "desc": "Own the company's day-to-day IT operations — backups, domain administration, support and system maintenance — built the internal KYC application, and now develop the digital subscriptions and redemptions app."
+        "desc": "Own the company's day-to-day IT operations — backups, domain administration, support and system maintenance. Built the internal KYC application, and now developing the reporting and digital subscriptions and redemptions solution."
       },
       {
         "role": "Software Development Intern",
@@ -107,14 +109,14 @@
     "items": [
       {
         "sector": "Finance",
-        "title": "Digital Subscriptions & Redemptions",
+        "title": "Reporting, Digital Subscriptions & Redemptions",
         "context": "Alphavest Asset Management · 2026 — in progress",
-        "summary": "A mobile app for Alphavest Asset Management clients: they place fund subscriptions and redemptions, and handle all their operations in digital form instead of on paper.",
+        "summary": "A solution for Alphavest Asset Management that delivers reporting and lets subscriptions and redemptions, along with all related operations, be handled in digital form instead of on paper.",
         "points": [
-          "Subscription and redemption orders placed from the client's phone (React Native)",
-          "Every client operation handled digitally, end to end",
-          "Java Spring Boot REST API backed by PostgreSQL",
-          "Reporting on indices, benchmarks, portfolios and funds"
+          "Reporting on indices, benchmarks, portfolios and funds",
+          "Subscription and redemption orders placed digitally from a mobile app (React Native)",
+          "All operations handled in digital form, end to end",
+          "Java Spring Boot REST API backed by PostgreSQL"
         ]
       },
       {
@@ -195,5 +197,33 @@
     "language": "Language",
     "toDark": "Switch to dark mode",
     "toLight": "Switch to light mode"
-  }
+  },
+  "meta": {
+    "locale": "en_US",
+    "title": "Assaad Elaouzi — IT & Application Developer, Casablanca",
+    "description": "Assaad Elaouzi is an IT & Application Developer in Casablanca, Morocco, building Laravel, Spring Boot and React systems for finance and industry.",
+    "ogImageAlt": "Assaad Elaouzi, IT & Application Developer in Casablanca, Morocco"
+  },
+  "faq": {
+    "heading": "Common questions.",
+    "items": [
+      {
+        "q": "Who is Assaad Elaouzi?",
+        "a": "Assaad Elaouzi is an IT & Application Developer in Casablanca, Morocco, working at Alphavest Asset Management since January 2026. Assaad holds a degree in Application Development Engineering from FST Tanger and a Full Stack Developer certification from Webforce3."
+      },
+      {
+        "q": "What technologies does Assaad Elaouzi work with?",
+        "a": "Laravel, PHP and Livewire; Java and Spring Boot; React.js and React Native; Node.js and Express.js; PostgreSQL, MySQL and SQL; plus Python and Git."
+      },
+      {
+        "q": "What has Assaad Elaouzi built?",
+        "a": "Five business systems, with a sixth in progress: a KYC platform and a reporting and digital subscriptions and redemptions solution for Alphavest Asset Management, a laboratory management system for OCP Group, a project evaluation platform at Forvis Mazars, a tour booking platform at DEVTI Technologie, and desktop tools at Gretin Innovation."
+      },
+      {
+        "q": "How can I contact Assaad Elaouzi?",
+        "a": "By email at elaouzi.assaadpro@gmail.com, by phone or WhatsApp at +212 645 609 313, or on LinkedIn. Assaad is based in Casablanca, Morocco."
+      }
+    ]
+  },
+  "updated": "Last updated"
 }

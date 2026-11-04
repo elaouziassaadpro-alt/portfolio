@@ -1,0 +1,199 @@
+{
+  "skip": "Skip to content",
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "exploring": "Exploring",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "intro": {
+    "role": "IT & Application Developer",
+    "tagline": "I build Laravel & React systems for finance and industry — and keep the IT behind them running.",
+    "nowLabel": "Now",
+    "now": "Building a digital subscriptions & redemptions app at Alphavest Asset Management.",
+    "ctaContact": "Get in touch",
+    "ctaProjects": "See the work",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "heading": "About",
+    "title": "Two hats, one owner — from server to interface.",
+    "basedLabel": "Based in",
+    "p1": "I hold a degree in Application Development Engineering (FST Tanger) and a Full Stack Developer certification from Webforce3. Since 2022, I've worked across four internships and my current role, building enterprise applications with Laravel and React while picking up hands-on IT infrastructure experience along the way.",
+    "p2": "At Alphavest Asset Management I wear two hats: I run core IT services — backups, domain administration, support and system maintenance — and I built the firm's KYC compliance application with Laravel and Livewire. I'm now building its digital subscriptions and redemptions app with Spring Boot and React Native. That lets me own a project end to end, from the server to the interface.",
+    "stats": [
+      {
+        "value": "2022",
+        "label": "Building software since"
+      },
+      {
+        "value": "4 + 1",
+        "label": "Internships + current role"
+      },
+      {
+        "value": "5",
+        "label": "Business systems built"
+      }
+    ],
+    "stackHeading": "Stack I work with"
+  },
+  "experience": {
+    "heading": "Experience",
+    "title": "Where I have built.",
+    "items": [
+      {
+        "role": "IT & Application Developer",
+        "company": "Alphavest Asset Management",
+        "period": "2026 — Now",
+        "desc": "Own the company's day-to-day IT operations — backups, domain administration, support and system maintenance — built the internal KYC application, and now develop the digital subscriptions and redemptions app."
+      },
+      {
+        "role": "Software Development Intern",
+        "company": "Forvis Mazars Casablanca",
+        "period": "2024 — 2025",
+        "desc": "Took an internal tool from stakeholder requirements to a working Laravel application — my first build owned end to end in a professional setting."
+      },
+      {
+        "role": "End-of-Studies Intern",
+        "company": "OCP Group, Jorf Lasfar",
+        "period": "2024",
+        "desc": "Final-year engineering project in an industrial environment: worked with plant and laboratory teams to replace a paper-based workflow with a digital one."
+      },
+      {
+        "role": "React.js Developer Intern",
+        "company": "DEVTI Technologie",
+        "period": "2023",
+        "desc": "Built production interfaces with React.js, turning UX requirements into a responsive product for a travel-tech company."
+      },
+      {
+        "role": "Java Developer Intern",
+        "company": "Gretin Innovation",
+        "period": "2022",
+        "desc": "Built desktop software with Java and JavaFX — internal tools used in day-to-day business operations."
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Selected work",
+    "otherHeading": "Other work",
+    "labels": {
+      "context": "Context",
+      "built": "What I built",
+      "stack": "Stack",
+      "live": "Live site",
+      "code": "Code",
+      "private": "Private client code"
+    },
+    "flow": {
+      "heading": "How the workflow runs",
+      "steps": [
+        {
+          "title": "Collect",
+          "text": "Client data and documents are stored securely in one place."
+        },
+        {
+          "title": "Verify",
+          "text": "Each client moves through a verification workflow with a clear status."
+        },
+        {
+          "title": "Comply",
+          "text": "Regulatory requirements are built into every step, not checked afterwards."
+        }
+      ]
+    },
+    "items": [
+      {
+        "sector": "Finance",
+        "title": "Digital Subscriptions & Redemptions",
+        "context": "Alphavest Asset Management · 2026 — in progress",
+        "summary": "A mobile app for Alphavest Asset Management clients: they place fund subscriptions and redemptions, and handle all their operations in digital form instead of on paper.",
+        "points": [
+          "Subscription and redemption orders placed from the client's phone (React Native)",
+          "Every client operation handled digitally, end to end",
+          "Java Spring Boot REST API backed by PostgreSQL",
+          "Reporting on indices, benchmarks, portfolios and funds"
+        ]
+      },
+      {
+        "sector": "Finance",
+        "title": "Enterprise KYC Platform",
+        "context": "Alphavest Asset Management · 2026",
+        "summary": "Know Your Customer operations for an asset-management firm, in a single internal application.",
+        "points": [
+          "Secure storage of client data and documents",
+          "Client verification workflows",
+          "Regulatory compliance built into the process"
+        ]
+      },
+      {
+        "sector": "Industry",
+        "title": "Laboratory Management System",
+        "context": "OCP Group, Jorf Lasfar · End-of-studies project, 2024",
+        "summary": "Replaces a paper-based process for analysis requests between production plants and the central laboratory.",
+        "points": [
+          "Automated request workflow",
+          "Better coordination between plant and lab teams",
+          "Full traceability of results"
+        ]
+      },
+      {
+        "sector": "Consulting",
+        "title": "Project Evaluation Platform",
+        "context": "Forvis Mazars Casablanca · 2024 — 2025",
+        "summary": "One place for project tracking and performance analysis at an audit and consulting firm.",
+        "points": [
+          "A unified view of progress for management",
+          "Objectives tracked per project",
+          "Taken from stakeholder requirements to a working app"
+        ]
+      },
+      {
+        "sector": "Travel",
+        "title": "Tour Booking Platform",
+        "context": "DEVTI Technologie · 2023",
+        "summary": "Connects travellers with tour operators to discover, book and manage tours.",
+        "points": []
+      },
+      {
+        "sector": "Internal tools",
+        "title": "Desktop Business Applications",
+        "context": "Gretin Innovation · 2022",
+        "summary": "Time-clock (employee attendance), scan-based counting and personnel access management.",
+        "points": []
+      }
+    ]
+  },
+  "exploring": {
+    "heading": "What I'm exploring",
+    "p1": "A concept for a super app that brings several services into one platform — an online marketplace, digital payments, service booking and vendor management — designed for international users and scalable operations.",
+    "tags": [
+      "Online Marketplace",
+      "Digital Payments",
+      "Service Booking",
+      "Vendor Management",
+      "Scalable Systems",
+      "Database Architecture"
+    ]
+  },
+  "contact": {
+    "heading": "Let's build something solid.",
+    "p1": "Need an enterprise backend, a cleaner IT setup, or a web application that scales? My inbox is open.",
+    "email": "Email",
+    "copy": "Copy",
+    "copied": "Copied",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "location": "Casablanca, Morocco"
+  },
+  "footer": "Designed and built by Assaad Elaouzi with React and Vite.",
+  "backToTop": "Back to top",
+  "a11y": {
+    "sections": "Sections",
+    "language": "Language",
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode"
+  }
+}

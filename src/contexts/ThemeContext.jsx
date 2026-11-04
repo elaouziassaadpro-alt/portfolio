@@ -9,7 +9,8 @@ function getInitialTheme() {
   } catch {
     // localStorage unavailable (private mode, etc.) — fall through to default
   }
-  return "light";
+  // Dark is the signature look; light is opt-in.
+  return "dark";
 }
 
 export function ThemeProvider({ children }) {

@@ -11,13 +11,13 @@ A single-page personal portfolio built with **React 19 + Vite 7**, rendered enti
 |---|---|---|
 | UI | React 19 (`StrictMode`) | Function components + hooks only |
 | Build / dev server | Vite 7 + `@vitejs/plugin-react` | `@` alias → `./src` (`vite.config.js`) |
-| Animation | `framer-motion` (scroll reveals), `motion` (unused `animated-beam`) | Same library under two package names |
-| 3D globe | `cobe` | WebGL globe in the Vision section |
-| Background | Hand-written WebGL fragment shader | `src/neural-glow.jsx` |
+| Animation | `framer-motion` | Name reveal, scroll reveals; wrapped in `MotionConfig reducedMotion="user"` |
+| 3D | `three` | Hero brain only (`HeroScene.jsx` + `brainGeometry.js`), lazy-loaded in its own chunk (~126 KB gzip) |
 | Icons | `lucide-react` | |
-| Styling | Plain CSS with custom-property tokens + inline `style={{}}` objects | `clsx` / `tailwind-merge` are installed but **Tailwind itself is not** |
+| Styling | Plain CSS with custom-property tokens (`src/index.css`) | Class-based; inline styles only for the language crossfade |
+| Fonts | Instrument Serif (display) + Inter (UI), Google Fonts via `<link>` in `index.html` | |
 | i18n | Home-grown React context | EN / FR / ES |
-| Theming | Home-grown React context | Light / dark via `data-theme` on `<html>` |
+| Theming | Home-grown React context | "Deep Ocean" (navy, teal, a little coral): dark by default, light mode via `data-theme="light"` |
 | Lint | ESLint 9 flat config (`js`, `react-hooks`, `react-refresh`) | `npm run lint` |
 
 Scripts: `npm run dev` · `npm run build` (→ `dist/`) · `npm run preview` · `npm run lint`.
@@ -28,185 +28,122 @@ Scripts: `npm run dev` · `npm run build` (→ `dist/`) · `npm run preview` · 
 
 ```
 portfolio/
-├── index.html              # SEO head: meta, OG/Twitter, JSON-LD (ProfilePage/Person), <noscript> fallback
-├── vite.config.js          # React plugin + "@" alias
-├── eslint.config.js
-├── public/                 # Served as-is from site root
-│   ├── logo.png, favicon.png, profile.png
-│   ├── robots.txt          # Allows all + explicit AI crawlers (GPTBot, ClaudeBot, PerplexityBot…)
-│   ├── sitemap.xml         # Single URL
-│   └── llms.txt            # Plain-text site summary for LLM crawlers
+├── index.html              # SEO head (meta, OG/Twitter, JSON-LD), font links, <noscript> fallback
+├── public/                 # profile.png, logo.png (favicon), robots.txt, sitemap.xml, llms.txt
 ├── src/
-│   ├── main.jsx            # Entry: ThemeProvider → LanguageProvider → App
-│   ├── App.jsx             # The whole page: Hero, About, Experience, Projects, Vision, Contact, Footer
-│   ├── navbar.jsx          # Fixed nav, anchor links, language switch, theme toggle
-│   ├── Gradient.jsx        # Contact CTA buttons (email / WhatsApp / phone) — name is historical
-│   ├── Globe.jsx           # Thin wrapper around components/ui/globe
-│   ├── cursor.jsx          # Canvas "follow cursor" dot (respects prefers-reduced-motion)
-│   ├── neural-glow.jsx     # Full-screen WebGL shader background (z-index -1)
-│   ├── index.css           # Design tokens (light + dark), base styles, utility classes
+│   ├── main.jsx            # ThemeProvider → LanguageProvider → MotionConfig → App
+│   ├── App.jsx             # Page shell: skip link, grain, nav, hero, marquee, sections, footer
+│   ├── data/               # ALL site data: site.json (non-text) + en.json, fr.json, es.json (copy)
+│   ├── content.js          # Loads data/site.json
+│   ├── index.css           # Tokens (light + dark) and every component style
 │   ├── App.css             # Body reset only
-│   ├── contexts/
-│   │   ├── ThemeContext.jsx
-│   │   └── LanguageContext.jsx
-│   ├── i18n/
-│   │   └── translations.js # All copy, keyed by language; SUPPORTED_LANGUAGES
-│   ├── components/
-│   │   ├── ScrollReveal.jsx       # framer-motion whileInView wrapper
-│   │   └── ui/
-│   │       ├── globe.jsx          # cobe globe (used)
-│   │       ├── animated-beam.jsx  # (unused — copied UI-library component)
-│   │       └── liquid-gradient.tsx# (unused)
-│   ├── assets/
-│   │   ├── Beam.jsx        # (unused demo of animated-beam, uses Tailwind classes)
-│   │   └── react.svg       # (unused)
-│   └── lib/utils.js        # cn() = twMerge(clsx()) — used only by animated-beam
-├── lib/utils.{js,ts}       # Duplicate of src/lib/utils, outside src — unused
-├── registry.json           # shadcn registry for "ui-layouts" (third-party, 2.3k lines) — unused by the build
-├── GEO-ANALYSIS.md         # SEO/GEO audit report (2026-09-01)
-└── claude-seo/             # Untracked third-party SEO tool checkout — not part of the site
+│   ├── i18n/translations.js   # Loads data/<lang>.json
+│   ├── contexts/           # ThemeContext, LanguageContext
+│   ├── hooks/              # useActiveSection (scroll-spy), useGlowPointer (card border glow)
+│   ├── sections/           # Navbar, Hero, About (bento), Experience (timeline), Projects, Exploring, Contact
+│   └── components/         # HeroScene + brainGeometry (three.js), SceneBoundary, RevealText, Magnetic, Marquee,
+│                           # SectionHeading, ScrollReveal, Controls, CopyEmail, WorkflowSteps
+├── PORTFOLIO-REVIEW.md     # Design review, references and action plan
+└── GEO-ANALYSIS.md         # SEO/GEO audit
 ```
 
 ---
 
-## 3. Runtime composition
+## 3. Layout
 
-```
-index.html
- └─ <div id="root">  ← main.jsx
-     └─ <StrictMode>
-         └─ <ThemeProvider>            sets <html data-theme>, persists "portfolio-theme"
-             └─ <LanguageProvider>     exposes { lang, setLang, t, isChanging }, persists "portfolio-lang"
-                 └─ <App>              wrapper fades/blurs while isChanging
-                     ├─ <FollowCursor>   canvas appended to <body>
-                     ├─ <NeuralGlow>     fixed WebGL canvas behind everything
-                     ├─ <Navbar>
-                     ├─ <main>
-                     │   ├─ #home        hero + profile photo
-                     │   ├─ #about       bio, tech pills, icon card
-                     │   ├─ #experience  t.experience.items
-                     │   ├─ #projects    t.projects.items (alternating layout)
-                     │   ├─ #vision      tags + <GlobeDemo> (cobe)
-                     │   └─ #contact     contact card + <Button> (Gradient.jsx)
-                     └─ <footer>
-```
+Top to bottom:
+1. **Navbar** (`sections/Navbar.jsx`): a floating glass bar that becomes solid after 24px of scroll. Below 960px its links collapse into a menu sheet.
+2. **Hero** (`#top`): the giant serif name reveals letter by letter (`RevealText`), with the role eyebrow, tagline, "Now" line and magnetic CTAs. Behind it sit the drifting aurora and the 3D brain.
+3. **Marquee**: the stack technologies in a seamless loop that pauses on hover.
+4. **Sections** in `.container`: About (a bento grid with the text, photo and stats), Experience (a hairline timeline), Projects (glow-border case studies plus "Other work"), Exploring, then Contact (centered, with copy-email and magnetic buttons).
+5. **Footer**: a giant faded italic "Elaouzi" mark and the credit line.
 
-Navigation is pure in-page anchors (`#about`, `#projects`, …); `html { scroll-behavior }` in `index.css` handles smoothing. There is no routing.
+**Hero 3D** (`components/HeroScene.jsx`):
+- The brain is generated in code (`brainGeometry.js`), with no model file. Two displaced icosphere hemispheres get their folds from the zero contours of warped Perlin noise, and a cerebellum and brain stem complete it.
+- A neural network sits on the fold crests: neurons wired to their nearest neighbours by arched paths. Coral signals hop from neuron to neuron, and each neuron flashes when one lands.
+- The cortex material (`MeshPhysicalMaterial`, lit by a `RoomEnvironment` PMREM) has a soft wave of emissive activity injected through `onBeforeCompile`.
+- The brain rotates slowly, breathes, and eases toward the pointer. Coarse-pointer devices get fewer triangles and neurons.
+- It eases toward the pointer, pauses when off-screen (IntersectionObserver), renders a single frame under reduced motion and caps the device pixel ratio at 1.75.
+- It is lazy-loaded behind `SceneBoundary`. If WebGL or the chunk fails, the CSS `.hero-orb` stays as the fallback.
+- On phones the object sits above the text in the normal flow instead of behind it.
 
-Every section below the hero is wrapped in `<ScrollReveal>` (`initial` → `whileInView`, `once: true`), which is the only use of framer-motion.
+**Glow cards**: any `.glow-card` gets a 1px border that lights up near the cursor. `useGlowPointer` writes `--mx`/`--my` on every visible card from a single window listener.
+
+**Important:** the `App` wrapper's `filter` must be `none` at rest. Any filter value makes it the containing block for `position: fixed` children, and the nav would then scroll away with the page.
 
 ---
 
-## 4. State management
-
-Two contexts, both in `src/contexts/`, both following the same pattern: lazy initial state from `localStorage` (wrapped in `try/catch`), a hook that throws outside its provider.
+## 4. State
 
 ### ThemeContext
-- State: `theme: "light" | "dark"` (default `light`; does **not** follow `prefers-color-scheme`).
-- Effect writes `data-theme` on `<html>` and persists to `localStorage["portfolio-theme"]`.
-- All colour switching happens in CSS: `:root` defines light tokens, `:root[data-theme="dark"]` overrides them.
+- `theme: "light" | "dark"`: initial value is `localStorage["portfolio-theme"]`, else `"dark"`.
+- Writes `data-theme` on `<html>`. A small inline script in `index.html` applies a saved light theme before first paint.
+- All colour switching happens in CSS: `:root` holds the dark tokens and `:root[data-theme="light"]` overrides them.
 
 ### LanguageContext
-- State: `lang` (initial: stored value → `navigator.language` prefix → `en`) and `isChanging`.
-- `t = translations[lang]` — components read copy as `t.section.key`.
-- `setLang` runs a timed crossfade:
-  1. `isChanging = true` → `App` fades to opacity 0 + blur (CSS transition 0.24 s).
-  2. After `TRANSITION_MS = 240` ms, swap `lang`, persist to `localStorage["portfolio-lang"]`.
-  3. After a further 30 ms (`setTimeout`, deliberately not `rAF` so backgrounded tabs don't stay invisible), `isChanging = false`.
-- **Coupling:** `TRANSITION_MS` in `LanguageContext.jsx` and the `0.24s` transition in `App.jsx` must change together.
+- `lang`: initial value is the stored choice, else the `navigator.language` prefix, else `en`. Kept in sync with `<html lang>`.
+- `t = translations[lang]`.
+- `setLang` crossfades: `isChanging = true`, wait `TRANSITION_MS` (240 ms), swap, then clear 30 ms later. That 240 ms must match the `0.24s` transition on the `App` wrapper.
 
 ---
 
-## 5. Content model (i18n)
+## 5. Content model
 
-`src/i18n/translations.js` exports `translations = { en, fr, es }` and `SUPPORTED_LANGUAGES = ["en","fr","es"]`. Each language object has the same shape:
+All site data lives in JSON in `src/data/`. To change text or data, edit these files; components don't need to change.
 
-```
-nav{about,experience,projects,vision,contact}
-hero{titleBefore,titleAccent,subtitle,ctaProjects,ctaContact,photoRole}
-about{heading,p1,p2,expertiseHeading,cards[4]}
-experience{heading,items[5]{role,company,period,desc}}
-projects{heading,items[5]{eyebrow,title,desc,bullets?}}
-vision{heading,p1,expertiseHeading,tags[]}
-contact{eyebrow,heading,p1,…Labels,location,buttons{email,whatsapp,call}}
-footer
-```
+| File | Holds |
+|---|---|
+| `en.json`, `fr.json`, `es.json` | All visible copy for that language, plus screen-reader labels (`a11y`) |
+| `site.json` | What every language shares: `profile` (name, photo, contact links), `sections`, `stack`, `experienceTags`, `featuredCount`, `projectMeta` |
 
-**Non-translated data lives in `App.jsx`** and is joined to the translated arrays **by index**:
+`src/content.js` and `src/i18n/translations.js` only load these files and export them to the components.
 
-| `App.jsx` array | Paired with | Must have same length/order |
+Arrays are matched **by index**, so every language must keep the same order and lengths:
+
+| `site.json` | Matches | Notes |
 |---|---|---|
-| `experienceIcons` | `t.experience.items` | 5 |
-| `aboutCardIcons` | `t.about.cards` | 4 |
-| `projectVisuals` (icon + tech tags) | `t.projects.items` | 5 |
-| `projectDelays` | `t.projects.items` | 5 |
+| `sections` | `nav[id]` in the language files, and the `<section id>`s | Order = nav order and section numbers |
+| `experienceTags` | `experience.items` | One tag list per job |
+| `projectMeta` | `projects.items` | `tags`, `image`, `links`, optional `flow` |
+| `featuredCount` | — | The first N projects get the case-study layout; the rest appear under "Other work" |
 
-Adding/removing/reordering an experience or project means editing **all three languages plus the matching `App.jsx` array**. Contact details (email, phone, social URLs) are hard-coded in `App.jsx`, `Gradient.jsx`, `index.html` (JSON-LD + noscript) and `public/llms.txt`.
+Each project in the language files has `sector`, `title`, `context`, `summary` and `points[]`. A project with `"flow": true` in `projectMeta` also renders `WorkflowSteps` from `projects.flow`.
 
----
+**To add a screenshot:** put the file in `public/projects/` and set `"image": "/projects/name.webp"` in `projectMeta`.
+**To add links:** set `"links": { "live": "…", "repo": "…" }`, or `{ "private": true }` for code that can't be shared.
+**To add a language:** add `src/data/<code>.json` with the same shape, then add it to `translations` in `src/i18n/translations.js`.
 
-## 6. Styling system
-
-- **Tokens** (`src/index.css`): `--bg-*`, `--text-*`, `--accent-primary/secondary` (burnt orange `#d85a30` / gold `#b89b5e`), `*-wash`, `*-border`, `--surface-*`, `--shadow-sm|md|lg`, `--glass-blur`, `--theme-transition`. Dark mode redefines the same names.
-- **Shared classes**: `.section`, `.glass-card`, `.btn`, `.btn-outline`, `.btn-premium`, `.pill`, `.pill-gold`, `.icon-plate`, `.callout`, `.eyebrow`, `.section-index`, `.gradient-text`, `.lang-switch`, `.theme-toggle`, `.animate-fade-in`, `.animate-float`.
-- **Layout** is mostly inline `style` objects in `App.jsx`; `.nav-link` styles are injected via a `<style>` tag inside `App`.
-- One breakpoint: `@media (max-width: 768px)` at the end of `index.css`.
-- Fonts: `Outfit` (headings) referenced by name in CSS/inline styles.
-
-### Visual layers (back → front)
-1. `NeuralGlow` — fixed WebGL canvas, `z-index: -1`, reacts to pointer, touch, click and scroll progress.
-2. Page sections — `position: relative; z-index: 10`.
-3. `Navbar` — fixed, `z-index: 100`, gains surface + blur after 50 px of scroll.
-4. `FollowCursor` — fixed canvas on `<body>`, `pointer-events: none`.
+**Not read from JSON:** `index.html` (meta tags, JSON-LD, `<noscript>`) and `public/llms.txt` are static files for crawlers, so update them by hand when the facts change.
 
 ---
 
-## 7. SEO / GEO layer
+## 6. Styling
 
-Because the app is client-rendered, crawlers that don't run JS see only `index.html`. To compensate:
-
-- `<head>`: title, description, canonical, `theme-color`, Open Graph (`profile` type, `en_US` + `fr_FR`/`es_ES` alternates), Twitter card.
-- JSON-LD `ProfilePage` → `Person` (address, employer `Organization`, `alumniOf` institutions, `sameAs` links).
-- `<noscript>` block with a static text version of the page.
-- `public/robots.txt` (explicitly allows AI crawlers), `sitemap.xml`, `llms.txt`.
-- Status and remaining gaps are tracked in `GEO-ANALYSIS.md` (score 57/100; ceiling limited by lack of SSR/prerender).
-
-The `<html lang>` stays `"en"` regardless of the selected language, and all languages share one URL (no hreflang).
-
----
-
-## 8. Known issues & technical debt
-
-| # | Issue | Where |
-|---|---|---|
-| 1 | Dead code: `animated-beam.jsx`, `liquid-gradient.tsx`, `assets/Beam.jsx`, `assets/react.svg`, root `lib/`, `registry.json`; `motion`, `clsx`, `tailwind-merge` exist only for them | see §2 |
-| 2 | Tailwind class names (`min-h-screen`, Beam.jsx) used without Tailwind installed — they do nothing | `App.jsx:66` |
-| 3 | Index-coupled arrays between `App.jsx` and translations (see §5) — easy to desync | `App.jsx:34-59` |
-| 4 | Many unused `lucide-react` imports | `App.jsx:2-24` |
-| 5 | Globe colours are hard-coded for the light theme; doesn't adapt to dark mode | `components/ui/globe.jsx` |
-| 6 | `FollowCursor` colour hard-coded (`#d85a30`) instead of a token; logs to console under reduced motion | `App.jsx:73`, `cursor.jsx` |
-| 7 | `NeuralGlow` and `cobe` run continuous animation loops even off-screen / under reduced motion | `neural-glow.jsx`, `globe.jsx` |
-| 8 | `<html lang>` not updated on language switch | `LanguageContext.jsx` |
-| 9 | Contact data duplicated in 4 places (see §5) | |
-| 10 | `Gradient.jsx` exports a component named `Button` that is actually the contact CTA group | `Gradient.jsx` |
-| 11 | Project cards use `key={idx}`; `target="_blank"` links lack `rel="noopener noreferrer"` | `App.jsx:489`, `Gradient.jsx` |
-| 12 | Theme default ignores OS preference | `ThemeContext.jsx` |
+- **Tokens**:
+  - `--bg`, `--bg-soft`, `--surface`, `--surface-2`, `--text`, `--text-soft`, `--text-muted`
+  - `--accent`, `--accent-light`, `--accent-deep`, `--accent-text` (the AA-safe small accent text), `--accent-wash*`, `--accent-line`, `--spark` (coral)
+  - `--border*`, `--glass`, `--status`
+  - `--serif` / `--sans`
+- **Buttons**: `.btn-primary` uses navy text on a teal gradient. `.btn-ghost` is glass with a hairline border.
+- **Texture**: a fixed `.grain` SVG-noise overlay and the drifting `.hero-aurora` blobs.
+- **Breakpoints**: 960px (nav collapses, single-column layout, hero object moves into the flow) and 480px (compact workflow steps, 2-up contact buttons).
+- **Reduced motion**: Framer Motion via `MotionConfig`. CSS stops the aurora, pulse, scroll cue and marquee (the marquee wraps instead). `Magnetic` and the 3D loop stay off.
 
 ---
 
-## 9. How to extend
+## 7. SEO / GEO
 
-- **Add a section:** create the JSX block in `App.jsx` with an `id`, wrap in `<ScrollReveal>`, add copy under a new key in **all three** language objects, add a `nav` label + `<a href="#id">` in `navbar.jsx`, and mirror the text in the `<noscript>` block / `llms.txt` for crawlers.
-- **Add a language:** add an object to `translations` with the full shape above, append its code to `SUPPORTED_LANGUAGES` (the switcher renders from that list), and add an `og:locale:alternate`.
-- **Add a project/experience:** append to `items` in every language **and** append the matching entry to `projectVisuals`/`projectDelays` or `experienceIcons`.
-- **Change colours:** edit tokens in both `:root` and `:root[data-theme="dark"]` in `index.css`; avoid hard-coded hex in components.
+The app renders on the client, so `index.html` carries meta tags, Open Graph, JSON-LD (`ProfilePage` → `Person`) and a `<noscript>` text version. `public/` holds `robots.txt`, `sitemap.xml` and `llms.txt`. The remaining gap (no prerender) is tracked in `GEO-ANALYSIS.md`.
 
 ---
 
-## 10. Suggested next steps (by impact)
+## 8. Known gaps
 
-1. **Prerender / SSG** (e.g. `vite-plugin-prerender` or a move to an SSG) so non-JS crawlers get the full page — the main GEO ceiling.
-2. **Move non-text data into `translations.js` or a shared `content.js`** keyed by id, removing the index coupling and the 4-way contact duplication.
-3. **Delete dead code and unused deps** (§8.1, §8.4) to shrink the bundle.
-4. **Split `App.jsx`** (720 lines) into `sections/Hero.jsx`, `About.jsx`, … and move inline styles to CSS classes.
-5. **Pause WebGL loops** when off-screen or under `prefers-reduced-motion`; theme-aware globe colours.
+| Gap | Where |
+|---|---|
+| No project screenshots or links yet; the cards are ready for them | `content.js` → `projectMeta` |
+| No CV download | Add the file to `public/` and a button in `Hero.jsx` |
+| `logo.png` (favicon, 165 KB) and `profile.png` (222 KB) are unoptimised PNGs | `public/` |
+| The `<noscript>` text and JSON-LD still use the old wording | `index.html` |
+| No prerender/SSG | see `GEO-ANALYSIS.md` |
+| ESLint fast-refresh warnings on the two context files (they export a hook next to the provider) | move the hooks to their own files |

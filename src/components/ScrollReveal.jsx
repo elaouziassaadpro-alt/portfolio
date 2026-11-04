@@ -1,40 +1,17 @@
 import { motion } from "framer-motion";
 
-const ScrollReveal = ({ 
-  children, 
-  delay = 0, 
-  direction = "up", 
-  duration = 0.8,
-  distance = 30
-}) => {
-  const directions = {
-    up: { y: distance },
-    down: { y: -distance },
-    left: { x: distance },
-    right: { x: -distance },
-  };
-
-  return (
-    <motion.div
-      initial={{ 
-        opacity: 0, 
-        ...directions[direction] 
-      }}
-      whileInView={{ 
-        opacity: 1, 
-        x: 0, 
-        y: 0 
-      }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ 
-        duration: duration, 
-        delay: delay,
-        ease: [0.22, 1, 0.36, 1] // Custom cubic-bezier for professional feel
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
+// Short fade-up on first view. MotionConfig in main.jsx turns it off
+// for visitors who prefer reduced motion.
+const ScrollReveal = ({ children, delay = 0, className }) => (
+  <motion.div
+    className={className}
+    initial={{ opacity: 0, y: 16 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-8% 0px" }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+  >
+    {children}
+  </motion.div>
+);
 
 export default ScrollReveal;

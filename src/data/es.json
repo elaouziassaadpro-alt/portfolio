@@ -1,0 +1,199 @@
+{
+  "skip": "Ir al contenido",
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "exploring": "Explorando",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "close": "Cerrar"
+  },
+  "intro": {
+    "role": "Desarrollador de Aplicaciones e IT",
+    "tagline": "Construyo sistemas Laravel y React para finanzas e industria — y mantengo en marcha la IT que los sostiene.",
+    "nowLabel": "Ahora",
+    "now": "Construyendo la aplicación de suscripciones y reembolsos digitales de Alphavest Asset Management.",
+    "ctaContact": "Contactarme",
+    "ctaProjects": "Ver proyectos",
+    "scroll": "Desplazar"
+  },
+  "about": {
+    "heading": "Sobre mí",
+    "title": "Dos papeles, un solo responsable — del servidor a la interfaz.",
+    "basedLabel": "Con base en",
+    "p1": "Tengo un grado en Ingeniería de Desarrollo de Aplicaciones (FST Tánger) y una certificación de Desarrollador Full Stack de Webforce3. Desde 2022 he pasado por cuatro prácticas y mi puesto actual, construyendo aplicaciones empresariales con Laravel y React mientras adquiría experiencia práctica en infraestructura IT.",
+    "p2": "En Alphavest Asset Management tengo un doble papel: gestiono los servicios IT esenciales — copias de seguridad, administración de dominios, soporte y mantenimiento — y desarrollé la aplicación de cumplimiento KYC con Laravel y Livewire. Ahora construyo su aplicación de suscripciones y reembolsos digitales con Spring Boot y React Native. Así puedo llevar un proyecto de principio a fin, del servidor a la interfaz.",
+    "stats": [
+      {
+        "value": "2022",
+        "label": "Desarrollando desde"
+      },
+      {
+        "value": "4 + 1",
+        "label": "Prácticas + puesto actual"
+      },
+      {
+        "value": "5",
+        "label": "Sistemas de negocio construidos"
+      }
+    ],
+    "stackHeading": "Mi stack"
+  },
+  "experience": {
+    "heading": "Experiencia",
+    "title": "Dónde he construido.",
+    "items": [
+      {
+        "role": "Desarrollador de Aplicaciones e IT",
+        "company": "Alphavest Asset Management",
+        "period": "2026 — Hoy",
+        "desc": "Gestiono las operaciones IT diarias — copias de seguridad, administración de dominios, soporte y mantenimiento — construí la aplicación KYC interna y ahora desarrollo la aplicación de suscripciones y reembolsos digitales."
+      },
+      {
+        "role": "Becario de Desarrollo de Software",
+        "company": "Forvis Mazars Casablanca",
+        "period": "2024 — 2025",
+        "desc": "Llevé una herramienta interna desde los requisitos de los interesados hasta una aplicación Laravel funcional — mi primer desarrollo de principio a fin en un entorno profesional."
+      },
+      {
+        "role": "Becario de Fin de Estudios",
+        "company": "OCP Group, Jorf Lasfar",
+        "period": "2024",
+        "desc": "Proyecto final de ingeniería en un entorno industrial: con los equipos de planta y laboratorio, sustituí un proceso en papel por un flujo digital."
+      },
+      {
+        "role": "Becario Desarrollador React.js",
+        "company": "DEVTI Technologie",
+        "period": "2023",
+        "desc": "Construí interfaces de producción con React.js, convirtiendo requisitos de UX en un producto responsive para una empresa de travel-tech."
+      },
+      {
+        "role": "Becario Desarrollador Java",
+        "company": "Gretin Innovation",
+        "period": "2022",
+        "desc": "Desarrollo de software de escritorio con Java y JavaFX — herramientas internas usadas a diario en el negocio."
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Trabajo seleccionado",
+    "otherHeading": "Otros proyectos",
+    "labels": {
+      "context": "Contexto",
+      "built": "Lo que construí",
+      "stack": "Stack",
+      "live": "Ver en línea",
+      "code": "Código",
+      "private": "Código privado del cliente"
+    },
+    "flow": {
+      "heading": "Cómo funciona el proceso",
+      "steps": [
+        {
+          "title": "Recopilar",
+          "text": "Los datos y documentos de los clientes se guardan de forma segura en un solo lugar."
+        },
+        {
+          "title": "Verificar",
+          "text": "Cada cliente pasa por un flujo de verificación con un estado claro."
+        },
+        {
+          "title": "Cumplir",
+          "text": "Los requisitos normativos están integrados en cada paso, no se revisan al final."
+        }
+      ]
+    },
+    "items": [
+      {
+        "sector": "Finanzas",
+        "title": "Suscripciones y reembolsos digitales",
+        "context": "Alphavest Asset Management · 2026 — en curso",
+        "summary": "Una aplicación móvil para los clientes de Alphavest Asset Management: realizan suscripciones y reembolsos de fondos y gestionan todas sus operaciones en formato digital, sin papel.",
+        "points": [
+          "Órdenes de suscripción y reembolso desde el teléfono del cliente (React Native)",
+          "Todas las operaciones del cliente gestionadas en digital, de principio a fin",
+          "API REST en Java Spring Boot sobre PostgreSQL",
+          "Reporting de índices, benchmarks, carteras y fondos"
+        ]
+      },
+      {
+        "sector": "Finanzas",
+        "title": "Plataforma KYC empresarial",
+        "context": "Alphavest Asset Management · 2026",
+        "summary": "Las operaciones KYC (Know Your Customer) de una gestora de activos, en una sola aplicación interna.",
+        "points": [
+          "Almacenamiento seguro de datos y documentos de clientes",
+          "Flujos de verificación de clientes",
+          "Cumplimiento normativo integrado en el proceso"
+        ]
+      },
+      {
+        "sector": "Industria",
+        "title": "Sistema de gestión de laboratorio",
+        "context": "OCP Group, Jorf Lasfar · Proyecto de fin de estudios, 2024",
+        "summary": "Sustituye un proceso en papel para las solicitudes de análisis entre las plantas de producción y el laboratorio central.",
+        "points": [
+          "Flujo de solicitudes automatizado",
+          "Mejor coordinación entre planta y laboratorio",
+          "Trazabilidad completa de los resultados"
+        ]
+      },
+      {
+        "sector": "Consultoría",
+        "title": "Plataforma de evaluación de proyectos",
+        "context": "Forvis Mazars Casablanca · 2024 — 2025",
+        "summary": "Un solo lugar para el seguimiento de proyectos y el análisis de rendimiento en una firma de auditoría y consultoría.",
+        "points": [
+          "Una visión unificada del avance para la dirección",
+          "Objetivos seguidos por proyecto",
+          "De los requisitos de los interesados a una aplicación funcional"
+        ]
+      },
+      {
+        "sector": "Viajes",
+        "title": "Plataforma de reserva de tours",
+        "context": "DEVTI Technologie · 2023",
+        "summary": "Conecta a viajeros con operadores turísticos para descubrir, reservar y gestionar tours.",
+        "points": []
+      },
+      {
+        "sector": "Herramientas internas",
+        "title": "Aplicaciones de escritorio empresariales",
+        "context": "Gretin Innovation · 2022",
+        "summary": "Fichaje (asistencia de empleados), conteo por escaneo y gestión de accesos del personal.",
+        "points": []
+      }
+    ]
+  },
+  "exploring": {
+    "heading": "Lo que estoy explorando",
+    "p1": "El concepto de una super app que reúne varios servicios en una sola plataforma — marketplace en línea, pagos digitales, reserva de servicios y gestión de proveedores — pensada para usuarios internacionales y operaciones escalables.",
+    "tags": [
+      "Marketplace en línea",
+      "Pagos digitales",
+      "Reserva de servicios",
+      "Gestión de proveedores",
+      "Sistemas escalables",
+      "Arquitectura de bases de datos"
+    ]
+  },
+  "contact": {
+    "heading": "Construyamos algo sólido.",
+    "p1": "¿Necesitas un backend empresarial, una infraestructura IT más ordenada o una aplicación web que escale? Mi bandeja de entrada está abierta.",
+    "email": "Correo",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "whatsapp": "WhatsApp",
+    "call": "Llamar",
+    "location": "Casablanca, Marruecos"
+  },
+  "footer": "Diseñado y desarrollado por Assaad Elaouzi con React y Vite.",
+  "backToTop": "Volver arriba",
+  "a11y": {
+    "sections": "Secciones",
+    "language": "Idioma",
+    "toDark": "Cambiar a modo oscuro",
+    "toLight": "Cambiar a modo claro"
+  }
+}

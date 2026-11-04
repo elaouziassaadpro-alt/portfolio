@@ -1,0 +1,119 @@
+{
+  "profile": {
+    "name": "Assaad Elaouzi",
+    "photo": "/profile.png",
+    "email": "elaouzi.assaadpro@gmail.com",
+    "phone": "+212 645 609 313",
+    "phoneHref": "tel:+212645609313",
+    "whatsapp": "https://wa.me/212645609313",
+    "github": "https://github.com/elaouziassaadpro-alt",
+    "linkedin": "https://www.linkedin.com/in/assaad-elaouzi-8b95bb211/"
+  },
+  "sections": [
+    "about",
+    "experience",
+    "projects",
+    "exploring",
+    "contact"
+  ],
+  "stack": [
+    "Laravel",
+    "PHP",
+    "Livewire",
+    "React.js",
+    "React Native",
+    "Node.js",
+    "Express.js",
+    "Java",
+    "Spring Boot",
+    "PostgreSQL",
+    "SQL",
+    "Python",
+    "Git"
+  ],
+  "experienceTags": [
+    [
+      "Laravel",
+      "Spring Boot",
+      "React Native",
+      "IT Operations"
+    ],
+    [
+      "Laravel",
+      "PHP",
+      "SQL"
+    ],
+    [
+      "Laravel",
+      "React.js",
+      "Docker"
+    ],
+    [
+      "React.js",
+      "JavaScript"
+    ],
+    [
+      "Java",
+      "JavaFX"
+    ]
+  ],
+  "featuredCount": 4,
+  "projectMeta": [
+    {
+      "tags": [
+        "Java",
+        "Spring Boot",
+        "React Native",
+        "JavaScript",
+        "PostgreSQL"
+      ],
+      "image": null,
+      "links": {}
+    },
+    {
+      "tags": [
+        "Laravel",
+        "PHP",
+        "Livewire",
+        "MySQL"
+      ],
+      "image": null,
+      "links": {},
+      "flow": true
+    },
+    {
+      "tags": [
+        "Laravel",
+        "React.js",
+        "Docker"
+      ],
+      "image": null,
+      "links": {}
+    },
+    {
+      "tags": [
+        "Laravel",
+        "PHP",
+        "SQL"
+      ],
+      "image": null,
+      "links": {}
+    },
+    {
+      "tags": [
+        "React.js",
+        "JavaScript"
+      ],
+      "image": null,
+      "links": {}
+    },
+    {
+      "tags": [
+        "Java",
+        "JavaFX"
+      ],
+      "image": null,
+      "links": {}
+    }
+  ]
+}

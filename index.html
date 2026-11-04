@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+    />
+    <!-- Apply the saved theme before first paint so light-mode visitors
+         don't see a dark flash. Dark is the default. -->
+    <script>
+      try {
+        if (localStorage.getItem("portfolio-theme") === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    </script>
 
     <title>Assaad Elaouzi — IT Applications Developer | Portfolio</title>
     <meta
@@ -17,7 +32,7 @@
     <meta name="author" content="Assaad Elaouzi" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://portfolio-ten-tau-451f9zrxlt.vercel.app/" />
-    <meta name="theme-color" content="#d85a30" />
+    <meta name="theme-color" content="#07141f" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile" />
@@ -137,8 +152,10 @@
         <p>
           As IT & Application Developer at Alphavest Asset Management, I
           manage core IT services — backups, domain administration, support
-          and system maintenance — alongside developing a KYC compliance
-          application with Laravel and Livewire.
+          and system maintenance — and built the firm's KYC compliance
+          application with Laravel and Livewire. Currently building its
+          digital subscriptions and redemptions app (Java Spring Boot, React
+          Native, PostgreSQL).
         </p>
         <p>
           Core technologies: Laravel, PHP, Livewire, React.js, React Native,
@@ -151,7 +168,7 @@
             <strong>IT &amp; Application Developer — Alphavest Asset Management</strong>
             (01/2026 – Present): Own the company's day-to-day IT operations —
             backups, domain administration, support, and system maintenance —
-            alongside developing the internal KYC application.
+            and built the internal KYC application.
           </li>
           <li>
             <strong>Software Development Intern — Forvis Mazars Casablanca</strong>
@@ -180,6 +197,13 @@
 
         <h2>Projects</h2>
         <ul>
+          <li>
+            <strong>Digital Subscriptions &amp; Redemptions</strong> (Java Spring
+            Boot, React Native, JavaScript, PostgreSQL; in progress) — mobile app
+            for Alphavest Asset Management clients to place fund subscriptions
+            and redemptions and handle all their operations digitally, with
+            reporting on indices, benchmarks, portfolios and funds.
+          </li>
           <li>
             <strong>Enterprise KYC Platform</strong> (Laravel, PHP, Livewire,
             MySQL) — KYC (Know Your Customer) operations platform for

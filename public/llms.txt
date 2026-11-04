@@ -6,7 +6,7 @@
 
 - [About](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#about): Degree in Application Development Engineering (FST Tanger), Full Stack Developer certification (Webforce3), and core technology stack.
 - [Experience](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#experience): Current role at Alphavest Asset Management, plus internships at Forvis Mazars Casablanca, OCP Group (Jorf Lasfar), DEVTI Technologie, and Gretin Innovation.
-- [Projects](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#projects): Enterprise KYC platform, laboratory management system, project evaluation platform, tour booking platform, and internal desktop tools.
+- [Projects](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#projects): digital subscriptions & redemptions app for Alphavest clients (Spring Boot, React Native, PostgreSQL; in progress), enterprise KYC platform, laboratory management system, project evaluation platform, tour booking platform, and internal desktop tools.
 - [Contact](https://portfolio-ten-tau-451f9zrxlt.vercel.app/#contact): Email, phone, and location.
 
 ## Key facts

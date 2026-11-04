@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { translations, SUPPORTED_LANGUAGES } from "../i18n/translations";
 
 const LanguageContext = createContext(null);
@@ -22,6 +22,10 @@ function getInitialLanguage() {
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(getInitialLanguage);
   const [isChanging, setIsChanging] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const setLang = (nextLang) => {
     if (!SUPPORTED_LANGUAGES.includes(nextLang) || nextLang === lang || isChanging) return;

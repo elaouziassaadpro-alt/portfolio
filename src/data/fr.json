@@ -1,0 +1,199 @@
+{
+  "skip": "Aller au contenu",
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "exploring": "Explorations",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Fermer"
+  },
+  "intro": {
+    "role": "Développeur d'applications & IT",
+    "tagline": "Je construis des systèmes Laravel & React pour la finance et l'industrie — et je fais tourner l'IT qui les porte.",
+    "nowLabel": "En ce moment",
+    "now": "Je développe l'application de souscriptions et rachats digitalisés d'Alphavest Asset Management.",
+    "ctaContact": "Me contacter",
+    "ctaProjects": "Voir les projets",
+    "scroll": "Défiler"
+  },
+  "about": {
+    "heading": "À propos",
+    "title": "Deux casquettes, un seul responsable — du serveur à l’interface.",
+    "basedLabel": "Basé à",
+    "p1": "Je suis titulaire d'une Licence en Ingénierie du Développement d'Applications (FST Tanger) et d'un certificat de Développeur Full Stack délivré par Webforce3. Depuis 2022, j'ai enchaîné quatre stages et mon poste actuel, en construisant des applications d'entreprise avec Laravel et React tout en développant une expérience concrète en infrastructure IT.",
+    "p2": "Chez Alphavest Asset Management, j'ai une double casquette : je gère les services IT essentiels — sauvegardes, administration des domaines, support et maintenance — et j'ai développé l'application de conformité KYC avec Laravel et Livewire. Je construis maintenant son application de souscriptions et rachats digitalisés avec Spring Boot et React Native. Je peux ainsi porter un projet de bout en bout, du serveur à l'interface.",
+    "stats": [
+      {
+        "value": "2022",
+        "label": "Je développe depuis"
+      },
+      {
+        "value": "4 + 1",
+        "label": "Stages + poste actuel"
+      },
+      {
+        "value": "5",
+        "label": "Systèmes métier construits"
+      }
+    ],
+    "stackHeading": "Ma stack"
+  },
+  "experience": {
+    "heading": "Expérience",
+    "title": "Là où j’ai construit.",
+    "items": [
+      {
+        "role": "Développeur d'applications & IT",
+        "company": "Alphavest Asset Management",
+        "period": "2026 — Auj.",
+        "desc": "Je pilote les opérations IT quotidiennes — sauvegardes, administration des domaines, support et maintenance — j'ai développé l'application KYC interne et je développe maintenant l'application de souscriptions et rachats digitalisés."
+      },
+      {
+        "role": "Stagiaire Développeur Logiciel",
+        "company": "Forvis Mazars Casablanca",
+        "period": "2024 — 2025",
+        "desc": "J'ai mené un outil interne des besoins des parties prenantes jusqu'à une application Laravel opérationnelle — mon premier projet de bout en bout en entreprise."
+      },
+      {
+        "role": "Stagiaire de fin d'études",
+        "company": "OCP Group, Jorf Lasfar",
+        "period": "2024",
+        "desc": "Projet de fin d'études en environnement industriel : avec les équipes des usines et du laboratoire, j'ai remplacé un processus papier par un flux numérique."
+      },
+      {
+        "role": "Stagiaire Développeur React.js",
+        "company": "DEVTI Technologie",
+        "period": "2023",
+        "desc": "Construction d'interfaces de production en React.js, en traduisant des besoins UX en un produit responsive pour une entreprise de travel-tech."
+      },
+      {
+        "role": "Stagiaire Développeur Java",
+        "company": "Gretin Innovation",
+        "period": "2022",
+        "desc": "Développement de logiciels desktop en Java et JavaFX — des outils internes utilisés au quotidien par l'entreprise."
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projets choisis",
+    "otherHeading": "Autres projets",
+    "labels": {
+      "context": "Contexte",
+      "built": "Ce que j'ai construit",
+      "stack": "Stack",
+      "live": "Voir en ligne",
+      "code": "Code",
+      "private": "Code client privé"
+    },
+    "flow": {
+      "heading": "Le déroulement du processus",
+      "steps": [
+        {
+          "title": "Collecter",
+          "text": "Les données et documents clients sont stockés de façon sécurisée, au même endroit."
+        },
+        {
+          "title": "Vérifier",
+          "text": "Chaque client suit un workflow de vérification avec un statut clair."
+        },
+        {
+          "title": "Conformer",
+          "text": "Les exigences réglementaires sont intégrées à chaque étape, pas vérifiées après coup."
+        }
+      ]
+    },
+    "items": [
+      {
+        "sector": "Finance",
+        "title": "Souscriptions et rachats digitalisés",
+        "context": "Alphavest Asset Management · 2026 — en cours",
+        "summary": "Une application mobile pour les clients d'Alphavest Asset Management : ils passent leurs souscriptions et rachats de fonds et gèrent toutes leurs opérations sous forme digitale, sans papier.",
+        "points": [
+          "Ordres de souscription et de rachat passés depuis le téléphone du client (React Native)",
+          "Toutes les opérations client traitées en digital, de bout en bout",
+          "API REST Java Spring Boot reposant sur PostgreSQL",
+          "Reporting sur les indices, les benchmarks, les portefeuilles et les fonds"
+        ]
+      },
+      {
+        "sector": "Finance",
+        "title": "Plateforme KYC d'entreprise",
+        "context": "Alphavest Asset Management · 2026",
+        "summary": "Les opérations KYC (Know Your Customer) d'une société de gestion d'actifs, réunies dans une seule application interne.",
+        "points": [
+          "Stockage sécurisé des données et documents clients",
+          "Workflows de vérification client",
+          "Conformité réglementaire intégrée au processus"
+        ]
+      },
+      {
+        "sector": "Industrie",
+        "title": "Système de gestion de laboratoire",
+        "context": "OCP Group, Jorf Lasfar · Projet de fin d'études, 2024",
+        "summary": "Remplace un processus papier pour les demandes d'analyses entre les usines de production et le laboratoire central.",
+        "points": [
+          "Workflow de demande automatisé",
+          "Meilleure coordination entre usines et laboratoire",
+          "Traçabilité complète des résultats"
+        ]
+      },
+      {
+        "sector": "Conseil",
+        "title": "Plateforme d'évaluation de projets",
+        "context": "Forvis Mazars Casablanca · 2024 — 2025",
+        "summary": "Un seul outil pour le suivi de projets et l'analyse de performance dans un cabinet d'audit et de conseil.",
+        "points": [
+          "Une vue unifiée de l'avancement pour la direction",
+          "Objectifs suivis projet par projet",
+          "Des besoins des parties prenantes à une application opérationnelle"
+        ]
+      },
+      {
+        "sector": "Voyage",
+        "title": "Plateforme de réservation de circuits",
+        "context": "DEVTI Technologie · 2023",
+        "summary": "Met en relation voyageurs et opérateurs touristiques pour découvrir, réserver et gérer des circuits.",
+        "points": []
+      },
+      {
+        "sector": "Outils internes",
+        "title": "Applications de bureau pour l'entreprise",
+        "context": "Gretin Innovation · 2022",
+        "summary": "Pointage (présence des employés), comptage par scan et gestion des accès du personnel.",
+        "points": []
+      }
+    ]
+  },
+  "exploring": {
+    "heading": "Ce que j'explore",
+    "p1": "Le concept d'une super app réunissant plusieurs services sur une seule plateforme — marketplace en ligne, paiements numériques, réservation de services et gestion des prestataires — pensée pour des utilisateurs internationaux et des opérations évolutives.",
+    "tags": [
+      "Marketplace en ligne",
+      "Paiements numériques",
+      "Réservation de services",
+      "Gestion des prestataires",
+      "Systèmes évolutifs",
+      "Architecture de base de données"
+    ]
+  },
+  "contact": {
+    "heading": "Construisons quelque chose de solide.",
+    "p1": "Besoin d'un backend d'entreprise, d'une infrastructure IT plus propre ou d'une application web qui passe à l'échelle ? Ma boîte mail est ouverte.",
+    "email": "E-mail",
+    "copy": "Copier",
+    "copied": "Copié",
+    "whatsapp": "WhatsApp",
+    "call": "Appeler",
+    "location": "Casablanca, Maroc"
+  },
+  "footer": "Conçu et développé par Assaad Elaouzi avec React et Vite.",
+  "backToTop": "Retour en haut",
+  "a11y": {
+    "sections": "Sections",
+    "language": "Langue",
+    "toDark": "Passer en mode sombre",
+    "toLight": "Passer en mode clair"
+  }
+}

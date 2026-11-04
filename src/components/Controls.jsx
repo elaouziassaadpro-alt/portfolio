@@ -1,0 +1,37 @@
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
+import { useLanguage } from "../contexts/LanguageContext";
+import { SUPPORTED_LANGUAGES } from "../i18n/translations";
+
+// Language switch + theme toggle, shared by the nav bar and the mobile menu.
+export default function Controls() {
+  const { theme, toggleTheme } = useTheme();
+  const { lang, setLang, t } = useLanguage();
+
+  return (
+    <div className="controls">
+      <div className="lang-switch" role="group" aria-label={t.a11y.language}>
+        {SUPPORTED_LANGUAGES.map((code) => (
+          <button
+            key={code}
+            type="button"
+            className={code === lang ? "active" : ""}
+            aria-pressed={code === lang}
+            onClick={() => setLang(code)}
+          >
+            {code.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
+      <button
+        type="button"
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={theme === "light" ? t.a11y.toDark : t.a11y.toLight}
+      >
+        {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+      </button>
+    </div>
+  );
+}

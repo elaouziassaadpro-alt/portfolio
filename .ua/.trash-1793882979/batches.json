@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 48,
+  "totalBatches": 8,
+  "exportsByPath": {
+    "eslint.config.js": [],
+    "public/site.webmanifest": [],
+    "scripts/prerender.mjs": [],
+    "src/App.jsx": [],
+    "src/components/Controls.jsx": [
+      "Controls"
+    ],
+    "src/components/CopyEmail.jsx": [
+      "CopyEmail"
+    ],
+    "src/components/HeroScene.jsx": [
+      "HeroScene"
+    ],
+    "src/components/Magnetic.jsx": [
+      "Magnetic"
+    ],
+    "src/components/Marquee.jsx": [
+      "Marquee"
+    ],
+    "src/components/RevealText.jsx": [
+      "RevealText"
+    ],
+    "src/components/SceneBoundary.jsx": [
+      "default"
+    ],
+    "src/components/ScrollReveal.jsx": [],
+    "src/components/SectionHeading.jsx": [
+      "SectionHeading"
+    ],
+    "src/components/WorkflowSteps.jsx": [
+      "WorkflowSteps"
+    ],
+    "src/components/brain.worker.js": [],
+    "src/components/brainGeometry.js": [
+      "seededRandom",
+      "pointOnEdge",
+      "createBrain"
+    ],
+    "src/content.js": [
+      "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+      "FEATURED_COUNT"
+    ],
+    "src/contexts/LanguageContext.jsx": [
+      "LanguageProvider",
+      "useLanguage"
+    ],
+    "src/contexts/ThemeContext.jsx": [
+      "ThemeProvider",
+      "useTheme"
+    ],
+    "src/entry-server.jsx": [
+      "render"
+    ],
+    "src/hooks/useActiveSection.js": [
+      "useActiveSection"
+    ],
+    "src/hooks/useGlowPointer.js": [
+      "useGlowPointer"
+    ],
+    "src/i18n/translations.js": [
+      "translations",
+      "SUPPORTED_LANGUAGES",
+      "DEFAULT_LANGUAGE",
+      "languagePath"
+    ],
+    "src/main.jsx": [],
+    "src/sections/About.jsx": [
+      "About"
+    ],
+    "src/sections/Contact.jsx": [
+      "Contact"
+    ],
+    "src/sections/Experience.jsx": [
+      "Experience"
+    ],
+    "src/sections/Exploring.jsx": [
+      "Exploring"
+    ],
+    "src/sections/Faq.jsx": [
+      "Faq"
+    ],
+    "src/sections/Hero.jsx": [
+      "Hero"
+    ],
+    "src/sections/Navbar.jsx": [
+      "Navbar"
+    ],
+    "src/sections/Projects.jsx": [
+      "Projects"
+    ],
+    "vite.config.js": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "src/components/ScrollReveal.jsx",
+          "language": "javascript",
+          "sizeLines": 17,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/SectionHeading.jsx",
+          "language": "javascript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/WorkflowSteps.jsx",
+          "language": "javascript",
+          "sizeLines": 33,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/content.js",
+          "language": "javascript",
+          "sizeLines": 5,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/About.jsx",
+          "language": "javascript",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Experience.jsx",
+          "language": "javascript",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Exploring.jsx",
+          "language": "javascript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Faq.jsx",
+          "language": "javascript",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Projects.jsx",
+          "language": "javascript",
+          "sizeLines": 121,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/ScrollReveal.jsx": [],
+        "src/components/SectionHeading.jsx": [
+          "src/components/ScrollReveal.jsx"
+        ],
+        "src/components/WorkflowSteps.jsx": [],
+        "src/content.js": [
+          "src/data/site.json"
+        ],
+        "src/sections/About.jsx": [
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ],
+        "src/sections/Experience.jsx": [
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ],
+        "src/sections/Exploring.jsx": [
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/contexts/LanguageContext.jsx"
+        ],
+        "src/sections/Faq.jsx": [
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/contexts/LanguageContext.jsx"
+        ],
+        "src/sections/Projects.jsx": [
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/components/WorkflowSteps.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ]
+      },
+      "neighborMap": {
+        "src/components/ScrollReveal.jsx": [
+          {
+            "path": "src/sections/Contact.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Contact"
+            ]
+          }
+        ],
+        "src/components/SectionHeading.jsx": [
+          {
+            "path": "src/sections/Contact.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Contact"
+            ]
+          }
+        ],
+        "src/content.js": [
+          {
+            "path": "src/data/site.json",
+            "batchIndex": 7,
+            "symbols": []
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/sections/Contact.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Contact"
+            ]
+          },
+          {
+            "path": "src/sections/Hero.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Hero"
+            ]
+          },
+          {
+            "path": "src/sections/Navbar.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "Navbar"
+            ]
+          }
+        ],
+        "src/sections/About.jsx": [
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/sections/Experience.jsx": [
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/sections/Exploring.jsx": [
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/sections/Faq.jsx": [
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/sections/Projects.jsx": [
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "src/components/Controls.jsx",
+          "language": "javascript",
+          "sizeLines": 42,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/contexts/LanguageContext.jsx",
+          "language": "javascript",
+          "sizeLines": 80,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/contexts/ThemeContext.jsx",
+          "language": "javascript",
+          "sizeLines": 42,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/entry-server.jsx",
+          "language": "javascript",
+          "sizeLines": 23,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/i18n/translations.js",
+          "language": "javascript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/main.jsx",
+          "language": "javascript",
+          "sizeLines": 26,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Navbar.jsx",
+          "language": "javascript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/Controls.jsx": [
+          "src/contexts/LanguageContext.jsx",
+          "src/contexts/ThemeContext.jsx",
+          "src/i18n/translations.js"
+        ],
+        "src/contexts/LanguageContext.jsx": [
+          "src/i18n/translations.js"
+        ],
+        "src/contexts/ThemeContext.jsx": [],
+        "src/entry-server.jsx": [
+          "src/App.jsx",
+          "src/contexts/LanguageContext.jsx",
+          "src/contexts/ThemeContext.jsx"
+        ],
+        "src/i18n/translations.js": [
+          "src/data/en.json",
+          "src/data/es.json",
+          "src/data/fr.json",
+          "src/data/site.json"
+        ],
+        "src/main.jsx": [
+          "src/App.jsx",
+          "src/contexts/LanguageContext.jsx",
+          "src/contexts/ThemeContext.jsx",
+          "src/index.css"
+        ],
+        "src/sections/Navbar.jsx": [
+          "src/components/Controls.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ]
+      },
+      "neighborMap": {
+        "src/contexts/LanguageContext.jsx": [
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/sections/About.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "About"
+            ]
+          },
+          {
+            "path": "src/sections/Contact.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Contact"
+            ]
+          },
+          {
+            "path": "src/sections/Experience.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Experience"
+            ]
+          },
+          {
+            "path": "src/sections/Exploring.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Exploring"
+            ]
+          },
+          {
+            "path": "src/sections/Faq.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Faq"
+            ]
+          },
+          {
+            "path": "src/sections/Hero.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Hero"
+            ]
+          },
+          {
+            "path": "src/sections/Projects.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Projects"
+            ]
+          }
+        ],
+        "src/entry-server.jsx": [
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/i18n/translations.js": [
+          {
+            "path": "src/data/en.json",
+            "batchIndex": 7,
+            "symbols": []
+          },
+          {
+            "path": "src/data/es.json",
+            "batchIndex": 7,
+            "symbols": []
+          },
+          {
+            "path": "src/data/fr.json",
+            "batchIndex": 7,
+            "symbols": []
+          },
+          {
+            "path": "src/data/site.json",
+            "batchIndex": 7,
+            "symbols": []
+          }
+        ],
+        "src/main.jsx": [
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/index.css",
+            "batchIndex": 8,
+            "symbols": []
+          }
+        ],
+        "src/sections/Navbar.jsx": [
+          {
+            "path": "src/content.js",
+            "batchIndex": 1,
+            "symbols": [
+              "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+              "FEATURED_COUNT"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "src/components/CopyEmail.jsx",
+          "language": "javascript",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/Magnetic.jsx",
+          "language": "javascript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/RevealText.jsx",
+          "language": "javascript",
+          "sizeLines": 14,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/SceneBoundary.jsx",
+          "language": "javascript",
+          "sizeLines": 16,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Contact.jsx",
+          "language": "javascript",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/sections/Hero.jsx",
+          "language": "javascript",
+          "sizeLines": 100,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/CopyEmail.jsx": [],
+        "src/components/Magnetic.jsx": [],
+        "src/components/RevealText.jsx": [],
+        "src/components/SceneBoundary.jsx": [],
+        "src/sections/Contact.jsx": [
+          "src/components/CopyEmail.jsx",
+          "src/components/Magnetic.jsx",
+          "src/components/ScrollReveal.jsx",
+          "src/components/SectionHeading.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ],
+        "src/sections/Hero.jsx": [
+          "src/components/Magnetic.jsx",
+          "src/components/RevealText.jsx",
+          "src/components/SceneBoundary.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx"
+        ]
+      },
+      "neighborMap": {
+        "src/sections/Contact.jsx": [
+          {
+            "path": "src/components/ScrollReveal.jsx",
+            "batchIndex": 1,
+            "symbols": []
+          },
+          {
+            "path": "src/components/SectionHeading.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "SectionHeading"
+            ]
+          },
+          {
+            "path": "src/content.js",
+            "batchIndex": 1,
+            "symbols": [
+              "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+              "FEATURED_COUNT"
+            ]
+          },
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/sections/Hero.jsx": [
+          {
+            "path": "src/content.js",
+            "batchIndex": 1,
+            "symbols": [
+              "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+              "FEATURED_COUNT"
+            ]
+          },
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "src/App.jsx",
+          "language": "javascript",
+          "sizeLines": 72,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/Marquee.jsx",
+          "language": "javascript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/hooks/useActiveSection.js",
+          "language": "javascript",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/hooks/useGlowPointer.js",
+          "language": "javascript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/App.jsx": [
+          "src/App.css",
+          "src/components/Marquee.jsx",
+          "src/content.js",
+          "src/contexts/LanguageContext.jsx",
+          "src/hooks/useActiveSection.js",
+          "src/hooks/useGlowPointer.js",
+          "src/sections/About.jsx",
+          "src/sections/Contact.jsx",
+          "src/sections/Experience.jsx",
+          "src/sections/Exploring.jsx",
+          "src/sections/Faq.jsx",
+          "src/sections/Hero.jsx",
+          "src/sections/Navbar.jsx",
+          "src/sections/Projects.jsx"
+        ],
+        "src/components/Marquee.jsx": [],
+        "src/hooks/useActiveSection.js": [],
+        "src/hooks/useGlowPointer.js": []
+      },
+      "neighborMap": {
+        "src/App.jsx": [
+          {
+            "path": "src/App.css",
+            "batchIndex": 8,
+            "symbols": []
+          },
+          {
+            "path": "src/content.js",
+            "batchIndex": 1,
+            "symbols": [
+              "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+              "FEATURED_COUNT"
+            ]
+          },
+          {
+            "path": "src/contexts/LanguageContext.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "LanguageProvider",
+              "useLanguage"
+            ]
+          },
+          {
+            "path": "src/sections/About.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "About"
+            ]
+          },
+          {
+            "path": "src/sections/Contact.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Contact"
+            ]
+          },
+          {
+            "path": "src/sections/Experience.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Experience"
+            ]
+          },
+          {
+            "path": "src/sections/Exploring.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Exploring"
+            ]
+          },
+          {
+            "path": "src/sections/Faq.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Faq"
+            ]
+          },
+          {
+            "path": "src/sections/Hero.jsx",
+            "batchIndex": 3,
+            "symbols": [
+              "Hero"
+            ]
+          },
+          {
+            "path": "src/sections/Navbar.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "Navbar"
+            ]
+          },
+          {
+            "path": "src/sections/Projects.jsx",
+            "batchIndex": 1,
+            "symbols": [
+              "Projects"
+            ]
+          },
+          {
+            "path": "src/entry-server.jsx",
+            "batchIndex": 2,
+            "symbols": [
+              "render"
+            ]
+          },
+          {
+            "path": "src/main.jsx",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "src/components/HeroScene.jsx",
+          "language": "javascript",
+          "sizeLines": 338,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/brain.worker.js",
+          "language": "javascript",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/brainGeometry.js",
+          "language": "javascript",
+          "sizeLines": 254,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/HeroScene.jsx": [
+          "src/components/brainGeometry.js"
+        ],
+        "src/components/brain.worker.js": [
+          "src/components/brainGeometry.js"
+        ],
+        "src/components/brainGeometry.js": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "GEO-ANALYSIS.md",
+          "language": "markdown",
+          "sizeLines": 54,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "PORTFOLIO-REVIEW.md",
+          "language": "markdown",
+          "sizeLines": 495,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 16,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "architect.md",
+          "language": "markdown",
+          "sizeLines": 160,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "index.html",
+          "language": "html",
+          "sizeLines": 50,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 30,
+          "fileCategory": "config"
+        },
+        {
+          "path": "vercel.json",
+          "language": "json",
+          "sizeLines": 26,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "GEO-ANALYSIS.md": [],
+        "PORTFOLIO-REVIEW.md": [],
+        "README.md": [],
+        "architect.md": [],
+        "index.html": [],
+        "package.json": [],
+        "vercel.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": "src/data/en.json",
+          "language": "json",
+          "sizeLines": 229,
+          "fileCategory": "config"
+        },
+        {
+          "path": "src/data/es.json",
+          "language": "json",
+          "sizeLines": 229,
+          "fileCategory": "config"
+        },
+        {
+          "path": "src/data/fr.json",
+          "language": "json",
+          "sizeLines": 229,
+          "fileCategory": "config"
+        },
+        {
+          "path": "src/data/site.json",
+          "language": "json",
+          "sizeLines": 165,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "src/data/en.json": [],
+        "src/data/es.json": [],
+        "src/data/fr.json": [],
+        "src/data/site.json": []
+      },
+      "neighborMap": {
+        "src/data/en.json": [
+          {
+            "path": "src/i18n/translations.js",
+            "batchIndex": 2,
+            "symbols": [
+              "translations",
+              "SUPPORTED_LANGUAGES",
+              "DEFAULT_LANGUAGE",
+              "languagePath"
+            ]
+          }
+        ],
+        "src/data/es.json": [
+          {
+            "path": "src/i18n/translations.js",
+            "batchIndex": 2,
+            "symbols": [
+              "translations",
+              "SUPPORTED_LANGUAGES",
+              "DEFAULT_LANGUAGE",
+              "languagePath"
+            ]
+          }
+        ],
+        "src/data/fr.json": [
+          {
+            "path": "src/i18n/translations.js",
+            "batchIndex": 2,
+            "symbols": [
+              "translations",
+              "SUPPORTED_LANGUAGES",
+              "DEFAULT_LANGUAGE",
+              "languagePath"
+            ]
+          }
+        ],
+        "src/data/site.json": [
+          {
+            "path": "src/content.js",
+            "batchIndex": 1,
+            "symbols": [
+              "{ profile, sections, stack, experienceTags, projectMeta, lastUpdated }",
+              "FEATURED_COUNT"
+            ]
+          },
+          {
+            "path": "src/i18n/translations.js",
+            "batchIndex": 2,
+            "symbols": [
+              "translations",
+              "SUPPORTED_LANGUAGES",
+              "DEFAULT_LANGUAGE",
+              "languagePath"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "eslint.config.js",
+          "language": "javascript",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "public/404.html",
+          "language": "html",
+          "sizeLines": 21,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "public/robots.txt",
+          "language": "txt",
+          "sizeLines": 36,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "public/site.webmanifest",
+          "language": "webmanifest",
+          "sizeLines": 13,
+          "fileCategory": "code"
+        },
+        {
+          "path": "scripts/prerender.mjs",
+          "language": "javascript",
+          "sizeLines": 201,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/App.css",
+          "language": "css",
+          "sizeLines": 4,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "src/index.css",
+          "language": "css",
+          "sizeLines": 1746,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "vite.config.js",
+          "language": "javascript",
+          "sizeLines": 13,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "eslint.config.js": [],
+        "public/404.html": [],
+        "public/robots.txt": [],
+        "public/site.webmanifest": [],
+        "scripts/prerender.mjs": [],
+        "src/App.css": [],
+        "src/index.css": [],
+        "vite.config.js": []
+      },
+      "neighborMap": {
+        "src/App.css": [
+          {
+            "path": "src/App.jsx",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/index.css": [
+          {
+            "path": "src/main.jsx",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ]
+      }
+    }
+  ]
+}

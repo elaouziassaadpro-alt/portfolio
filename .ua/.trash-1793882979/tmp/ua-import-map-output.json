@@ -1,0 +1,143 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 48,
+    "filesWithImports": 18,
+    "totalEdges": 66
+  },
+  "failures": [],
+  "importMap": {
+    "GEO-ANALYSIS.md": [],
+    "PORTFOLIO-REVIEW.md": [],
+    "README.md": [],
+    "architect.md": [],
+    "eslint.config.js": [],
+    "index.html": [],
+    "package.json": [],
+    "public/404.html": [],
+    "public/robots.txt": [],
+    "public/site.webmanifest": [],
+    "scripts/prerender.mjs": [],
+    "src/App.css": [],
+    "src/App.jsx": [
+      "src/App.css",
+      "src/components/Marquee.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx",
+      "src/hooks/useActiveSection.js",
+      "src/hooks/useGlowPointer.js",
+      "src/sections/About.jsx",
+      "src/sections/Contact.jsx",
+      "src/sections/Experience.jsx",
+      "src/sections/Exploring.jsx",
+      "src/sections/Faq.jsx",
+      "src/sections/Hero.jsx",
+      "src/sections/Navbar.jsx",
+      "src/sections/Projects.jsx"
+    ],
+    "src/components/Controls.jsx": [
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx",
+      "src/i18n/translations.js"
+    ],
+    "src/components/CopyEmail.jsx": [],
+    "src/components/HeroScene.jsx": [
+      "src/components/brainGeometry.js"
+    ],
+    "src/components/Magnetic.jsx": [],
+    "src/components/Marquee.jsx": [],
+    "src/components/RevealText.jsx": [],
+    "src/components/SceneBoundary.jsx": [],
+    "src/components/ScrollReveal.jsx": [],
+    "src/components/SectionHeading.jsx": [
+      "src/components/ScrollReveal.jsx"
+    ],
+    "src/components/WorkflowSteps.jsx": [],
+    "src/components/brain.worker.js": [
+      "src/components/brainGeometry.js"
+    ],
+    "src/components/brainGeometry.js": [],
+    "src/content.js": [
+      "src/data/site.json"
+    ],
+    "src/contexts/LanguageContext.jsx": [
+      "src/i18n/translations.js"
+    ],
+    "src/contexts/ThemeContext.jsx": [],
+    "src/data/en.json": [],
+    "src/data/es.json": [],
+    "src/data/fr.json": [],
+    "src/data/site.json": [],
+    "src/entry-server.jsx": [
+      "src/App.jsx",
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx"
+    ],
+    "src/hooks/useActiveSection.js": [],
+    "src/hooks/useGlowPointer.js": [],
+    "src/i18n/translations.js": [
+      "src/data/en.json",
+      "src/data/es.json",
+      "src/data/fr.json",
+      "src/data/site.json"
+    ],
+    "src/index.css": [],
+    "src/main.jsx": [
+      "src/App.jsx",
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx",
+      "src/index.css"
+    ],
+    "src/sections/About.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Contact.jsx": [
+      "src/components/CopyEmail.jsx",
+      "src/components/Magnetic.jsx",
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Experience.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Exploring.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Faq.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Hero.jsx": [
+      "src/components/Magnetic.jsx",
+      "src/components/RevealText.jsx",
+      "src/components/SceneBoundary.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Navbar.jsx": [
+      "src/components/Controls.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Projects.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/components/WorkflowSteps.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "vercel.json": [],
+    "vite.config.js": []
+  }
+}

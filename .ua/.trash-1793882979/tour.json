@@ -1,0 +1,96 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with architect.md, the real reference for this portfolio: it covers the tech stack, directory map, page layout, theme and language state, the JSON content model, styling tokens, SEO build output and known gaps. Keep it open as a map, because every later step zooms into one of these areas. The root README.md is still the unmodified Vite template, so it tells you nothing about this project.",
+    "nodeIds": ["document:architect.md"]
+  },
+  {
+    "order": 2,
+    "title": "Booting the Page",
+    "description": "index.html is the template for the single-page app: it loads src/main.jsx, and its inline script applies a saved light theme and redirects visitors landing on / to their language page. Placeholder comments mark where pre-rendered head and body are injected, which is the first hint that this is more than a plain client-side app. main.jsx then wraps App in the theme, language and motion providers, hydrating pre-rendered markup or falling back to a fresh client render in development.",
+    "nodeIds": ["file:index.html", "file:src/main.jsx"],
+    "languageLesson": "Hydration (React's hydrateRoot) attaches event handlers and state to HTML that already exists, instead of creating the DOM from scratch as createRoot does. The server-rendered and client-rendered output must match, which is why theme and language have to be settled before React takes over."
+  },
+  {
+    "order": 3,
+    "title": "Composing the App",
+    "description": "App.jsx assembles the whole page from its navbar, sections, technology marquee and footer. It has the widest reach of any code file in the graph, so it serves as a table of contents for the source. Because both the client and the server entries render it, the same component tree produces the live page and its static HTML.",
+    "nodeIds": ["file:src/App.jsx", "file:src/components/Marquee.jsx"]
+  },
+  {
+    "order": 4,
+    "title": "The JSON Content Model",
+    "description": "Before reading any section, look at the data they all display. site.json holds language-independent facts such as profile details, section order, tech stack, tags, project metadata and the canonical URL, while en.json, fr.json and es.json hold the translated copy in the same shape. The key design rule is that experience and project arrays are matched by position across these files, so editing content means keeping their order and lengths aligned.",
+    "nodeIds": ["config:src/data/site.json", "config:src/data/en.json", "config:src/data/fr.json", "config:src/data/es.json"]
+  },
+  {
+    "order": 5,
+    "title": "Content Access Modules",
+    "description": "Two thin modules expose the JSON from Step 4 to the rest of the code. content.js re-exports the language-independent data and the featured project count, while translations.js aggregates the language files and provides the translations map, supported languages, default language and a language URL helper. Both are among the most depended-upon files in the project, so components read content through them rather than importing JSON directly.",
+    "nodeIds": ["file:src/content.js", "file:src/i18n/translations.js"]
+  },
+  {
+    "order": 6,
+    "title": "Language and Theme State",
+    "description": "These are the providers that main.jsx set up in Step 2. LanguageContext has the highest fan-in in the codebase: it derives the active language from the URL and handles crossfaded switches, history integration, persistence and document head updates. ThemeContext treats the document's data-theme attribute as an external store, keeping React consistent with the pre-paint script from index.html and the dark-by-default pre-rendered HTML. Controls is the shared language switcher and theme toggle that drives both.",
+    "nodeIds": ["file:src/contexts/LanguageContext.jsx", "file:src/contexts/ThemeContext.jsx", "file:src/components/Controls.jsx"],
+    "languageLesson": "When state already lives outside React, such as a DOM attribute, it can be treated as an external store and read from there instead of being copied into component state. React's useSyncExternalStore hook exists for this pattern and lets a server snapshot differ safely from the client value."
+  },
+  {
+    "order": 7,
+    "title": "Shared UI Building Blocks",
+    "description": "With content and state in place, these small pieces give the sections their common look and motion. ScrollReveal fades and slides content in on first view, and SectionHeading builds on it for the numbered eyebrow and accent-italic title used across sections. Magnetic adds a hover effect to call-to-action buttons only for precise pointers and outside reduced motion, while useGlowPointer publishes pointer coordinates as CSS custom properties for the card glow.",
+    "nodeIds": ["file:src/components/ScrollReveal.jsx", "file:src/components/SectionHeading.jsx", "file:src/components/Magnetic.jsx", "file:src/hooks/useGlowPointer.js"]
+  },
+  {
+    "order": 8,
+    "title": "Navigation and Content Sections",
+    "description": "Here the earlier steps come together: each section combines translated copy from Step 6 with shared data from Step 5. App.jsx imports useActiveSection to track the section in view so Navbar can highlight its link, and Navbar collapses into a mobile menu sheet below 960px. Experience pairs translated entries with their tags by index, the position-matching rule from Step 4, and Projects does the same with its metadata, splitting entries into featured case studies, which can include the interactive WorkflowSteps explainer, and a compact grid.",
+    "nodeIds": ["file:src/sections/Navbar.jsx", "file:src/hooks/useActiveSection.js", "file:src/sections/Experience.jsx", "file:src/sections/Projects.jsx", "file:src/components/WorkflowSteps.jsx"]
+  },
+  {
+    "order": 9,
+    "title": "Remaining Page Sections",
+    "description": "The other sections follow the same recipe, each with a distinct job. About combines translated intro text with a responsive photo and animated stat cards, and Exploring shows current interests in a reveal-animated card. Faq deserves a closer look because its self-contained answers also feed the FAQPage schema during pre-rendering, which Step 13 covers. Contact closes the page with profile-driven links and the CopyEmail row, which falls back to the mail app when clipboard access is blocked.",
+    "nodeIds": ["file:src/sections/About.jsx", "file:src/sections/Exploring.jsx", "file:src/sections/Faq.jsx", "file:src/sections/Contact.jsx", "file:src/components/CopyEmail.jsx"]
+  },
+  {
+    "order": 10,
+    "title": "The Hero's Loading Strategy",
+    "description": "The hero is the first thing visitors see, and it is built so that 3D never competes with page content. Hero defers the Three.js brain into a lazy chunk, while RevealText animates the name with CSS alone so it works from pre-rendered HTML without waiting for JavaScript. SceneBoundary wraps the lazy scene so a failed chunk load leaves the CSS orb fallback visible rather than breaking the page.",
+    "nodeIds": ["file:src/sections/Hero.jsx", "file:src/components/RevealText.jsx", "file:src/components/SceneBoundary.jsx"],
+    "languageLesson": "React.lazy with a dynamic import() splits a component into its own chunk that loads on demand. If that load fails, the error surfaces during rendering, so an error boundary is what catches it. Error boundaries are still written as class components."
+  },
+  {
+    "order": 11,
+    "title": "The 3D Brain Scene",
+    "description": "This is the lazy chunk that Step 10 protects, and it is split to keep the main thread responsive. brainGeometry.js procedurally generates the hemispheres, cerebellum, brain stem and neuron network from seeded Perlin noise, so no model file has to be downloaded. brain.worker.js runs that generation off the main thread and posts back plain serializable data. HeroScene then runs the WebGL scene with shader waves and neuron pulses, pausing off-screen and honouring reduced motion.",
+    "nodeIds": ["file:src/components/HeroScene.jsx", "file:src/components/brain.worker.js", "file:src/components/brainGeometry.js"],
+    "languageLesson": "A Web Worker runs JavaScript on a separate thread and communicates through postMessage, which copies data rather than sharing it. Only serializable values cross that boundary, so a worker returns plain data and the main thread builds its objects, such as Three.js meshes, from it."
+  },
+  {
+    "order": 12,
+    "title": "Styling and Design Tokens",
+    "description": "All the components so far get their appearance from one place. index.css defines the Deep Ocean design tokens for dark and light themes and styles every section, along with responsive breakpoints, animations and reduced-motion handling. Its token theming pairs with the data-theme attribute from Step 6, and App.css is only a minimal body reset.",
+    "nodeIds": ["file:src/index.css", "file:src/App.css"]
+  },
+  {
+    "order": 13,
+    "title": "Per-Language Pre-Rendering",
+    "description": "This pipeline answers the question raised by the placeholders in Step 2. The build script in package.json chains the client build, an SSR build of entry-server.jsx and the prerender script, with vite.config.js supplying the React plugin and the @ alias. prerender.mjs then renders one static HTML page per language with SEO head tags and JSON-LD, and generates sitemap.xml, llms.txt and llms-full.txt from src/data. This is how the same JSON from Step 4 reaches search engines and AI assistants without them needing to run the app.",
+    "nodeIds": ["config:package.json", "file:vite.config.js", "file:src/entry-server.jsx", "file:scripts/prerender.mjs"]
+  },
+  {
+    "order": 14,
+    "title": "Crawlers and Public Files",
+    "description": "The public folder complements the generated pages from Step 13. robots.txt allows all user agents, explicitly welcomes AI bots such as GPTBot, ClaudeBot and PerplexityBot, and points to the sitemap. The manifest declares the app's name, display mode, colors and icons, and the noindex 404 page links back to each language version. GEO-ANALYSIS.md audits the deployed result with measured Lighthouse scores and an estimated GEO readiness of about 79/100, and lists the remaining actions, most of them off-site.",
+    "nodeIds": ["document:public/robots.txt", "file:public/site.webmanifest", "file:public/404.html", "document:GEO-ANALYSIS.md"]
+  },
+  {
+    "order": 15,
+    "title": "Deployment and Tooling",
+    "description": "The tour ends with how the site ships and stays clean. vercel.json sets the build command from Step 13, the dist output directory and trailing slashes, and applies security headers to all routes plus long-lived cache headers to hashed assets and images. eslint.config.js lints JS and JSX with the recommended, React Hooks and React Refresh rules, and relaxes no-unused-vars for the `m` motion alias that core ESLint cannot see used as a JSX tag.",
+    "nodeIds": ["config:vercel.json", "file:eslint.config.js"]
+  }
+]

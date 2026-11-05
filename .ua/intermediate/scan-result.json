@@ -1,0 +1,444 @@
+{
+  "name": "portfolio",
+  "description": "Personal developer portfolio for Assaad Elaouzi: a React and Vite single-page site with an animated Three.js brain, JSON-driven multilingual content, and per-language static pre-rendering for SEO.",
+  "languages": [
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "txt",
+    "webmanifest"
+  ],
+  "frameworks": [
+    "React",
+    "Vite"
+  ],
+  "files": [
+    {
+      "path": "GEO-ANALYSIS.md",
+      "language": "markdown",
+      "sizeLines": 54,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "PORTFOLIO-REVIEW.md",
+      "language": "markdown",
+      "sizeLines": 495,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "architect.md",
+      "language": "markdown",
+      "sizeLines": 160,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "index.html",
+      "language": "html",
+      "sizeLines": 50,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 30,
+      "fileCategory": "config"
+    },
+    {
+      "path": "public/404.html",
+      "language": "html",
+      "sizeLines": 21,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "public/robots.txt",
+      "language": "txt",
+      "sizeLines": 36,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "public/site.webmanifest",
+      "language": "webmanifest",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/prerender.mjs",
+      "language": "javascript",
+      "sizeLines": 201,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/App.css",
+      "language": "css",
+      "sizeLines": 4,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "src/App.jsx",
+      "language": "javascript",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/Controls.jsx",
+      "language": "javascript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CopyEmail.jsx",
+      "language": "javascript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/HeroScene.jsx",
+      "language": "javascript",
+      "sizeLines": 338,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/Magnetic.jsx",
+      "language": "javascript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/Marquee.jsx",
+      "language": "javascript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/RevealText.jsx",
+      "language": "javascript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/SceneBoundary.jsx",
+      "language": "javascript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ScrollReveal.jsx",
+      "language": "javascript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/SectionHeading.jsx",
+      "language": "javascript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/WorkflowSteps.jsx",
+      "language": "javascript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/brain.worker.js",
+      "language": "javascript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/brainGeometry.js",
+      "language": "javascript",
+      "sizeLines": 254,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/content.js",
+      "language": "javascript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/contexts/LanguageContext.jsx",
+      "language": "javascript",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/contexts/ThemeContext.jsx",
+      "language": "javascript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/en.json",
+      "language": "json",
+      "sizeLines": 229,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/data/es.json",
+      "language": "json",
+      "sizeLines": 229,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/data/fr.json",
+      "language": "json",
+      "sizeLines": 229,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/data/site.json",
+      "language": "json",
+      "sizeLines": 165,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/entry-server.jsx",
+      "language": "javascript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useActiveSection.js",
+      "language": "javascript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useGlowPointer.js",
+      "language": "javascript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/i18n/translations.js",
+      "language": "javascript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/index.css",
+      "language": "css",
+      "sizeLines": 1746,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "src/main.jsx",
+      "language": "javascript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/About.jsx",
+      "language": "javascript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Contact.jsx",
+      "language": "javascript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Experience.jsx",
+      "language": "javascript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Exploring.jsx",
+      "language": "javascript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Faq.jsx",
+      "language": "javascript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Hero.jsx",
+      "language": "javascript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Navbar.jsx",
+      "language": "javascript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/sections/Projects.jsx",
+      "language": "javascript",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "vercel.json",
+      "language": "json",
+      "sizeLines": 26,
+      "fileCategory": "config"
+    },
+    {
+      "path": "vite.config.js",
+      "language": "javascript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 48,
+  "filteredByIgnore": 9,
+  "estimatedComplexity": "moderate",
+  "importMap": {
+    "GEO-ANALYSIS.md": [],
+    "PORTFOLIO-REVIEW.md": [],
+    "README.md": [],
+    "architect.md": [],
+    "eslint.config.js": [],
+    "index.html": [],
+    "package.json": [],
+    "public/404.html": [],
+    "public/robots.txt": [],
+    "public/site.webmanifest": [],
+    "scripts/prerender.mjs": [],
+    "src/App.css": [],
+    "src/App.jsx": [
+      "src/App.css",
+      "src/components/Marquee.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx",
+      "src/hooks/useActiveSection.js",
+      "src/hooks/useGlowPointer.js",
+      "src/sections/About.jsx",
+      "src/sections/Contact.jsx",
+      "src/sections/Experience.jsx",
+      "src/sections/Exploring.jsx",
+      "src/sections/Faq.jsx",
+      "src/sections/Hero.jsx",
+      "src/sections/Navbar.jsx",
+      "src/sections/Projects.jsx"
+    ],
+    "src/components/Controls.jsx": [
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx",
+      "src/i18n/translations.js"
+    ],
+    "src/components/CopyEmail.jsx": [],
+    "src/components/HeroScene.jsx": [
+      "src/components/brainGeometry.js"
+    ],
+    "src/components/Magnetic.jsx": [],
+    "src/components/Marquee.jsx": [],
+    "src/components/RevealText.jsx": [],
+    "src/components/SceneBoundary.jsx": [],
+    "src/components/ScrollReveal.jsx": [],
+    "src/components/SectionHeading.jsx": [
+      "src/components/ScrollReveal.jsx"
+    ],
+    "src/components/WorkflowSteps.jsx": [],
+    "src/components/brain.worker.js": [
+      "src/components/brainGeometry.js"
+    ],
+    "src/components/brainGeometry.js": [],
+    "src/content.js": [
+      "src/data/site.json"
+    ],
+    "src/contexts/LanguageContext.jsx": [
+      "src/i18n/translations.js"
+    ],
+    "src/contexts/ThemeContext.jsx": [],
+    "src/data/en.json": [],
+    "src/data/es.json": [],
+    "src/data/fr.json": [],
+    "src/data/site.json": [],
+    "src/entry-server.jsx": [
+      "src/App.jsx",
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx"
+    ],
+    "src/hooks/useActiveSection.js": [],
+    "src/hooks/useGlowPointer.js": [],
+    "src/i18n/translations.js": [
+      "src/data/en.json",
+      "src/data/es.json",
+      "src/data/fr.json",
+      "src/data/site.json"
+    ],
+    "src/index.css": [],
+    "src/main.jsx": [
+      "src/App.jsx",
+      "src/contexts/LanguageContext.jsx",
+      "src/contexts/ThemeContext.jsx",
+      "src/index.css"
+    ],
+    "src/sections/About.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Contact.jsx": [
+      "src/components/CopyEmail.jsx",
+      "src/components/Magnetic.jsx",
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Experience.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Exploring.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Faq.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Hero.jsx": [
+      "src/components/Magnetic.jsx",
+      "src/components/RevealText.jsx",
+      "src/components/SceneBoundary.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Navbar.jsx": [
+      "src/components/Controls.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "src/sections/Projects.jsx": [
+      "src/components/ScrollReveal.jsx",
+      "src/components/SectionHeading.jsx",
+      "src/components/WorkflowSteps.jsx",
+      "src/content.js",
+      "src/contexts/LanguageContext.jsx"
+    ],
+    "vercel.json": [],
+    "vite.config.js": []
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/App.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "App",
+          "startLine": 16,
+          "endLine": 70,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "App",
+          "callee": "useLanguage",
+          "lineNumber": 17
+        },
+        {
+          "caller": "App",
+          "callee": "useActiveSection",
+          "lineNumber": 18
+        },
+        {
+          "caller": "App",
+          "callee": "useGlowPointer",
+          "lineNumber": 19
+        },
+        {
+          "caller": "App",
+          "callee": "profile.name.split",
+          "lineNumber": 54
+        },
+        {
+          "caller": "App",
+          "callee": "new Date().getFullYear",
+          "lineNumber": 58
+        },
+        {
+          "caller": "App",
+          "callee": "new Date(lastUpdated).toLocaleDateString",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 14,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/Marquee.jsx",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "Marquee",
+          "startLine": 3,
+          "endLine": 22,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Marquee",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Marquee",
+          "callee": "[0, 1].map",
+          "lineNumber": 7
+        },
+        {
+          "caller": "Marquee",
+          "callee": "items.map",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/hooks/useActiveSection.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "useActiveSection",
+          "startLine": 5,
+          "endLine": 27,
+          "params": [
+            "ids"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useActiveSection",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useActiveSection",
+          "callee": "useState",
+          "lineNumber": 6
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "useEffect",
+          "lineNumber": 8
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "entries.forEach",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "setActive",
+          "lineNumber": 12
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "ids.forEach",
+          "lineNumber": 18
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "document.getElementById",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "observer.observe",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useActiveSection",
+          "callee": "observer.disconnect",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/hooks/useGlowPointer.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "useGlowPointer",
+          "startLine": 5,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useGlowPointer",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useGlowPointer",
+          "callee": "useEffect",
+          "lineNumber": 6
+        },
+        {
+          "caller": "useGlowPointer",
+          "callee": "window.matchMedia",
+          "lineNumber": 7
+        },
+        {
+          "caller": "update",
+          "callee": "document.querySelectorAll(\".glow-card\").forEach",
+          "lineNumber": 13
+        },
+        {
+          "caller": "update",
+          "callee": "document.querySelectorAll",
+          "lineNumber": 13
+        },
+        {
+          "caller": "update",
+          "callee": "card.getBoundingClientRect",
+          "lineNumber": 14
+        },
+        {
+          "caller": "update",
+          "callee": "card.style.setProperty",
+          "lineNumber": 16
+        },
+        {
+          "caller": "update",
+          "callee": "card.style.setProperty",
+          "lineNumber": 17
+        },
+        {
+          "caller": "handleMove",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 22
+        },
+        {
+          "caller": "useGlowPointer",
+          "callee": "window.addEventListener",
+          "lineNumber": 25
+        },
+        {
+          "caller": "useGlowPointer",
+          "callee": "window.removeEventListener",
+          "lineNumber": 27
+        },
+        {
+          "caller": "useGlowPointer",
+          "callee": "cancelAnimationFrame",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

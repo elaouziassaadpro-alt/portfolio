@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/HeroScene.jsx",
+      "type": "file",
+      "name": "HeroScene.jsx",
+      "filePath": "src/components/HeroScene.jsx",
+      "summary": "React component that renders the hero's animated Three.js brain, loading its geometry through a Web Worker and running the WebGL scene with cortical shader waves, neuron pulses and pointer-driven rotation. It pauses off-screen, honours reduced motion, and leaves a CSS orb as the fallback when WebGL is unavailable.",
+      "tags": ["component", "threejs", "webgl", "animation", "entry-point"],
+      "complexity": "complex",
+      "languageNotes": "Uses Vite's new Worker(new URL(..., import.meta.url)) pattern, so the worker is bundled without a static import, and patches MeshPhysicalMaterial GLSL through onBeforeCompile."
+    },
+    {
+      "id": "function:src/components/HeroScene.jsx:glowTexture",
+      "type": "function",
+      "name": "glowTexture",
+      "filePath": "src/components/HeroScene.jsx",
+      "lineRange": [34, 45],
+      "summary": "Draws a soft white radial gradient on a 64px canvas and returns it as a CanvasTexture for the neuron and pulse point sprites.",
+      "tags": ["utility", "texture", "canvas"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/HeroScene.jsx:loadBrain",
+      "type": "function",
+      "name": "loadBrain",
+      "filePath": "src/components/HeroScene.jsx",
+      "lineRange": [49, 80],
+      "summary": "Generates the brain in a module Web Worker and rebuilds BufferGeometry and Vector3 objects from the returned typed arrays. Falls back to calling createBrain on the main thread if the worker cannot be created or errors.",
+      "tags": ["web-worker", "async", "fallback", "deserialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/HeroScene.jsx:startScene",
+      "type": "function",
+      "name": "startScene",
+      "filePath": "src/components/HeroScene.jsx",
+      "lineRange": [86, 315],
+      "summary": "Builds the full WebGL scene (renderer, environment map, cortex material, wiring, neurons, signal pulses, lights) and drives its render loop with resize, pointer and visibility handling. Returns a cleanup function that disposes all GPU resources and observers.",
+      "tags": ["threejs", "render-loop", "shader", "resource-cleanup", "accessibility"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/HeroScene.jsx:HeroScene",
+      "type": "function",
+      "name": "HeroScene",
+      "filePath": "src/components/HeroScene.jsx",
+      "lineRange": [317, 338],
+      "summary": "Default-exported React component that renders the decorative mount div and, on mount, loads a brain sized by pointer precision before starting the scene. Cancels a pending start and runs scene cleanup on unmount.",
+      "tags": ["component", "react-hook", "lifecycle", "responsive"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/brain.worker.js",
+      "type": "file",
+      "name": "brain.worker.js",
+      "filePath": "src/components/brain.worker.js",
+      "summary": "Web Worker that runs createBrain off the main thread on request and posts back the surfaces, neuron positions, edges and adjacency as plain serializable data.",
+      "tags": ["web-worker", "serialization", "performance", "entry-point"],
+      "complexity": "simple",
+      "languageNotes": "Passes the attribute array buffers as a postMessage transfer list, moving the large typed arrays to the main thread without copying them."
+    },
+    {
+      "id": "file:src/components/brainGeometry.js",
+      "type": "file",
+      "name": "brainGeometry.js",
+      "filePath": "src/components/brainGeometry.js",
+      "summary": "Procedurally generates the hero brain's anatomy (folded hemispheres, cerebellum, brain stem) and a neuron network on the fold crests using seeded Perlin noise, so no model file has to be downloaded. Imported by both the worker and the main-thread scene.",
+      "tags": ["procedural-generation", "threejs", "geometry", "utility", "noise"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:seededRandom",
+      "type": "function",
+      "name": "seededRandom",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [10, 18],
+      "summary": "Returns a deterministic pseudo-random generator closure for a given seed, producing values in [0, 1) so the brain and pulses are reproducible.",
+      "tags": ["utility", "random", "deterministic"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createNoise",
+      "type": "function",
+      "name": "createNoise",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [21, 68],
+      "summary": "Builds a seeded classic 3D Perlin noise function from a shuffled permutation table, used to shape the cortical folds and cerebellar folia.",
+      "tags": ["noise", "algorithm", "procedural-generation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createHemisphere",
+      "type": "function",
+      "name": "createHemisphere",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [85, 141],
+      "summary": "Deforms an icosphere into one cerebral hemisphere, adding a flattened medial wall, frontal taper, temporal lobe and noise-driven gyri with vertex colors. Returns the geometry plus the crest points where neurons can sit.",
+      "tags": ["geometry", "procedural-generation", "vertex-colors"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createCerebellum",
+      "type": "function",
+      "name": "createCerebellum",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [143, 167],
+      "summary": "Shapes a smaller squashed sphere into the cerebellum with fine parallel folia from a noise-perturbed sine wave, colored by wave height.",
+      "tags": ["geometry", "procedural-generation", "vertex-colors"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createBrainStem",
+      "type": "function",
+      "name": "createBrainStem",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [169, 182],
+      "summary": "Creates the brain stem as a tilted, translated tapered cylinder with a uniform vertex color derived from the sulcus color.",
+      "tags": ["geometry", "vertex-colors", "procedural-generation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createNetwork",
+      "type": "function",
+      "name": "createNetwork",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [186, 225],
+      "summary": "Samples well-spaced neurons from the fold crests and wires each to its nearest neighbours with arched edges, returning the nodes, edges and an adjacency list that signals follow.",
+      "tags": ["graph", "algorithm", "spatial-sampling", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:pointOnEdge",
+      "type": "function",
+      "name": "pointOnEdge",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [227, 236],
+      "summary": "Evaluates the quadratic Bezier curve of a network edge at parameter t, writing the point into a reusable target vector to avoid per-frame allocations.",
+      "tags": ["utility", "math", "bezier"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/brainGeometry.js:createBrain",
+      "type": "function",
+      "name": "createBrain",
+      "filePath": "src/components/brainGeometry.js",
+      "lineRange": [238, 254],
+      "summary": "Public entry point that assembles both hemispheres, the cerebellum, the brain stem and the neuron network from fixed seeds at the requested detail and node count.",
+      "tags": ["factory", "procedural-generation", "api"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:src/components/HeroScene.jsx", "target": "file:src/components/brainGeometry.js", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/brain.worker.js", "target": "file:src/components/brainGeometry.js", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/HeroScene.jsx", "target": "file:src/components/brain.worker.js", "type": "depends_on", "direction": "forward", "weight": 0.6},
+
+    {"source": "file:src/components/HeroScene.jsx", "target": "function:src/components/HeroScene.jsx:glowTexture", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/HeroScene.jsx", "target": "function:src/components/HeroScene.jsx:loadBrain", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/HeroScene.jsx", "target": "function:src/components/HeroScene.jsx:startScene", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/HeroScene.jsx", "target": "function:src/components/HeroScene.jsx:HeroScene", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:seededRandom", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createNoise", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createHemisphere", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createCerebellum", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createBrainStem", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createNetwork", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:pointOnEdge", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createBrain", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:src/components/HeroScene.jsx", "target": "function:src/components/HeroScene.jsx:HeroScene", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:seededRandom", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:pointOnEdge", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/brainGeometry.js", "target": "function:src/components/brainGeometry.js:createBrain", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "function:src/components/HeroScene.jsx:loadBrain", "target": "function:src/components/brainGeometry.js:createBrain", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/HeroScene.jsx:startScene", "target": "function:src/components/brainGeometry.js:pointOnEdge", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/HeroScene.jsx:startScene", "target": "function:src/components/brainGeometry.js:seededRandom", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/components/brain.worker.js", "target": "function:src/components/brainGeometry.js:createBrain", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

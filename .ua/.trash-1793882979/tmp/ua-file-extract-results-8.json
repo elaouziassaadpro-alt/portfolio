@@ -1,0 +1,368 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [
+    "public/404.html",
+    "public/robots.txt",
+    "public/site.webmanifest",
+    "src/App.css",
+    "src/index.css"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "eslint.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 29,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/prerender.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 188,
+      "functions": [
+        {
+          "name": "readJson",
+          "startLine": 9,
+          "endLine": 9,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "pagePath",
+          "startLine": 16,
+          "endLine": 16,
+          "params": [
+            "lang"
+          ]
+        },
+        {
+          "name": "pageUrl",
+          "startLine": 17,
+          "endLine": 17,
+          "params": [
+            "lang"
+          ]
+        },
+        {
+          "name": "asset",
+          "startLine": 18,
+          "endLine": 18,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "attr",
+          "startLine": 19,
+          "endLine": 19,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "structuredData",
+          "startLine": 21,
+          "endLine": 92,
+          "params": [
+            "lang"
+          ]
+        },
+        {
+          "name": "headTags",
+          "startLine": 94,
+          "endLine": 129,
+          "params": [
+            "lang"
+          ]
+        },
+        {
+          "name": "write",
+          "startLine": 131,
+          "endLine": 135,
+          "params": [
+            "relative",
+            "content"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readJson",
+          "callee": "JSON.parse",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readJson",
+          "callee": "fs.readFileSync",
+          "lineNumber": 9
+        },
+        {
+          "caller": "readJson",
+          "callee": "path.join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "pageUrl",
+          "callee": "pagePath",
+          "lineNumber": 17
+        },
+        {
+          "caller": "attr",
+          "callee": "value.replace(/&/g, \"&amp;\").replace(/\"/g, \"&quot;\").replace",
+          "lineNumber": 19
+        },
+        {
+          "caller": "attr",
+          "callee": "value.replace(/&/g, \"&amp;\").replace",
+          "lineNumber": 19
+        },
+        {
+          "caller": "attr",
+          "callee": "value.replace",
+          "lineNumber": 19
+        },
+        {
+          "caller": "structuredData",
+          "callee": "Object.keys",
+          "lineNumber": 31
+        },
+        {
+          "caller": "structuredData",
+          "callee": "pageUrl",
+          "lineNumber": 36
+        },
+        {
+          "caller": "structuredData",
+          "callee": "pageUrl",
+          "lineNumber": 37
+        },
+        {
+          "caller": "structuredData",
+          "callee": "pageUrl",
+          "lineNumber": 53
+        },
+        {
+          "caller": "structuredData",
+          "callee": "asset",
+          "lineNumber": 54
+        },
+        {
+          "caller": "structuredData",
+          "callee": "person.alumniOf.map",
+          "lineNumber": 59
+        },
+        {
+          "caller": "structuredData",
+          "callee": "pageUrl",
+          "lineNumber": 65
+        },
+        {
+          "caller": "structuredData",
+          "callee": "t.projects.items.map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "structuredData",
+          "callee": "site.projectMeta[i].tags.join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "structuredData",
+          "callee": "pageUrl",
+          "lineNumber": 81
+        },
+        {
+          "caller": "structuredData",
+          "callee": "t.faq.items.map",
+          "lineNumber": 83
+        },
+        {
+          "caller": "structuredData",
+          "callee": "JSON.stringify({ \"@context\": \"https://schema.org\", \"@graph\": graph }).replace",
+          "lineNumber": 91
+        },
+        {
+          "caller": "structuredData",
+          "callee": "JSON.stringify",
+          "lineNumber": 91
+        },
+        {
+          "caller": "headTags",
+          "callee": "asset",
+          "lineNumber": 96
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys(languages)\n    .map((code) => `<link rel=\"alternate\" hreflang=\"${code}\" href=\"${pageUrl(code)}\" />`)\n    .join",
+          "lineNumber": 97
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys(languages)\n    .map",
+          "lineNumber": 97
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys",
+          "lineNumber": 97
+        },
+        {
+          "caller": "headTags",
+          "callee": "pageUrl",
+          "lineNumber": 98
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys(languages)\n    .filter((code) => code !== lang)\n    .map((code) => `<meta property=\"og:locale:alternate\" content=\"${languages[code].meta.locale}\" />`)\n    .join",
+          "lineNumber": 100
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys(languages)\n    .filter((code) => code !== lang)\n    .map",
+          "lineNumber": 100
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys(languages)\n    .filter",
+          "lineNumber": 100
+        },
+        {
+          "caller": "headTags",
+          "callee": "Object.keys",
+          "lineNumber": 100
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 105
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 106
+        },
+        {
+          "caller": "headTags",
+          "callee": "pageUrl",
+          "lineNumber": 108
+        },
+        {
+          "caller": "headTags",
+          "callee": "pageUrl",
+          "lineNumber": 110
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 112
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 113
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 114
+        },
+        {
+          "caller": "headTags",
+          "callee": "pageUrl",
+          "lineNumber": 115
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 119
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 122
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 123
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 125
+        },
+        {
+          "caller": "headTags",
+          "callee": "attr",
+          "lineNumber": 126
+        },
+        {
+          "caller": "headTags",
+          "callee": "structuredData",
+          "lineNumber": 128
+        },
+        {
+          "caller": "write",
+          "callee": "path.join",
+          "lineNumber": 132
+        },
+        {
+          "caller": "write",
+          "callee": "fs.mkdirSync",
+          "lineNumber": 133
+        },
+        {
+          "caller": "write",
+          "callee": "path.dirname",
+          "lineNumber": 133
+        },
+        {
+          "caller": "write",
+          "callee": "fs.writeFileSync",
+          "lineNumber": 134
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "vite.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/Controls.jsx",
+      "type": "file",
+      "name": "Controls.jsx",
+      "filePath": "src/components/Controls.jsx",
+      "summary": "Shared language switcher and theme toggle used by both the desktop nav bar and the mobile menu.",
+      "tags": ["component", "i18n", "theming", "accessibility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/Controls.jsx:Controls",
+      "type": "function",
+      "name": "Controls",
+      "filePath": "src/components/Controls.jsx",
+      "lineRange": [7, 42],
+      "summary": "Renders crawlable per-language links whose clicks are intercepted for an in-page language switch, plus a light/dark theme toggle button.",
+      "tags": ["component", "i18n", "theming", "seo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/contexts/LanguageContext.jsx",
+      "type": "file",
+      "name": "LanguageContext.jsx",
+      "filePath": "src/contexts/LanguageContext.jsx",
+      "summary": "React context managing the active language, derived from the URL, with crossfaded switches, history integration, persistence, and document head updates.",
+      "tags": ["context-provider", "i18n", "state-management", "hook", "seo"],
+      "complexity": "moderate",
+      "languageNotes": "A timed flag sequence fades text out before swapping it; setTimeout is deliberately used over requestAnimationFrame because rAF is suspended in background tabs and would leave the page invisible."
+    },
+    {
+      "id": "function:src/contexts/LanguageContext.jsx:LanguageProvider",
+      "type": "function",
+      "name": "LanguageProvider",
+      "filePath": "src/contexts/LanguageContext.jsx",
+      "lineRange": [25, 74],
+      "summary": "Provides lang, setLang, the active translations, and the isChanging flag; handles the timed language swap, URL pushState, localStorage persistence, head updates, and popstate navigation. Accepts initialLang for server rendering.",
+      "tags": ["context-provider", "i18n", "state-management", "component"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "function",
+      "name": "useLanguage",
+      "filePath": "src/contexts/LanguageContext.jsx",
+      "lineRange": [76, 80],
+      "summary": "Hook returning the language context, throwing an error when used outside a LanguageProvider.",
+      "tags": ["hook", "i18n", "context-consumer"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/contexts/ThemeContext.jsx",
+      "type": "file",
+      "name": "ThemeContext.jsx",
+      "filePath": "src/contexts/ThemeContext.jsx",
+      "summary": "Theme state layer that treats the document's data-theme attribute as an external store, staying consistent with the pre-paint inline script and dark-by-default pre-rendered HTML.",
+      "tags": ["context-provider", "theming", "state-management", "hook", "ssr"],
+      "complexity": "simple",
+      "languageNotes": "useSyncExternalStore with a separate server snapshot avoids hydration mismatches when the saved theme differs from the pre-rendered default."
+    },
+    {
+      "id": "function:src/contexts/ThemeContext.jsx:toggleTheme",
+      "type": "function",
+      "name": "toggleTheme",
+      "filePath": "src/contexts/ThemeContext.jsx",
+      "lineRange": [17, 26],
+      "summary": "Flips the data-theme attribute between light and dark, saves the choice to localStorage while tolerating write failures, and notifies store subscribers.",
+      "tags": ["theming", "event-handler", "persistence"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/contexts/ThemeContext.jsx:ThemeProvider",
+      "type": "function",
+      "name": "ThemeProvider",
+      "filePath": "src/contexts/ThemeContext.jsx",
+      "lineRange": [28, 36],
+      "summary": "Subscribes to the theme store and exposes the current theme and toggleTheme to descendants through context.",
+      "tags": ["context-provider", "theming", "component"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/contexts/ThemeContext.jsx:useTheme",
+      "type": "function",
+      "name": "useTheme",
+      "filePath": "src/contexts/ThemeContext.jsx",
+      "lineRange": [38, 42],
+      "summary": "Hook returning the theme context, throwing an error when used outside a ThemeProvider.",
+      "tags": ["hook", "theming", "context-consumer"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/entry-server.jsx",
+      "type": "file",
+      "name": "entry-server.jsx",
+      "filePath": "src/entry-server.jsx",
+      "summary": "Server-side rendering entry used at build time by the pre-render script to produce the static HTML for each language.",
+      "tags": ["entry-point", "ssr", "prerender", "seo"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/entry-server.jsx:render",
+      "type": "function",
+      "name": "render",
+      "filePath": "src/entry-server.jsx",
+      "lineRange": [9, 23],
+      "summary": "Renders the full provider tree and App to an HTML string for the given language.",
+      "tags": ["ssr", "prerender", "i18n"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/i18n/translations.js",
+      "type": "file",
+      "name": "translations.js",
+      "filePath": "src/i18n/translations.js",
+      "summary": "Central i18n module that aggregates the per-language JSON copy and exposes the translations map, supported languages, default language, and language URL helper.",
+      "tags": ["i18n", "configuration", "utility", "data-model"],
+      "complexity": "simple",
+      "languageNotes": "Language JSON files must keep identical shapes and array lengths because site.json is matched to their arrays by index."
+    },
+    {
+      "id": "function:src/i18n/translations.js:languagePath",
+      "type": "function",
+      "name": "languagePath",
+      "filePath": "src/i18n/translations.js",
+      "lineRange": [14, 14],
+      "summary": "Maps a language code to its URL path: the root for the default language and a /code/ prefix otherwise.",
+      "tags": ["utility", "i18n", "routing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main.jsx",
+      "type": "file",
+      "name": "main.jsx",
+      "filePath": "src/main.jsx",
+      "summary": "Browser entry point that wraps App in theme, language, and motion providers, then hydrates pre-rendered markup or falls back to a fresh client render in development.",
+      "tags": ["entry-point", "hydration", "bootstrap", "client-side"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/Navbar.jsx",
+      "type": "file",
+      "name": "Navbar.jsx",
+      "filePath": "src/sections/Navbar.jsx",
+      "summary": "Floating glass navigation bar with section links and active-state highlighting that collapses into a mobile menu sheet below 960px.",
+      "tags": ["component", "navigation", "responsive", "accessibility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/sections/Navbar.jsx:Navbar",
+      "type": "function",
+      "name": "Navbar",
+      "filePath": "src/sections/Navbar.jsx",
+      "lineRange": [8, 84],
+      "summary": "Renders logo, localized section links, controls, and the mobile menu; tracks scroll position and menu state and closes the menu on Escape or link selection.",
+      "tags": ["component", "navigation", "event-handler", "i18n"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:src/components/Controls.jsx", "target": "function:src/components/Controls.jsx:Controls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/contexts/LanguageContext.jsx", "target": "function:src/contexts/LanguageContext.jsx:LanguageProvider", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/contexts/LanguageContext.jsx", "target": "function:src/contexts/LanguageContext.jsx:useLanguage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/contexts/ThemeContext.jsx", "target": "function:src/contexts/ThemeContext.jsx:toggleTheme", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/contexts/ThemeContext.jsx", "target": "function:src/contexts/ThemeContext.jsx:ThemeProvider", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/contexts/ThemeContext.jsx", "target": "function:src/contexts/ThemeContext.jsx:useTheme", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/entry-server.jsx", "target": "function:src/entry-server.jsx:render", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/i18n/translations.js", "target": "function:src/i18n/translations.js:languagePath", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:src/sections/Navbar.jsx", "target": "function:src/sections/Navbar.jsx:Navbar", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:src/components/Controls.jsx", "target": "function:src/components/Controls.jsx:Controls", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/contexts/LanguageContext.jsx", "target": "function:src/contexts/LanguageContext.jsx:LanguageProvider", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/contexts/LanguageContext.jsx", "target": "function:src/contexts/LanguageContext.jsx:useLanguage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/contexts/ThemeContext.jsx", "target": "function:src/contexts/ThemeContext.jsx:ThemeProvider", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/contexts/ThemeContext.jsx", "target": "function:src/contexts/ThemeContext.jsx:useTheme", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/entry-server.jsx", "target": "function:src/entry-server.jsx:render", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/i18n/translations.js", "target": "function:src/i18n/translations.js:languagePath", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/sections/Navbar.jsx", "target": "function:src/sections/Navbar.jsx:Navbar", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:src/components/Controls.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/Controls.jsx", "target": "file:src/contexts/ThemeContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/components/Controls.jsx", "target": "file:src/i18n/translations.js", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/contexts/LanguageContext.jsx", "target": "file:src/i18n/translations.js", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/entry-server.jsx", "target": "file:src/App.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/entry-server.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/entry-server.jsx", "target": "file:src/contexts/ThemeContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/i18n/translations.js", "target": "file:src/data/en.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/i18n/translations.js", "target": "file:src/data/es.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/i18n/translations.js", "target": "file:src/data/fr.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/i18n/translations.js", "target": "file:src/data/site.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/main.jsx", "target": "file:src/App.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/main.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/main.jsx", "target": "file:src/contexts/ThemeContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/main.jsx", "target": "file:src/index.css", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/sections/Navbar.jsx", "target": "file:src/components/Controls.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/sections/Navbar.jsx", "target": "file:src/content.js", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:src/sections/Navbar.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "function:src/components/Controls.jsx:Controls", "target": "function:src/contexts/ThemeContext.jsx:useTheme", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/Controls.jsx:Controls", "target": "function:src/contexts/LanguageContext.jsx:useLanguage", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/components/Controls.jsx:Controls", "target": "function:src/i18n/translations.js:languagePath", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/contexts/LanguageContext.jsx:LanguageProvider", "target": "function:src/i18n/translations.js:languagePath", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:src/sections/Navbar.jsx:Navbar", "target": "function:src/contexts/LanguageContext.jsx:useLanguage", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:src/components/Controls.jsx", "target": "file:src/contexts/ThemeContext.jsx", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:src/components/Controls.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:src/sections/Navbar.jsx", "target": "file:src/contexts/LanguageContext.jsx", "type": "depends_on", "direction": "forward", "weight": 0.6},
+
+    {"source": "function:src/sections/Navbar.jsx:Navbar", "target": "function:src/components/Controls.jsx:Controls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "function:src/entry-server.jsx:render", "target": "function:src/contexts/ThemeContext.jsx:ThemeProvider", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "function:src/entry-server.jsx:render", "target": "function:src/contexts/LanguageContext.jsx:LanguageProvider", "type": "contains", "direction": "forward", "weight": 1.0}
+  ]
+}

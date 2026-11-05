@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:/Users/Administrateur/Desktop/Bureau/assaad/portfolio",
+  "batchFiles": [
+    {"path": "src/components/HeroScene.jsx", "language": "javascript", "sizeLines": 338, "fileCategory": "code"},
+    {"path": "src/components/brain.worker.js", "language": "javascript", "sizeLines": 27, "fileCategory": "code"},
+    {"path": "src/components/brainGeometry.js", "language": "javascript", "sizeLines": 254, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/components/HeroScene.jsx": ["src/components/brainGeometry.js"],
+    "src/components/brain.worker.js": ["src/components/brainGeometry.js"],
+    "src/components/brainGeometry.js": []
+  }
+}

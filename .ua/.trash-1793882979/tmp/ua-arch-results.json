@@ -1,0 +1,516 @@
+{
+  "scriptCompleted": true,
+  "commonPrefix": "",
+  "directoryGroups": {
+    "src": [
+      "file:src/components/ScrollReveal.jsx",
+      "file:src/components/SectionHeading.jsx",
+      "file:src/components/WorkflowSteps.jsx",
+      "file:src/content.js",
+      "file:src/sections/About.jsx",
+      "file:src/sections/Experience.jsx",
+      "file:src/sections/Exploring.jsx",
+      "file:src/sections/Faq.jsx",
+      "file:src/sections/Projects.jsx",
+      "file:src/components/Controls.jsx",
+      "file:src/contexts/LanguageContext.jsx",
+      "file:src/contexts/ThemeContext.jsx",
+      "file:src/entry-server.jsx",
+      "file:src/i18n/translations.js",
+      "file:src/main.jsx",
+      "file:src/sections/Navbar.jsx",
+      "file:src/components/CopyEmail.jsx",
+      "file:src/components/Magnetic.jsx",
+      "file:src/components/RevealText.jsx",
+      "file:src/components/SceneBoundary.jsx",
+      "file:src/sections/Contact.jsx",
+      "file:src/sections/Hero.jsx",
+      "file:src/App.jsx",
+      "file:src/components/Marquee.jsx",
+      "file:src/hooks/useActiveSection.js",
+      "file:src/hooks/useGlowPointer.js",
+      "file:src/components/HeroScene.jsx",
+      "file:src/components/brain.worker.js",
+      "file:src/components/brainGeometry.js",
+      "config:src/data/en.json",
+      "config:src/data/es.json",
+      "config:src/data/fr.json",
+      "config:src/data/site.json",
+      "file:src/App.css",
+      "file:src/index.css"
+    ],
+    "root": [
+      "document:GEO-ANALYSIS.md",
+      "document:PORTFOLIO-REVIEW.md",
+      "document:README.md",
+      "document:architect.md",
+      "file:index.html",
+      "config:package.json",
+      "config:vercel.json",
+      "file:eslint.config.js",
+      "file:vite.config.js"
+    ],
+    "public": [
+      "file:public/404.html",
+      "document:public/robots.txt",
+      "file:public/site.webmanifest"
+    ],
+    "scripts": [
+      "file:scripts/prerender.mjs"
+    ]
+  },
+  "srcSubGroups": {
+    "components": [
+      "file:src/components/ScrollReveal.jsx",
+      "file:src/components/SectionHeading.jsx",
+      "file:src/components/WorkflowSteps.jsx",
+      "file:src/components/Controls.jsx",
+      "file:src/components/CopyEmail.jsx",
+      "file:src/components/Magnetic.jsx",
+      "file:src/components/RevealText.jsx",
+      "file:src/components/SceneBoundary.jsx",
+      "file:src/components/Marquee.jsx",
+      "file:src/components/HeroScene.jsx",
+      "file:src/components/brain.worker.js",
+      "file:src/components/brainGeometry.js"
+    ],
+    "(src root)": [
+      "file:src/content.js",
+      "file:src/entry-server.jsx",
+      "file:src/main.jsx",
+      "file:src/App.jsx",
+      "file:src/App.css",
+      "file:src/index.css"
+    ],
+    "sections": [
+      "file:src/sections/About.jsx",
+      "file:src/sections/Experience.jsx",
+      "file:src/sections/Exploring.jsx",
+      "file:src/sections/Faq.jsx",
+      "file:src/sections/Projects.jsx",
+      "file:src/sections/Navbar.jsx",
+      "file:src/sections/Contact.jsx",
+      "file:src/sections/Hero.jsx"
+    ],
+    "contexts": [
+      "file:src/contexts/LanguageContext.jsx",
+      "file:src/contexts/ThemeContext.jsx"
+    ],
+    "i18n": [
+      "file:src/i18n/translations.js"
+    ],
+    "hooks": [
+      "file:src/hooks/useActiveSection.js",
+      "file:src/hooks/useGlowPointer.js"
+    ],
+    "data": [
+      "config:src/data/en.json",
+      "config:src/data/es.json",
+      "config:src/data/fr.json",
+      "config:src/data/site.json"
+    ]
+  },
+  "nodeTypeGroups": {
+    "file": [
+      "file:src/components/ScrollReveal.jsx",
+      "file:src/components/SectionHeading.jsx",
+      "file:src/components/WorkflowSteps.jsx",
+      "file:src/content.js",
+      "file:src/sections/About.jsx",
+      "file:src/sections/Experience.jsx",
+      "file:src/sections/Exploring.jsx",
+      "file:src/sections/Faq.jsx",
+      "file:src/sections/Projects.jsx",
+      "file:src/components/Controls.jsx",
+      "file:src/contexts/LanguageContext.jsx",
+      "file:src/contexts/ThemeContext.jsx",
+      "file:src/entry-server.jsx",
+      "file:src/i18n/translations.js",
+      "file:src/main.jsx",
+      "file:src/sections/Navbar.jsx",
+      "file:src/components/CopyEmail.jsx",
+      "file:src/components/Magnetic.jsx",
+      "file:src/components/RevealText.jsx",
+      "file:src/components/SceneBoundary.jsx",
+      "file:src/sections/Contact.jsx",
+      "file:src/sections/Hero.jsx",
+      "file:src/App.jsx",
+      "file:src/components/Marquee.jsx",
+      "file:src/hooks/useActiveSection.js",
+      "file:src/hooks/useGlowPointer.js",
+      "file:src/components/HeroScene.jsx",
+      "file:src/components/brain.worker.js",
+      "file:src/components/brainGeometry.js",
+      "file:index.html",
+      "file:eslint.config.js",
+      "file:public/404.html",
+      "file:public/site.webmanifest",
+      "file:scripts/prerender.mjs",
+      "file:src/App.css",
+      "file:src/index.css",
+      "file:vite.config.js"
+    ],
+    "document": [
+      "document:GEO-ANALYSIS.md",
+      "document:PORTFOLIO-REVIEW.md",
+      "document:README.md",
+      "document:architect.md",
+      "document:public/robots.txt"
+    ],
+    "config": [
+      "config:package.json",
+      "config:vercel.json",
+      "config:src/data/en.json",
+      "config:src/data/es.json",
+      "config:src/data/fr.json",
+      "config:src/data/site.json"
+    ]
+  },
+  "crossCategoryEdges": [
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "imports",
+      "count": 61
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "depends_on",
+      "count": 19
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "documents",
+      "count": 13
+    },
+    {
+      "fromType": "config",
+      "toType": "file",
+      "edgeType": "configures",
+      "count": 9
+    },
+    {
+      "fromType": "document",
+      "toType": "document",
+      "edgeType": "related",
+      "count": 5
+    },
+    {
+      "fromType": "file",
+      "toType": "config",
+      "edgeType": "imports",
+      "count": 5
+    },
+    {
+      "fromType": "document",
+      "toType": "config",
+      "edgeType": "documents",
+      "count": 4
+    },
+    {
+      "fromType": "file",
+      "toType": "config",
+      "edgeType": "depends_on",
+      "count": 4
+    },
+    {
+      "fromType": "config",
+      "toType": "config",
+      "edgeType": "related",
+      "count": 3
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "configures",
+      "count": 3
+    },
+    {
+      "fromType": "document",
+      "toType": "config",
+      "edgeType": "related",
+      "count": 2
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "related",
+      "count": 2
+    },
+    {
+      "fromType": "config",
+      "toType": "config",
+      "edgeType": "depends_on",
+      "count": 1
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "related",
+      "count": 1
+    }
+  ],
+  "interGroupImports": [],
+  "srcSubGroupImports": [
+    {
+      "from": "sections",
+      "to": "components",
+      "count": 19
+    },
+    {
+      "from": "sections",
+      "to": "contexts",
+      "count": 8
+    },
+    {
+      "from": "(src root)",
+      "to": "sections",
+      "count": 8
+    },
+    {
+      "from": "sections",
+      "to": "(src root)",
+      "count": 6
+    },
+    {
+      "from": "(src root)",
+      "to": "contexts",
+      "count": 5
+    },
+    {
+      "from": "i18n",
+      "to": "data",
+      "count": 4
+    },
+    {
+      "from": "components",
+      "to": "contexts",
+      "count": 2
+    },
+    {
+      "from": "(src root)",
+      "to": "hooks",
+      "count": 2
+    },
+    {
+      "from": "components",
+      "to": "i18n",
+      "count": 1
+    },
+    {
+      "from": "contexts",
+      "to": "i18n",
+      "count": 1
+    },
+    {
+      "from": "(src root)",
+      "to": "components",
+      "count": 1
+    },
+    {
+      "from": "(src root)",
+      "to": "data",
+      "count": 1
+    }
+  ],
+  "intraGroupDensity": {
+    "src": {
+      "internalEdges": 66,
+      "totalEdges": 66,
+      "density": 1
+    },
+    "root": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "public": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "scripts": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    }
+  },
+  "patternMatches": {
+    "public": "assets",
+    "components": "ui",
+    "hooks": "hooks",
+    "data": "data"
+  },
+  "filePatternMatches": {
+    "document:GEO-ANALYSIS.md": "documentation",
+    "document:PORTFOLIO-REVIEW.md": "documentation",
+    "document:README.md": "documentation",
+    "document:architect.md": "documentation"
+  },
+  "deploymentTopology": {
+    "hasDockerfile": false,
+    "hasCompose": false,
+    "hasK8s": false,
+    "hasTerraform": false,
+    "hasCI": false,
+    "infraFiles": [
+      "vercel.json"
+    ]
+  },
+  "dataPipeline": {
+    "schemaFiles": [],
+    "migrationFiles": [],
+    "dataModelFiles": [
+      "src/data/en.json",
+      "src/data/es.json",
+      "src/data/fr.json",
+      "src/data/site.json"
+    ],
+    "apiHandlerFiles": []
+  },
+  "docCoverage": {
+    "groupsWithDocs": 3,
+    "totalGroups": 4,
+    "coverageRatio": 0.75,
+    "undocumentedGroups": [
+      "public"
+    ]
+  },
+  "dependencyDirection": [
+    {
+      "dependent": "sections",
+      "dependsOn": "components",
+      "forward": 19,
+      "backward": 0
+    },
+    {
+      "dependent": "sections",
+      "dependsOn": "contexts",
+      "forward": 8,
+      "backward": 0
+    },
+    {
+      "dependent": "(src root)",
+      "dependsOn": "sections",
+      "forward": 8,
+      "backward": 6
+    },
+    {
+      "dependent": "(src root)",
+      "dependsOn": "contexts",
+      "forward": 5,
+      "backward": 0
+    },
+    {
+      "dependent": "i18n",
+      "dependsOn": "data",
+      "forward": 4,
+      "backward": 0
+    },
+    {
+      "dependent": "components",
+      "dependsOn": "contexts",
+      "forward": 2,
+      "backward": 0
+    },
+    {
+      "dependent": "(src root)",
+      "dependsOn": "hooks",
+      "forward": 2,
+      "backward": 0
+    },
+    {
+      "dependent": "components",
+      "dependsOn": "i18n",
+      "forward": 1,
+      "backward": 0
+    },
+    {
+      "dependent": "contexts",
+      "dependsOn": "i18n",
+      "forward": 1,
+      "backward": 0
+    },
+    {
+      "dependent": "(src root)",
+      "dependsOn": "components",
+      "forward": 1,
+      "backward": 0
+    },
+    {
+      "dependent": "(src root)",
+      "dependsOn": "data",
+      "forward": 1,
+      "backward": 0
+    }
+  ],
+  "fileStats": {
+    "totalFileNodes": 48,
+    "filesPerGroup": {
+      "src": 35,
+      "root": 9,
+      "public": 3,
+      "scripts": 1
+    },
+    "nodeTypeCounts": {
+      "file": 37,
+      "document": 5,
+      "config": 6
+    }
+  },
+  "fileFanIn": {
+    "file:src/components/ScrollReveal.jsx": 7,
+    "file:src/components/SectionHeading.jsx": 6,
+    "file:src/content.js": 7,
+    "file:src/contexts/LanguageContext.jsx": 12,
+    "file:src/components/WorkflowSteps.jsx": 1,
+    "file:src/contexts/ThemeContext.jsx": 3,
+    "file:src/i18n/translations.js": 2,
+    "file:src/App.jsx": 2,
+    "file:src/index.css": 1,
+    "file:src/components/Controls.jsx": 1,
+    "file:src/components/CopyEmail.jsx": 1,
+    "file:src/components/Magnetic.jsx": 2,
+    "file:src/components/RevealText.jsx": 1,
+    "file:src/components/SceneBoundary.jsx": 1,
+    "file:src/App.css": 1,
+    "file:src/components/Marquee.jsx": 1,
+    "file:src/hooks/useActiveSection.js": 1,
+    "file:src/hooks/useGlowPointer.js": 1,
+    "file:src/sections/About.jsx": 1,
+    "file:src/sections/Contact.jsx": 1,
+    "file:src/sections/Experience.jsx": 1,
+    "file:src/sections/Exploring.jsx": 1,
+    "file:src/sections/Faq.jsx": 1,
+    "file:src/sections/Hero.jsx": 1,
+    "file:src/sections/Navbar.jsx": 1,
+    "file:src/sections/Projects.jsx": 1,
+    "file:src/components/brainGeometry.js": 2,
+    "config:src/data/site.json": 2,
+    "config:src/data/en.json": 1,
+    "config:src/data/es.json": 1,
+    "config:src/data/fr.json": 1
+  },
+  "fileFanOut": {
+    "file:src/components/SectionHeading.jsx": 1,
+    "file:src/sections/About.jsx": 4,
+    "file:src/sections/Experience.jsx": 4,
+    "file:src/sections/Exploring.jsx": 3,
+    "file:src/sections/Faq.jsx": 3,
+    "file:src/sections/Projects.jsx": 5,
+    "file:src/components/Controls.jsx": 3,
+    "file:src/contexts/LanguageContext.jsx": 1,
+    "file:src/entry-server.jsx": 3,
+    "file:src/main.jsx": 4,
+    "file:src/sections/Navbar.jsx": 3,
+    "file:src/sections/Contact.jsx": 6,
+    "file:src/sections/Hero.jsx": 5,
+    "file:src/App.jsx": 14,
+    "file:src/components/HeroScene.jsx": 1,
+    "file:src/components/brain.worker.js": 1,
+    "file:src/content.js": 1,
+    "file:src/i18n/translations.js": 4
+  }
+}

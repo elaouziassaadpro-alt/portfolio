@@ -1,0 +1,745 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/ScrollReveal.jsx",
+      "type": "file",
+      "name": "ScrollReveal.jsx",
+      "filePath": "src/components/ScrollReveal.jsx",
+      "summary": "Reusable Framer Motion wrapper that fades and slides its children up the first time they enter the viewport; used throughout the page sections.",
+      "tags": [
+        "component",
+        "animation",
+        "utility",
+        "framer-motion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "function",
+      "name": "ScrollReveal",
+      "filePath": "src/components/ScrollReveal.jsx",
+      "lineRange": [
+        5,
+        15
+      ],
+      "summary": "Wraps children in a motion div that fades up once on entering view, with a configurable delay and class name.",
+      "tags": [
+        "component",
+        "animation",
+        "framer-motion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/SectionHeading.jsx",
+      "type": "file",
+      "name": "SectionHeading.jsx",
+      "filePath": "src/components/SectionHeading.jsx",
+      "summary": "Shared section header rendering a numbered eyebrow label over a large title whose last word is set in accent italic, revealed on scroll.",
+      "tags": [
+        "component",
+        "typography",
+        "layout",
+        "reusable-ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "function",
+      "name": "SectionHeading",
+      "filePath": "src/components/SectionHeading.jsx",
+      "lineRange": [
+        5,
+        21
+      ],
+      "summary": "Splits the title to italicize its last word and renders a zero-padded index, label, and heading inside a scroll reveal.",
+      "tags": [
+        "component",
+        "typography",
+        "reusable-ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/WorkflowSteps.jsx",
+      "type": "file",
+      "name": "WorkflowSteps.jsx",
+      "filePath": "src/components/WorkflowSteps.jsx",
+      "summary": "Small interactive explainer used in project case studies: clicking a step highlights it, advances a progress track, and announces its description to screen readers.",
+      "tags": [
+        "component",
+        "interactive",
+        "stateful",
+        "accessibility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/WorkflowSteps.jsx:WorkflowSteps",
+      "type": "function",
+      "name": "WorkflowSteps",
+      "filePath": "src/components/WorkflowSteps.jsx",
+      "lineRange": [
+        4,
+        33
+      ],
+      "summary": "Tracks the active step in local state and renders step buttons with active and done states, a progress bar, and a polite live region for the step text.",
+      "tags": [
+        "component",
+        "stateful",
+        "accessibility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/content.js",
+      "type": "file",
+      "name": "content.js",
+      "filePath": "src/content.js",
+      "summary": "Thin accessor over src/data/site.json that re-exports language-independent content (profile, sections, stack, experience tags, project metadata, last-updated date) and the featured project count.",
+      "tags": [
+        "data-model",
+        "content",
+        "barrel",
+        "json-driven"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/About.jsx",
+      "type": "file",
+      "name": "About.jsx",
+      "filePath": "src/sections/About.jsx",
+      "summary": "About section presenting translated intro paragraphs, a responsive profile photo with location caption, and animated stat cards in a bento layout.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n",
+        "bento-layout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/About.jsx:About",
+      "type": "function",
+      "name": "About",
+      "filePath": "src/sections/About.jsx",
+      "lineRange": [
+        7,
+        52
+      ],
+      "summary": "Renders the about section from translations and profile data, including a lazy-loaded responsive photo and staggered stat cards.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/Experience.jsx",
+      "type": "file",
+      "name": "Experience.jsx",
+      "filePath": "src/sections/Experience.jsx",
+      "summary": "Experience section rendering translated career entries as a timeline, pairing each item by index with its language-independent tags from shared content.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n",
+        "timeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/Experience.jsx:Experience",
+      "type": "function",
+      "name": "Experience",
+      "filePath": "src/sections/Experience.jsx",
+      "lineRange": [
+        6,
+        36
+      ],
+      "summary": "Maps translated experience items to timeline entries with staggered reveal and tags looked up by item index.",
+      "tags": [
+        "component",
+        "page-section",
+        "timeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/Exploring.jsx",
+      "type": "file",
+      "name": "Exploring.jsx",
+      "filePath": "src/sections/Exploring.jsx",
+      "summary": "Section describing what the author is currently exploring, showing a translated paragraph and a tag list inside a reveal-animated card.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n",
+        "tags"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/Exploring.jsx:Exploring",
+      "type": "function",
+      "name": "Exploring",
+      "filePath": "src/sections/Exploring.jsx",
+      "lineRange": [
+        5,
+        24
+      ],
+      "summary": "Renders the exploring heading, translated paragraph, and tag list in a single animated card.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/Faq.jsx",
+      "type": "file",
+      "name": "Faq.jsx",
+      "filePath": "src/sections/Faq.jsx",
+      "summary": "FAQ section listing translated question and answer cards written to be self-contained for people and AI assistants; the same items feed the FAQPage schema during pre-rendering.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n",
+        "faq",
+        "seo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/Faq.jsx:Faq",
+      "type": "function",
+      "name": "Faq",
+      "filePath": "src/sections/Faq.jsx",
+      "lineRange": [
+        7,
+        24
+      ],
+      "summary": "Maps translated FAQ items to staggered, reveal-animated question and answer cards.",
+      "tags": [
+        "component",
+        "page-section",
+        "faq"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/sections/Projects.jsx",
+      "type": "file",
+      "name": "Projects.jsx",
+      "filePath": "src/sections/Projects.jsx",
+      "summary": "Projects section that splits translated project entries into detailed featured case-study cards and a compact grid of other projects, merging each with language-independent metadata such as tags, images, links, and an optional workflow explainer.",
+      "tags": [
+        "component",
+        "page-section",
+        "i18n",
+        "case-study",
+        "json-driven"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/sections/Projects.jsx:ProjectLinks",
+      "type": "function",
+      "name": "ProjectLinks",
+      "filePath": "src/sections/Projects.jsx",
+      "lineRange": [
+        8,
+        30
+      ],
+      "summary": "Renders live, repository, and private-project indicators for a project, returning nothing when no link is available.",
+      "tags": [
+        "component",
+        "helper",
+        "links"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/Projects.jsx:Tags",
+      "type": "function",
+      "name": "Tags",
+      "filePath": "src/sections/Projects.jsx",
+      "lineRange": [
+        32,
+        42
+      ],
+      "summary": "Renders an accessible labelled list of technology tags.",
+      "tags": [
+        "component",
+        "helper",
+        "tags"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/sections/Projects.jsx:Projects",
+      "type": "function",
+      "name": "Projects",
+      "filePath": "src/sections/Projects.jsx",
+      "lineRange": [
+        44,
+        121
+      ],
+      "summary": "Slices translated projects at the featured count and renders featured case studies and other project cards, each combined with metadata by position.",
+      "tags": [
+        "component",
+        "page-section",
+        "case-study"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/ScrollReveal.jsx",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ScrollReveal.jsx",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/SectionHeading.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/SectionHeading.jsx",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/SectionHeading.jsx",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/WorkflowSteps.jsx",
+      "target": "function:src/components/WorkflowSteps.jsx:WorkflowSteps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/WorkflowSteps.jsx",
+      "target": "function:src/components/WorkflowSteps.jsx:WorkflowSteps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/content.js",
+      "target": "file:src/data/site.json",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "file:src/components/SectionHeading.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "file:src/content.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "function:src/sections/About.jsx:About",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "function:src/sections/About.jsx:About",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "file:src/components/SectionHeading.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "file:src/content.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "function:src/sections/Experience.jsx:Experience",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "function:src/sections/Experience.jsx:Experience",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "file:src/components/SectionHeading.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "function:src/sections/Exploring.jsx:Exploring",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "function:src/sections/Exploring.jsx:Exploring",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "file:src/components/SectionHeading.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "function:src/sections/Faq.jsx:Faq",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "function:src/sections/Faq.jsx:Faq",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/components/ScrollReveal.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/components/SectionHeading.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/components/WorkflowSteps.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/content.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "function:src/sections/Projects.jsx:ProjectLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "function:src/sections/Projects.jsx:Tags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "function:src/sections/Projects.jsx:Projects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "function:src/sections/Projects.jsx:Projects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/About.jsx:About",
+      "target": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/About.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:src/sections/About.jsx:About",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/About.jsx:About",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Experience.jsx:Experience",
+      "target": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Experience.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:src/sections/Experience.jsx:Experience",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Experience.jsx:Experience",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Exploring.jsx:Exploring",
+      "target": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Exploring.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:src/sections/Exploring.jsx:Exploring",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Exploring.jsx:Exploring",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Faq.jsx:Faq",
+      "target": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Faq.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:src/sections/Faq.jsx:Faq",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Faq.jsx:Faq",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/contexts/LanguageContext.jsx:useLanguage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/sections/Projects.jsx",
+      "target": "file:src/contexts/LanguageContext.jsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/components/SectionHeading.jsx:SectionHeading",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/components/ScrollReveal.jsx:ScrollReveal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/components/WorkflowSteps.jsx:WorkflowSteps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/sections/Projects.jsx:ProjectLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "function:src/sections/Projects.jsx:Projects",
+      "target": "function:src/sections/Projects.jsx:Tags",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

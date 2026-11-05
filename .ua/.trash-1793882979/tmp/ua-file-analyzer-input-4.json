@@ -1,0 +1,15 @@
+{
+  "projectRoot": "C:/Users/Administrateur/Desktop/Bureau/assaad/portfolio",
+  "batchFiles": [
+    {"path": "src/App.jsx", "language": "javascript", "sizeLines": 72, "fileCategory": "code"},
+    {"path": "src/components/Marquee.jsx", "language": "javascript", "sizeLines": 22, "fileCategory": "code"},
+    {"path": "src/hooks/useActiveSection.js", "language": "javascript", "sizeLines": 27, "fileCategory": "code"},
+    {"path": "src/hooks/useGlowPointer.js", "language": "javascript", "sizeLines": 31, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/App.jsx": ["src/App.css","src/components/Marquee.jsx","src/content.js","src/contexts/LanguageContext.jsx","src/hooks/useActiveSection.js","src/hooks/useGlowPointer.js","src/sections/About.jsx","src/sections/Contact.jsx","src/sections/Experience.jsx","src/sections/Exploring.jsx","src/sections/Faq.jsx","src/sections/Hero.jsx","src/sections/Navbar.jsx","src/sections/Projects.jsx"],
+    "src/components/Marquee.jsx": [],
+    "src/hooks/useActiveSection.js": [],
+    "src/hooks/useGlowPointer.js": []
+  }
+}

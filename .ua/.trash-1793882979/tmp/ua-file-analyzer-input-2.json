@@ -1,0 +1,21 @@
+{
+  "projectRoot": "C:/Users/Administrateur/Desktop/Bureau/assaad/portfolio",
+  "batchFiles": [
+    {"path": "src/components/Controls.jsx", "language": "javascript", "sizeLines": 42, "fileCategory": "code"},
+    {"path": "src/contexts/LanguageContext.jsx", "language": "javascript", "sizeLines": 80, "fileCategory": "code"},
+    {"path": "src/contexts/ThemeContext.jsx", "language": "javascript", "sizeLines": 42, "fileCategory": "code"},
+    {"path": "src/entry-server.jsx", "language": "javascript", "sizeLines": 23, "fileCategory": "code"},
+    {"path": "src/i18n/translations.js", "language": "javascript", "sizeLines": 14, "fileCategory": "code"},
+    {"path": "src/main.jsx", "language": "javascript", "sizeLines": 26, "fileCategory": "code"},
+    {"path": "src/sections/Navbar.jsx", "language": "javascript", "sizeLines": 84, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/components/Controls.jsx": ["src/contexts/LanguageContext.jsx", "src/contexts/ThemeContext.jsx", "src/i18n/translations.js"],
+    "src/contexts/LanguageContext.jsx": ["src/i18n/translations.js"],
+    "src/contexts/ThemeContext.jsx": [],
+    "src/entry-server.jsx": ["src/App.jsx", "src/contexts/LanguageContext.jsx", "src/contexts/ThemeContext.jsx"],
+    "src/i18n/translations.js": ["src/data/en.json", "src/data/es.json", "src/data/fr.json", "src/data/site.json"],
+    "src/main.jsx": ["src/App.jsx", "src/contexts/LanguageContext.jsx", "src/contexts/ThemeContext.jsx", "src/index.css"],
+    "src/sections/Navbar.jsx": ["src/components/Controls.jsx", "src/content.js", "src/contexts/LanguageContext.jsx"]
+  }
+}

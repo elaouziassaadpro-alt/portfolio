@@ -29,3 +29,9 @@ dist-ssr
 
 # Personal CV files
 cv/
+
+# Understand-Anything knowledge graph data
+.ua/
+
+# Local SEO tooling (separate repository)
+claude-seo/

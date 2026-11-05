@@ -69,14 +69,7 @@ export default function Hero() {
           {t.intro.tagline}
         </p>
 
-        <p className="now hero-fade" style={fadeDelay(0.85)}>
-          <span className="now-dot" aria-hidden="true" />
-          <span>
-            <strong>{t.intro.nowLabel}</strong> — {t.intro.now}
-          </span>
-        </p>
-
-        <div className="hero-actions hero-fade" style={fadeDelay(1)}>
+        <div className="hero-actions hero-fade" style={fadeDelay(0.85)}>
           <Magnetic>
             <a href="#contact" className="btn btn-primary">
               {t.intro.ctaContact}

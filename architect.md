@@ -56,7 +56,7 @@ portfolio/
 
 Top to bottom:
 1. **Navbar** (`sections/Navbar.jsx`): a floating glass bar that becomes solid after 24px of scroll. Below 960px its links collapse into a menu sheet.
-2. **Hero** (`#top`): the giant serif name reveals letter by letter (`RevealText`), with the role eyebrow, tagline, "Now" line and magnetic CTAs. Behind it sit the drifting aurora and the 3D brain.
+2. **Hero** (`#top`): the giant serif name reveals letter by letter (`RevealText`), with the role eyebrow, tagline and magnetic CTAs. Behind it sit the drifting aurora and the 3D brain.
 3. **Marquee**: the stack technologies in a seamless loop that pauses on hover.
 4. **Sections** in `.container`: About (a bento grid with the text, photo and stats), Experience (a hairline timeline), Projects (glow-border case studies plus "Other work"), Exploring, then Contact (centered, with copy-email and magnetic buttons).
 5. **Footer**: a giant faded italic "Elaouzi" mark and the credit line.

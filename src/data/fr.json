@@ -13,8 +13,6 @@
   "intro": {
     "role": "Développeur d'applications & IT",
     "tagline": "Je construis des systèmes Laravel & React pour la finance et l'industrie — et je fais tourner l'IT qui les porte.",
-    "nowLabel": "En ce moment",
-    "now": "Je développe pour Alphavest Asset Management une solution de reporting et de souscriptions et rachats digitalisés.",
     "ctaContact": "Me contacter",
     "ctaProjects": "Voir les projets",
     "scroll": "Défiler"
